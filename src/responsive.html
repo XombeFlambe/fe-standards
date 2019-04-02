@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GULP TEST Front End Web Standards - Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- STYLESHEETS -->
+        <!--build:css css/css/modern.min.css-->
+        <link rel="stylesheet" href="./css/css/modern.css">
+        
+        <!-- endbuild -->
+        <!-- build:css css/css/legacy.min.css-->
+        <!--[if lt IE 9]> 
+            <link rel="stylesheet" href="css/css/legacy.css">
+        <![endif]-->
+        <!-- endbuild -->
+
+        <link rel="stylesheet" href="./plugins/slider/flexslider.css" type="text/css">
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+		<!-- BEGIN HEADER -->
+		<div class="header">
+			<div class="header-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <div class="header-hd">
+				<h1 class="hdg hdg_2 hdg_grayLight">Front End Web Development Standards</h1>
+			</div>
+
+		</div>
+
+        
+			<!-- BEGIN NAVIGATION  -->
+			<div class="mainNav js-mainNav">
+				<div class="mainNav-trigger js-mainNav-trigger">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="mainNav-content js-mainNav-content">
+					<ul class="list hList">
+						<li><a href="structure.html" class="">Structure</a></li>
+						<li><a href="html-practices.html" class="">HTML Practices</a></li>
+						<li><a href="css-practices.html" class="">CSS &amp; SCSS  Practices</a></li>
+						<li><a href="js-practices.html" class="">JS Practices</a></li>
+						<li><a href="responsive.html" class="active">Responsive Layouts</a></li>
+					    <li><a href="common-objects.html" class="">Common Objects</a></li>
+					    <li><a href="js-modules.html" class="">JS Modules</a></li>
+					    <li><a href="media.html" class="">Media</a></li>
+					    <li><a href="task-runners.html" class="">Task Runners</a></li>
+					    <li><a href="style-guides.html" class="">Style Guides</a></li>
+					</ul>
+				</div>
+			</div>
+
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+
+            <h2 class="hdg hdg_2 hdg_pushBtm">Responsive Layouts</h2>
+            <div class="mediaBox">
+                <div class="mediaBox-media">
+                    <img src="./media/images/everythingdisc-multi.png" alt="Responsive view examples">
+                </div>
+                <p>In the past, it was common practice to build a separate mobile site to compliment the main site. This practice was flawed as two sites then had to be maintained instead of just one, doubling maintenance/update time and causing inconsistencies between them. A solution to the problem arrived in 2011 based on responsiveness. <a href="http://abookapart.com/products/responsive-web-design" target="_blank">Responsive Web Design</a>, created by Ethan Marcotte, is the practice of creating a flexible web page layout that optimally responds to the screen size device. The layout shifts in a fluid fashion to compensate for a smaller or larger screen widths. There are a number of articles, tutorials, and opinions on responsive standards. <a href="http://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/" target="_blank">"Responsive Web Design: What It Is and How To Use It"</a> by Kayla Knight is a great resource for learning the basics of responsive web design and is a must read.</p>
+            </div>
+
+            <h3 class="hdg hdg_4 hdg_pushBtmSm">This project was built on responsive basic standards as well as these best practices:</h3>
+            <ul class="list list_bullet">
+            	<li>Use CSS <a href="https://developers.google.com/web/fundamentals/design-and-ui/responsive/fundamentals/use-media-queries?hl=en#apply-media-queries-based-on-viewport-size" target="_blank">(for example, @media (query) { /* css rules go here */ }</a>) to create the layout breakpoints. Responsiveness should always be handled using CSS and written in stylesheets. Do not use device platforms for layout breakpoints because new devices on the market makes the breakpoint logic outdated. Avoid using JS for breakpoints.</li>
+            	<li>Use screen width to create the media query. Avoid device orientation (landscape/portrait) logic in the media query.</li>
+            	<li>Avoid using more than one breakpoint. The more breakpoints means much more design, coding, and maintenance time. One breakpoint is sufficient for 99% of website objects. The other 1% can be targeted with object specific width media queries.</li>
+            	<li>The optimal breakpoint is between 768px and 769px, which will handle target most devices with the best layout.</li>
+            	<li>Use percentages and max-widths to create flexible grids, layouts, and objects.</li>
+            	<li>Incorporate <a href="">mobile first strategy</a> for writing responsive code. This means to write the object's base code, and then extend the larger size layout with a media query (or separate object_md.scss file when using SCSS).</li>
+            	<li>When using SCSS, create separate .scss files of your object styling for each breakpoint layout ( for example: _modal.scss and _modal_md.scss). The two files will be combined in the compiled modern.css and legacy.css files.</li>
+            	<li>See the SCSS code in <a href="./common-objects.html">Common Objects</a> and <a href="./js-modules.html">JS Modules</a> for responsive styling examples. <a href="./media/uploads/statics.zip">Download this project</a> for a better look at how responsive coding is handled using SCSS.</li>
+            </ul>   
+
+        </div><!-- END MAIN CONTENT -->
+
+
+		<!-- FOOTER -->
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <small class="footer-copy">Copyright © 2000-2015 by John Wiley &amp; Sons, Inc. or related companies. All rights reserved.</small>
+        </div><!-- END FOOTER -->
+
+        <!-- BACK TO TOP OF PAGE BUTTON -->
+        <a href="#" class="topside js-topside">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <!--build:js js/main.min.js -->
+        <script src="js/vendor/jquery-1.11.3.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/plugins.js"></script>
+        <!-- endbuild -->
+
+        <script src="plugins/slider/jquery.flexslider.js"></script>
+        
+        <script>
+        $(window).load(function() {
+              $('.flexslider').flexslider({
+                  animationSpeed: 800,
+                  touch: true,
+                  pauseOnHover: true,
+                  pauseOnAction: true,
+                  startAt:0,
+                  animation: "fade"
+                });
+            });
+        </script>
+    </body>
+</html>

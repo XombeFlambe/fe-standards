@@ -1,0 +1,662 @@
+<!-- css-practices.nunjucks -->
+{% extends "layout.html" %}
+
+{% block content %}
+        {{nav.active('css-practices')}}
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+        	<h2 class="hdg hdg_2 hdg_pushBtm">CSS &amp; SCSS Practices</h2>
+
+			<!-- PAGE SUB NAV -->
+            <ul class="hList">
+                <li><a href="#writing-css" class="js-nav">Writing CSS</a></li>
+                <li><a href="#anatomy" class="js-nav">CSS Anatomy</a></li>
+                <li><a href="#css-specificity" class="js-nav">CSS Specificity</a></li>
+                <li><a href="#css-reset" class="js-nav">CSS Resets</a></li>
+                <li><a href="#display-property" class="js-nav">Display Properties</a></li>
+            	<li><a href="#floats" class="js-nav">Floating Objects</a></li>
+            	<li><a href="#z-index" class="js-nav">Z-Index Property</a></li>
+                <li><a href="#important" class="js-nav">!important</a></li>
+                <li><a href="#extender-classes" class="js-nav">Extender Classes</a></li>
+            	<li><a href="#mixin-classes" class="js-nav">Mixin Classes</a></li>
+            	<li><a href="#wysiwyg" class="js-nav">Text Editor Styling</a></li>
+            </ul><!-- END PAGE SUB NAV -->
+
+            <!-- COMMON PRACTICES --> 
+            <div class="sector" id="writing-css">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Writing CSS</h2></div>
+                <div class="sector-bd">
+                    <p>CSS (cascading style sheet) is a language used to style markup (HTML for example). It can be written in .css files, directly in the html element tag, and inside a style tag located in the head tag of an html document. SCSS (sassy css) is an updated version of SASS (semantically awesome style sheets). It is a pre-processing language for CSS code that allows the developer to modularize, create variables, create mixins, nest css code, and use math operators. Think of SCSS as more of an extension of CSS rather than a standalone language. SCSS is the Wiley standard for writing CSS and should be used for all current and future projects. New to CSS? <a href="https://www.codecademy.com/learn/web" target="_blank">Codecademy has a great set of learning modules.</a></p>
+                    <h3 class="hdg hdg_4">CSS</h3>
+                    <ul class="list list_bullet">
+                        <li>It is best practice to write your CSS code in .css and .scss files. This allows CSS to be reuseable for many shared objects on many pages.</li>
+                        <li>Avoid writing CSS code in the markup (also called inline styles), as the code is not reuseable and will overwrite styles in .css files. When choosing to write CSS in the markup, make sure there is a valid reason for doing so.</li>
+                        <li>Use the class attribute as the selector whenever possible to name your element tags for styling purposes. Class attributes can be used multiple times on a page.</li>
+                        <li>Only use the id attribute as the selector for unique objects, as id's can be used once on a page. Using an id more than once per page will break the code. An example of proper id use is for hyperlinking. The sections of this page are hyperlinked to their respective sub navigation links using unique id names.</li>
+                    </ul>
+                    <h3 class="hdg hdg_4">SCSS</h3>
+                    <ul class="list list_bullet">
+                        <li>Read <a href="http://sass-lang.com/guide" target="_blank">"Sass Basics"</a> to learn how SCSS works.</li>
+                        <li>A CSS compiler is needed to process .scss files into .css files. <a href="https://prepros.io/" target="_blank">Prepos</a> is a standalone compiling app that has been used for the Everything DiSC and Five Behaviors Kentico sites. If the project uses a <a href="./task-runners.html">task runner</a>, then a compiler can easily be added to the task file instead of using a standalone app like Prepos.</li>
+                        <li>Avoid using the @extend feature. Instead, write <a href="#extender-classes">extender classes</a>.</li>
+                        <li>Limit the use of nesting css to keep objects modular.</li>
+                    </ul>
+                </div>
+            </div><!-- END COMMON PRACTICES-->
+
+            <!-- CSS ANATOMY SECTOR --> 
+            <div class="sector" id="anatomy">
+                <div class="sector-hd"><h2 class="hdg hdg_3">CSS Anatomy</h2></div>
+                <div class="sector-bd">
+                    <p>The anatomy of a CSS rule consists of a selector and a declaration. The declaration consists of of a property and a value. Read <a href="http://djnmarti.com/foothill/coin65/week_02/basicsReview_rulesAnatomy.html" target="_blank">"Anatomy of CSS Rules - Selectors &amp; Declarations"</a> for more documentation. Selectors can be comprised of classes, ids, attributes, elements, pseudo classes, and psuedo elements. <a href="http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048" target="_blank">"The 30 CSS Selectors you Must Memorize"</a> is a must read resource for learning how to effectively create selectors. W3C has a <a href="http://www.w3.org/TR/CSS21/propidx.html" target="_blank">full property table</a>.</p>
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm">Anatomy</h3>
+                    <pre class="box">
+selector {
+    property: value;
+    property: value;
+    property: value;
+}
+</pre>
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">Heirarchy</h3>
+                    <p>Stack the properties in specific order and groupings as displayed below:</p>
+                    <pre class="box">
+selector {
+   display (display)
+   box-model (width, height, padding, margin, border, etc.)
+   positioning (relative, absolute, top, left, bottom, right, z-index, etc.)
+   color/background (color, background, background-positioning, background-image, etc.)
+   fonts (font-family, font-size, font-weight, etc.)
+   text (text-align, vertical-align, line-height, letter-spacing, etc.)
+   misc (cursor, etc.)
+   transformations (transform, transition, animation, etc.)
+}
+</pre> 
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">Example</h3>
+                    <pre class="box">
+.apple {
+    display: block;
+    width: 50px;
+    margin: 20px;
+    border: 2px solid purple;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    color: red;
+    font-size: 16px;
+    line-height: 1.4;
+    cursor: pointer;
+    transform: rotate(30deg);
+}
+</pre>  
+                </div>
+            </div><!-- END CSS ANATOMY SECTOR -->
+
+            <!-- CSS SPECIFICITY SECTOR -->
+            <div class="sector" id="css-specificity">
+                <div class="sector-hd"><h2 class="hdg hdg_3">CSS Specificity</h2></div>
+                <div class="sector-bd">
+                    <p>CSS specificity determines how the browser decides what styles take precedent over other styles using a weight system. There are many ways to style elements, and they each have specific weights.</p>
+                    <ul class="list list_bullet">
+                        <li>The <a href="#important" class="js-nav">!important</a> css rule overrides all weights.</li>
+                        <li>Direct inline styling has a weight of 1000 and will override any object less than 1000</li>
+                        <li>ids have a weight of 0100 and will override any object with a weight less than 0100</li>
+                        <li>classes, pseudo-classes and attributes have a weight of 0010 and will override any object less than 0010</li>
+                        <li>elements and pseudo-elements have a weight of 0001</li>
+                    </ul>
+                    <p>It is best practice to style objects with lighter weights. Weight specificity can be a blessing like using mixin classes that make objects more customizable. It can also be a curse by unintentionally overwriting styles. Read <a href="https://css-tricks.com/specifics-on-css-specificity/" target="_blank">"Specifics on CSS Specificity"</a> to learn how to weigh specificity. Hone your weight specifity skills with <a href="http://codepen.io/XombeFlambe/full/gyoFE/" target="_blank">interactive flash cards</a>.</p>
+                </div>
+            </div><!-- END CSS SPECIFICITY SECTOR -->
+
+            <!-- RESET SECTOR --> 
+            <div class="sector" id="css-reset">
+                <div class="sector-hd"><h2 class="hdg hdg_3">CSS Resets</h2></div>
+                <div class="sector-bd">
+                    <p>All browsers have default styles on html elements, and some of these styles differ between Chrome, IE, Firefox and the various other browsers. This inconsistency of styles can make your layouts look great on one browser and break on another. IE has had many default styling issues across all their browser versions, and they currently continue to add more default styles than Chrome or Mozilla. In Early 2014, Firefox decided to update and add to their default styling, but this decision created even more inconsistency. Reset styles are used to zero out the default browser styles that cause inconsistencies. These styles must be placed at the top of your CSS file so that you can override them with your own custom styles. You can google css reset generators (<a href="http://lysobey.com/resetGen/prod.html?" target="_blank">for example</a>) online or use <a href="https://html5boilerplate.com/" target="_blank">HTML5 Boilerplate</a> that includes the reset styles. Below is an example of the reset styles used for this project.</p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <pre>
+/* ---------------------------------------------------------------------
+RESET CSS (thanks Eric Meyer)
+------------------------------------------------------------------------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:focus {
+    outline: 0;
+}
+
+html {
+    overflow-y: scroll; /* Always show a vertical scrollbar, even when there is no scrolling */
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* ---------------------------------------------------------------------
+ HTML5 Element Reset
+------------------------------------------------------------------------ */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+
+audio, canvas, video, progress, picture {
+    display: inline-block;
+}
+
+template {
+    display: none;
+}
+
+/* ---------------------------------------------------------------------
+ Form Reset Styles
+------------------------------------------------------------------------ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* ---------------------------------------------------------------------
+ Button Reset Styles
+------------------------------------------------------------------------ */
+button {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    background: none;
+    -webkit-font-smoothing: inherit;
+}
+</pre>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!-- END RESET SECTOR -->
+
+            <!-- DISPLAY PROPERTY SECTOR --> 
+            <div class="sector" id="display-property">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Display Property</h2></div>
+                <div class="sector-bd">
+                    <p>The display property is used to change the normal display of an element. A span element can be changed into a block object or a div element into an inline object. There is also a hybrid between the two, inline-block, which keeps the object inline but can also take on margin properties. Margins cannot be used on inline objects.</p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            {% include "partials/notes/_note-inline-css.html" %}
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <span style="background:gray;">Span element</span>
+                            <span style="display:block; padding: 10px; margin-bottom:5px; background:gray;">Span element, display block</span>
+                            <div style="margin-bottom:5px; background:gray;">Div element</div>
+                            <div style="padding:5px; margin-bottom: 20px; display:inline-block; background:gray;">Div element, display inline-block</div>
+                            <div style="display:inline; background:gray;">Div element, display inline</div>
+                            
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;span style=&quot;background:gray;&quot;&gt;Span element&lt;/span&gt;
+&lt;span style=&quot;display:block; padding: 10px; margin-bottom:5px; background:gray;&quot;&gt;Span element, display block&lt;/span&gt;
+&lt;div style=&quot;margin-bottom:5px; background:gray;&quot;&gt;Div element&lt;/div&gt;
+&lt;div style=&quot;padding:5px; margin-bottom: 20px; display:inline-block; background:gray;&quot;&gt;Div element, display inline-block&lt;/div&gt;
+&lt;div style=&quot;display:inline; background:gray;&quot;&gt;Div element, display inline&lt;/div&gt;
+</pre>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!-- END DISPLAY PROPERTY SECTOR -->
+
+            <!-- FLOATS SECTOR -->  
+            <div class="sector" id="floats">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Floats</h2></div>
+                <div class="sector-bd">
+                    <p>Floats are a means of positioning objects to the left or right of the parent element, and they can be used on block objects to mimic inline objects that stack next to eachother instead of on top of eachother. Grid and block list objects are a perfect example of floating divs. Always remember to clear your floated objects or they may not display properly. Add a clear fix to the parent element of the floated object to achieve this.</p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <ul class="blocks blocks_4col">
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                            </ul>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;ul class=&quot;blocks blocks_4col&quot;&gt;
+    &lt;li&gt;&lt;img src=&quot;http://placehold.it/400x200&quot; class=&quot;imgResponsive&quot; alt=&quot;Block example&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://placehold.it/400x200&quot; class=&quot;imgResponsive&quot; alt=&quot;Block example&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://placehold.it/400x200&quot; class=&quot;imgResponsive&quot; alt=&quot;Block example&quot;&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img src=&quot;http://placehold.it/400x200&quot; class=&quot;imgResponsive&quot; alt=&quot;Block example&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+.blocks {margin-left: -20px;}
+
+.blocks:before,
+.blocks:after {
+    display: table;
+    content: "";
+}
+
+.blocks:after {clear: both;}
+
+.blocks > li {
+    float: left;
+    margin: 0 0 20px 20px;
+}
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">SCSS</h4>
+                            <pre class="box">
+/* Located in the scss/helpers/_utils.scss file */
+@mixin clearfix() {
+    &amp;:before,
+    &amp;:after {
+        content: " ";
+        display: table;
+    }
+
+    &amp;:after {
+        clear: both;
+    }
+}
+
+/* Located in the scss/modules/_blocks_md.scss file */
+.blocks {
+    margin-left: -$BLOCK_MARGIN;
+    @include clearfix();
+}
+
+.blocks > li {
+    float: left;
+    margin: 0 0 $BLOCK_MARGIN $BLOCK_MARGIN;
+}</pre>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!-- END FLOATS SECTOR-->
+
+            <!-- Z-INDEX SECTOR -->
+            <div class="sector" id="z-index">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Z-Index Property</h2></div>
+                <div class="sector-bd">
+                    <p>Z-indexes specify the 'stacking' order of an object on the z-axis. Avoid setting large z-indexes, as many developers fall victim to index creep, for example: A developer may have a tooltip z-indexed at 9999. A client then wants to include a sticky header, so the developer then adds a z-index of 99999 to the header. Next the client wants to include a modal, so the developer adds a z-index of 999999. This happens more often than not and is bad practice. This project's <a href="./common-modules.html#modals">modal</a> uses a z-index of 9 to achieve it's top level heirarchy. Keep your z-indexes maintainable using low numbers. There is no need to use anything larger than 10 to achieve proper z-index heirarchy. There is much more to z-indexing than just making a number bigger to make an object's heirarchy better. Read <a href="http://philipwalton.com/articles/what-no-one-told-you-about-z-index/" target="_blank">"What No One Told You About Z-Index"</a> for more info on how z-indexing works.</p>
+                </div>
+            </div><!-- END Z-INDEX SECTOR -->
+
+            <!-- !IMPORTANT SECTOR -->
+            <div class="sector" id="important">
+                <div class="sector-hd"><h2 class="hdg hdg_3">!important</h2></div>
+                <div class="sector-bd">
+                    <p>!important is a css rule that can be added to a selector property's value and tells the browser to ignore all other values of that specific selector property. It is best practice not to use !important unless there is a valid reason and strong argument to use it. Casual use of !important can and will cause future css maintenance issues.</p>
+                    <p>Valid reasons for using !important:</p>
+                    <ul class="list list_bullet">
+                        <li>Overriding 3rd party plugin styles. 3rd party plugins include styles that you will want to customize without editing the plugins CSS file. Plugin styling can be over complicated and sub-standard. Override the plugin styles in your own CSS files, and if need be, use the !important rule.</li>
+                        <li>Working with unmanageable specificity weights. When a project suffers from code bloat after multiple maintenance fixes, the css selector chains can become so long that it is no longer in the best interests of the developer to bother with specificity weights.</li>
+                        <li>Working on old sites using inline styling. The inline styling is sub-standard and out-dated, and the !important can save time and headaches dealing with it.</li>
+                    </ul>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">SCSS overrides for the 3rd party plugin, flexslider, used in this project.</h4>
+                            <pre class="box">
+.flexslider {
+    margin-bottom: 0 !important;
+    border: none !important;
+}
+
+.flex-control-nav {
+    bottom: 20px !important;
+    z-index: 2 !important;
+}
+
+.flex-control-nav {bottom: -10px !important;}
+
+.flex-direction-nav {display: none;}
+
+.flex-direction-nav a:before {color: $BRAND_LIGHT !important;}
+.flex-control-paging li a {border-color: $BRAND_LIGHT !important;}
+.flex-control-paging li a:hover,
+.flex-control-paging li a.flex-active {background: $BRAND_LIGHT !important;}
+
+.flexslider img {margin-bottom: 20px !important;}
+
+.slides-info {
+    width: 100%;
+    text-align: center;
+}
+
+.slides-info-hd {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-size: 28px;
+}
+
+</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- END !IMPORTANT SECTOR -->
+
+            <!-- EXTENDED CLASSES SECTOR -->
+            <div class="sector" id="extender-classes">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Extender Classes</h2></div>
+                <div class="sector-bd">
+                    <p>Extender classes are used to expand the styling of their parent class. They help keep CSS modular and reuseable and are used on a number of objects in this project. There are a number of objects in this project that use extender classes. Take a look at how buttons are styled in the example below.</p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <p>The base class is .btn, and it has to extenders. One extender, .btn_white overrides the base class background, color and border property values. The other extender, .btn_sm, overrides the base class min-width, padding and font size property values. Multiple extenders can be used on a single base class to create even more variations, like the white small button in this example.</p>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <a href="#" class="btn">Primary Button</a>
+                            <button class="btn btn_secondary">Secondary Button</button>
+                            <input type="submit" class="btn btn_sm" value="Small Button" />
+                            <a href="#" class="btn btn_secondary btn_sm">White Small Button</a>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;
+&lt;button href=&quot;#&quot; class=&quot;btn btn_secondary&quot;&gt;Secondary Button&lt;/button&gt;
+&lt;input type=&quot;submit&quot; class=&quot;btn btn_sm&quot; value=&quot;Small Button&quot; /&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn btn_secondary btn_sm&quot;&gt;Disabled Button&lt;/a&gt;
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">CSS</h4>
+                            <pre class="box">
+.btn {
+    display: inline-block;
+    min-width: 160px;
+    margin: 0 20px 20px 0;
+    padding: 12px 20px;
+    box-shadow: $BOX_SHADOW;
+    border: 2px solid $BRAND_DARK;
+    color: $WHITE;
+    background: $BRAND;
+    font-family: $FONT_SECONDARY;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    transition: box-shadow .1s, transform .1s, background .3s;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: none;
+    cursor: pointer;
+    text-decoration: none;
+    background: $BRAND_DARK; /* Old browsers */
+    transform: translate(2px,2px);
+}
+
+.btn_sm {
+    min-width: 120px;
+    padding: 8px 10px;
+    font-size: 16px;
+}
+
+.btn_secondary {
+    border: 2px solid $GRAY_DARK;
+    color: $GRAY_DARK;
+    background: $WHITE;
+}
+
+.btn_secondary:hover,
+.btn_secondary:focus {
+    background: $GRAY_LIGHT;
+}
+</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- END EXTENDED CLASSES SECTOR -->
+
+            <!-- MIXIN CLASSES SECTOR -->
+            <div class="sector" id="mixin-classes">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Mixin Classes</h2></div>
+                <div class="sector-bd">
+                    <p>Mixin classes are similar to extender classes, but they do not have parent classes. Instead, they are used globally on many objects and are an exeption to the rule of not mixing selectors. Some are directly styled, and some have no style properties but are indirectly styled when chained with another class. Mixin classes should be used to enable/disable or show/hide objects. Avoid creating mixins when an extender class is more appropriate, like creating a white version of the blue button.</p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example Using Styled Mixin Class </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <p>There are two buttons in this example, but the second button contains the .isVisuallyHidden class, which visually hides the button from view but is still visible in the browser inspector.</p>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Common Mixins used for Chaining Classes</h4>
+                            <ul class="list list_bullet">
+                                <li>.isHidden</li>
+                                <li>.isVisuallyHidden</li>
+                                <li>.isHiddenMobile</li>
+                                <li>.isHiddenDesktop</li>
+                            </ul>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <a href="#" class="btn">Primary Button</a>
+                            <a href="#" class="btn isVisuallyHidden">Hidden Button</a>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <pre class="box">
+&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;
+&lt;button href=&quot;#&quot; class=&quot;btn isVisuallyHidden&quot;&gt;Hidden Button&lt;/button&gt;
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">CSS</h4>
+                            <pre class="box">
+.isVisuallyHidden() {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    position: absolute !important;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+</pre>
+                        </div>
+                    </div>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example Using Unstyled Mixin Class</h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <p>The .inActive selector does not have any styles applied to it. This makes it modular, and it can be used on multiple objects. The styling is applied by chaining it to the .btn class in the CSS that creates a unique selector.</p>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Common Mixins used for Chaining Classes</h4>
+                            <ul class="list list_bullet">
+                                <li>.active or .isActive</li>
+                                <li>.inActive</li>
+                                <li>.disabled</li>
+                            </ul>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <a href="#" class="btn">Primary Button</a>
+                            <a href="#" class="btn inActive">Disabled Button</a>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn inActive&quot;&gt;Disabled Button&lt;/a&gt;
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">CSS</h4>
+                            <pre class="box">
+.btn.inActive {
+    border: 2px solid #cfe0e6;
+    box-shadow: none;
+    color: #cfe0e6;
+    background: #f7fbfc;
+    cursor: not-allowed;
+    transform: none;
+}
+</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- END MIXIN CLASSES SECTOR -->
+
+            <!-- WYSIWYG SECTOR -->
+            <div class="sector" id="wysiwyg">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Text Editor (WYSIWYG) Styles</h2></div>
+                <div class="sector-bd">
+                    <p>Wysiwyg (what you see is what you get) is an industry standard acronym for a CMS (content management system) text editor. The wysiwyg text editor is used by a CMS administrator to make content changes without having to be versed in html code. Wysiwyg styling is achieved by directly styling html elements and using a parent .wysiwyg container div. It is best practice to create a wysiwyg module when using SCSS, instead of creating a separate style sheet.</p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <p>The most common elements wysiwyg text editors used are &lt;b&gt;, &lt;i&gt;, &lt;u&gt;, &lt;p&gt;, &lt;a&gt;, &lt;h1&gt;-&lt;h6&gt;, &lt;ul&gt;, and &lt;ol&gt;. These elements must be contained by a .wysiwyg parent div. The &lt;p&gt; and &lt;a&gt; elements will inherit your already created styles, but if you wish to make the wysiwyg styling for these elements different, you can create the new styling within the .wysiwyg parent class. Text editor tools work strictly with element tags. Adding classes to these tool tasks are rarely an option and would require customizing back end code.</p>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <div class="wysiwyg">
+                            <h3>Wysiwyg Heading</h3>
+                            <p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>. Maiores natus, suscipit quos voluptates et neque facilis adipisci dignissimos odit, <i>exercitationem consectetur ipsa veritatis</i> enim eveniet eius numquam dolore repellat! Quidem.</p>
+                            <p>Lorem ipsum dolor sit amet, <a href="javascript:void(0);">consectetur adipisicing elit</a>. Ea optio, blanditiis vero nobis maiores omnis architecto assumenda, <u>illum aspernatur quaerat dolorem itaque quos numquam</u>, facere quidem dicta. Harum deleniti, aliquid!</p>
+                            <ul>
+                                <li>unordered list item 1</li>
+                                <li>unordered list item 2</li>
+                                <li>unordered list item 3</li>
+                            </ul>
+                            <ol>
+                                <li>ordered list item 1</li>
+                                <li>ordered list item 2</li>
+                                <li>ordered list item 3</li>
+                            </ol>
+                        </div>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;div class=&quot;wysiwyg&quot;&gt;
+    &lt;h3&gt;Wysiwyg Heading&lt;/h3&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, &lt;b&gt;consectetur adipisicing elit&lt;/b&gt;. Maiores natus, suscipit quos voluptates et neque facilis adipisci dignissimos odit, &lt;i&gt;exercitationem consectetur ipsa veritatis&lt;/i&gt; enim eveniet eius numquam dolore repellat! Quidem.&lt;/p&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href=&quot;javascript:void();&quot;&gt;consectetur adipisicing elit&lt;/a&gt;. Ea optio, blanditiis vero nobis maiores omnis architecto assumenda, &lt;u&gt;illum aspernatur quaerat dolorem itaque quos numquam&lt;/u&gt;, facere quidem dicta. Harum deleniti, aliquid!&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;unordered list item 1&lt;/li&gt;
+        &lt;li&gt;unordered list item 2&lt;/li&gt;
+        &lt;li&gt;unordered list item 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;
+        &lt;li&gt;ordered list item 1&lt;/li&gt;
+        &lt;li&gt;ordered list item 2&lt;/li&gt;
+        &lt;li&gt;ordered list item 3&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt;
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">SCSS</h4>
+                            <p>SCSS allows you to nest classes and elements. Nest your elements inside the .wysiwyg class. If you are using straight CSS, then you will need to place .wysiwyg ahead of each element tag (for example, .wysiwyg p {margin-bottom: 10px;}).</p>
+                            <pre class="box">
+.wysiwyg {
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    h1 {font-size: 40px;}
+    h2 {font-size: 32px;}
+    h3 {font-size: 24px;}
+    h4, h5, h6 {font-size: 18px;}
+
+    p {margin-bottom: 20px;}
+
+    b {font-weight: bold;}
+
+    i {font-style: italic;}
+
+    u {text-decoration: underline;}
+
+    ul, ul li {list-style-type: disc;}
+
+    ol, ol li {list-style-type: decimal;}
+
+    ul, ol {margin: 0 0 20px 20px;}
+}
+</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- END WYSIWYG SECTOR -->
+
+        </div><!-- END MAIN CONTENT -->
+
+{% endblock %}

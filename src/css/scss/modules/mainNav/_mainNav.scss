@@ -1,0 +1,43 @@
+/*----------------------------------------------------------------------
+ Main Navigation
+----------------------------------------------------------------------*/
+.mainNav {
+	max-width: $SITE_MAX_WIDTH;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.mainNav-trigger {
+	display: block;
+	width: 50px;
+	padding: 8px 10px;
+	margin: 0 auto 15px;
+	border-radius: 50%;
+	background: $BRAND_LIGHT;
+	cursor: pointer;
+}
+
+.mainNav-trigger i {font-size: 32px;}
+
+.mainNav-content {display: none;}
+
+.mainNav a {
+	display: block;
+	padding: 5px 10px 0;
+	color: $BRAND_LIGHT;
+	font-family: $FONT_SECONDARY;
+	font-size: 17px;
+	text-transform: uppercase;
+	transition: color .3s, background .3s, box-shadow .3s;
+}
+
+.mainNav a:hover,
+.mainNav a:focus {
+	box-shadow: 0 2px 0 0 $BRAND_LIGHT;
+	text-decoration: none;
+}
+
+.mainNav a.active {
+	color: $GRAY_LIGHT;
+	box-shadow: 0 2px 0 0 $GRAY_LIGHT; 
+}

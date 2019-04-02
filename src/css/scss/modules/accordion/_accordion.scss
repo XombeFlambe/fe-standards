@@ -1,0 +1,60 @@
+// ------------------------------------------------------------------
+// Accordion
+// ------------------------------------------------------------------
+.accordion,
+.accordion-item {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.accordion {margin-bottom: 20px;}
+
+.accordion-trigger {
+	display: block;
+	padding: 10px;
+	margin-bottom: 5px;
+	position: relative;
+	color: $WHITE;
+    background: $BRAND;
+	font-weight: bold;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.accordion-trigger:hover,
+.accordion-trigger:focus {text-decoration: none;}
+
+.accordion-trigger:before,
+.accordion-trigger:after {
+	display: table;
+	content: "";
+}
+
+.accordion-trigger:after {clear:both;}
+
+.accordion-trigger > *:first-child {width: 93%;}
+
+.accordion-trigger i {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	margin-top: -8px;
+}
+
+.accordion-trigger > * > i {margin-right: 10px;}
+
+.accordion-content {
+	display: none;
+	padding: 10px;
+	margin-bottom: 5px;
+	background: $WHITE;
+	border: 1px solid $GRAY;
+}
+
+.accordion-content.isActive {display: block;}
+
+.accordion_sub .accordion-trigger {
+    color: $WHITE;
+	background: $GRAY;
+}

@@ -1,0 +1,33 @@
+		<!-- FOOTER -->
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <small class="footer-copy">Copyright © 2000-2015 by John Wiley &amp; Sons, Inc. or related companies. All rights reserved.</small>
+        </div><!-- END FOOTER -->
+
+        <!-- BACK TO TOP OF PAGE BUTTON -->
+        <a href="#" class="topside js-topside">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <!--build:js js/main.min.js -->
+        <script src="js/vendor/jquery-1.11.3.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/plugins.js"></script>
+        <!-- endbuild -->
+
+        <script src="plugins/slider/jquery.flexslider.js"></script>
+        
+        <script>
+        $(window).load(function() {
+              $('.flexslider').flexslider({
+                  animationSpeed: 800,
+                  touch: true,
+                  pauseOnHover: true,
+                  pauseOnAction: true,
+                  startAt:0,
+                  animation: "fade"
+                });
+            });
+        </script>

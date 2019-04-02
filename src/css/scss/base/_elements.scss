@@ -1,0 +1,40 @@
+html,
+body {-webkit-font-smoothing: antialiased;}
+
+body {
+	background: $COLOR_BG;
+	overflow: hidden;
+    background: $GRAY_DARK;
+    @include baseText();
+}
+
+body:after {
+	display: table;
+	content: "";
+	width: 100%;
+	height: 500px;
+	position: fixed;
+	top: 0; 
+	left:0;	
+	z-index: -1;
+}
+
+body * {box-sizing: border-box;}
+
+body.bodyFixedNav {padding-top: 100px;}
+
+a {@include baseLink();}
+
+a:hover,
+a:focus {text-decoration: underline;}
+
+p {margin-bottom: 20px;}
+
+pre {word-wrap: break-word;}
+
+::selection {
+  background: #70c4c2; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #70c4c2; /* Gecko Browsers */
+}

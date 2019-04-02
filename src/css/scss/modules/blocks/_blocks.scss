@@ -1,0 +1,11 @@
+/*----------------------------------------------------------------------
+ Blocks
+----------------------------------------------------------------------*/
+.blocks > li {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+.blocks.mix-blocks_noMarginBtm > li {margin-bottom: 0;}
+
+.mix-blocks_padded > li {padding: 20px 50px;}

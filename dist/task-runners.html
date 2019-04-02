@@ -1,0 +1,373 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GULP TEST Front End Web Standards - Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="css/css/modern.min.css">
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/css/legacy.min.css">
+        <![endif]-->
+
+        <link rel="stylesheet" href="./plugins/slider/flexslider.css" type="text/css">
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+		<!-- BEGIN HEADER -->
+		<div class="header">
+			<div class="header-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <div class="header-hd">
+				<h1 class="hdg hdg_2 hdg_grayLight">Front End Web Development Standards</h1>
+			</div>
+
+		</div>
+
+        
+			<!-- BEGIN NAVIGATION  -->
+			<div class="mainNav js-mainNav">
+				<div class="mainNav-trigger js-mainNav-trigger">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="mainNav-content js-mainNav-content">
+					<ul class="list hList">
+						<li><a href="structure.html" class="">Structure</a></li>
+						<li><a href="html-practices.html" class="">HTML Practices</a></li>
+						<li><a href="css-practices.html" class="">CSS &amp; SCSS  Practices</a></li>
+						<li><a href="js-practices.html" class="">JS Practices</a></li>
+						<li><a href="responsive.html" class="">Responsive Layouts</a></li>
+					    <li><a href="common-objects.html" class="">Common Objects</a></li>
+					    <li><a href="js-modules.html" class="">JS Modules</a></li>
+					    <li><a href="media.html" class="">Media</a></li>
+					    <li><a href="task-runners.html" class="active">Task Runners</a></li>
+					    <li><a href="style-guides.html" class="">Style Guides</a></li>
+					</ul>
+				</div>
+			</div>
+
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+
+            <h2 class="hdg hdg_2 hdg_pushBtm">Task Runners</h2>
+            <div class="mediaBox">
+                <div class="mediaBox-media">
+                    <img src="./media/images/gulp-logo.png" alt="Gulp logo">
+                </div>
+                <p>A task runner is a set of JS applications that automate a number of time consuming tasks and help opitimize projects. The most popular task runners are <a href="http://gruntjs.com/" target="_blank">Grunt</a>, <a href="http://gulpjs.com/" target="_blank">Gulp</a>, Cake and Brocolli. Learn more about the differences between the four by reading <a href="http://blog.cozycloud.cc/technic/2014/06/18/task-runners-comparison/" target="_blank">"JS Task Runners Comparison: Grunt vs Cake vs Gulp vs Brocolli"</a>. All four can achieve the same outcomes, but the initial setups, support and documentation vary. Although Grunt is the most widely used, Gulp is the preferred task runner and was chosen for this project for these reasons:</p>
+                <ul class="list list_bullet">
+                    <li>Setting up <a href="http://gulpjs.com/" target="_blank">Gulp</a> is simpler and easier for beginner to intermediate JS developers.</li>
+                    <li>Gulp documentation and tutorials are also better written than Grunt docs/tutes.</li>
+                    <li>Gulp tasks run faster than Grunt tasks.</li>
+                </ul>
+            </div>
+
+        	<h3 class="hdg hdg_3 hdg_pushBtmSm">Tutorials</h3>
+        	<p><a href="https://css-tricks.com/gulp-for-beginners/" target="_blank">"Gulp for Beginners"</a> and <a href="http://andy-carter.com/blog/a-beginners-guide-to-the-task-runner-gulp" target="_blank">"A Beginners Guide to the Task Runner Gulp"</a> are great tutorials for setting up and using Gulp. In brief terms, they will teach the developer how to:</p>
+        	<ul class="list list_bullet">
+        		<li>Install node.js (needed to run gulp)</li>
+        		<li>Learn about the package.json file</li>
+        		<li>Install gulp</li>
+        		<li>Install gulp plugins</li>
+        		<li>Learn about the gulpfile.js file</li>
+        		<li>Write gulp tasks</li>
+        	</ul>
+
+			<h3 class="hdg hdg_3 hdg_pushBtmSm">Project Use</h3>
+        	<p>Here is a list of all the tasks being automated with Gulp for this project:</p>
+        	<ul class="list list_bullet">
+        		<li>gulp (task runner)</li>
+        		<li>sass (scss compiler)</li>
+        		<li>csslint (css linter)</li>
+        		<li>browserSync (syncs browser during file updates)</li>
+        		<li>useref (file and directory referencer)</li>
+        		<li>gulpIf (if statement helper)</li>
+        		<li>uglify (js minifier)</li>
+        		<li>minifyCSS (css minifier)</li>
+        		<li>imagemin (image optimizer)</li>
+        		<li>cache (clears caches)</li>
+        		<li>del (deletes)</li>
+        		<li>runSequence (gulp script sequencer) </li>
+        		<li>autoprefixer (adds browser prefixes to css)</li>
+        		<li>nunjucksRender (html templater)</li>
+        		<li>browserify (js modulizer)</li>
+        		<li>rename (file renamer)</li>
+        		<li>jshint (js debugger)</li>
+        		<li>checkCSS (unused css and class identifier)</li>
+        	</ul>
+
+        	<div class="drawer js-drawer">
+                <div class="drawer-trigger js-drawer-trigger">
+                    <a href="javascript:void(0)"><h3>Project package.json file </h3><i class="caret"></i></a>
+                </div>
+                <div class="drawer-content js-drawer-content">
+                    <pre>
+{
+    "name": "gulp-test",
+    "version": "1.0.0",
+    "description": "Gulp test drive to determine if gulp is the correct task runner solution",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Nate Levine",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.9.11",
+        "del": "^2.0.2",
+        "gulp": "^3.9.0",
+        "gulp-autoprefixer": "^3.1.0",
+        "gulp-browserify": "^0.5.1",
+        "gulp-cache": "^0.4.0",
+        "gulp-check-unused-css": "^2.1.3",
+        "gulp-csslint": "^0.2.0",
+        "gulp-if": "^2.0.0",
+        "gulp-ignore": "^2.0.1",
+        "gulp-imagemin": "^2.4.0",
+        "gulp-jshint": "^1.12.0",
+        "gulp-minify-css": "^1.2.1",
+        "gulp-nunjucks-render": "^1.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.0.4",
+        "gulp-uglify": "^1.4.2",
+        "gulp-useref": "^2.0.1",
+        "jshint-stylish": "^2.0.1",
+        "run-sequence": "^1.1.4"
+    }
+}
+</pre>
+                </div>
+            </div>
+
+            <div class="drawer js-drawer">
+                <div class="drawer-trigger js-drawer-trigger">
+                    <a href="javascript:void(0)"><h3>Project gulpfile.js file </h3><i class="caret"></i></a>
+                </div>
+                <div class="drawer-content js-drawer-content">
+                    <pre>
+/*********************************************
+Task variables
+*********************************************/
+var gulp = require('gulp'); // Task Runner
+var sass = require('gulp-sass'); // SCSS compliler
+var csslint = require('gulp-csslint'); // CSS linter
+var browserSync = require('browser-sync'); // Browser sync updater
+var useref = require('gulp-useref'); // File and Directory Referencer
+var gulpIf = require('gulp-if'); // If statement helper
+var uglify = require('gulp-uglify'); // JS minifier
+var minifyCSS = require('gulp-minify-css'); // CSS minifier
+var imagemin = require('gulp-imagemin'); // Image optimizer
+var cache = require('gulp-cache'); // Cacher
+var del = require('del'); // Delete helper
+var runSequence = require('run-sequence'); // Script run sequencer
+var autoprefixer = require('gulp-autoprefixer'); // Auto prefixer for CSS
+var nunjucksRender = require('gulp-nunjucks-render'); // HTML Templater
+var browserify = require('gulp-browserify'); // JS Modulizer
+var rename = require("gulp-rename"); // File renamer
+var jshint = require('gulp-jshint'); // JS debugger
+var checkCSS = require('gulp-check-unused-css'); // Checks for unused CSS and classes
+
+/*********************************************
+Gulp task functions
+*********************************************/
+// Builds the dist directory from the src directory
+gulp.task('build', function (callback) {
+  runSequence('clean:dist', callback);
+  runSequence('scripts', 'nunjucks','sass', 'useref', 'images', 'fonts', 'uploads', 'plugins', callback);
+});
+
+// Watch Task, auto refreshes the browser when html, scss and js files are edited
+gulp.task('watch', ['scripts', 'nunjucks', 'browserSync', 'sass'], function(){
+    gulp.watch('src/css/scss/**/*.scss', ['sass']);
+    gulp.watch('src/templates/**/*.html', ['nunjucks']);
+    gulp.watch('src/pages/**/*.html', ['nunjucks']);
+    gulp.watch('src/*.html', browserSync.reload);
+    gulp.watch('src/js/**/*.js', ['scripts']);
+    gulp.watch('src/js/**/*.js', browserSync.reload);
+});
+
+// Watch Task, using gulp command
+gulp.task('default', function (callback) {
+  runSequence(['scripts', 'nunjucks', 'sass', 'browserSync', 'watch'], callback);
+});
+
+// SCSS compiler
+gulp.task('sass', function(){
+  return gulp.src('src/css/scss/**/*.scss') // Gets all files ending with .scss in src/scss and children dirs
+    .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(autoprefixer({
+            browsers: ['> 1%'],
+            cascade: true
+        })) /* Autoprefixes css based on browser coverage, in this case greater than 1% global browser usage */
+    .pipe(gulp.dest('src/css/css/'))
+    .pipe(gulp.dest('dist/css/css/'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+});
+
+// Browser auto updater
+gulp.task('browserSync', function() {
+    browserSync({
+        server: {
+            baseDir: 'src'
+        },
+    });
+});
+
+// Dist build helper plus CSS and JS minifier
+gulp.task('useref', function(){
+  var assets = useref.assets();
+
+  return gulp.src('src/*.html')
+    .pipe(assets)
+    .pipe(gulpIf('*.css', minifyCSS())) // Minifies only if it's a CSS file
+    .pipe(gulpIf('*.js', uglify())) // Uglifies Javascript files
+    .pipe(assets.restore())
+    .pipe(useref())
+    .pipe(gulp.dest('dist/'));
+});
+
+// Media image builder plus minifier
+gulp.task('images', function(){
+  return gulp.src('src/media/images/**/*.+(png|jpg|jpeg|gif|svg)')
+  // Caching images that ran through imagemin
+  .pipe(cache(imagemin({
+      interlaced: true
+    })))
+  .pipe(gulp.dest('dist/media/images/'));
+});
+
+// Media fonts builder
+gulp.task('fonts', function() {
+  return gulp.src('src/media/fonts/**/*.+(eot|svg|ttf|woff)')
+  .pipe(gulp.dest('dist/media/fonts/'));
+});
+
+// Media uploads builder
+gulp.task('uploads', function() {
+  return gulp.src(['src/media/uploads/**/*', '!src/media/uploads/**/*.scc']) // ignore .scc source safe files
+  .pipe(gulp.dest('dist/media/uploads/'));
+});
+
+// Plugins directory builder
+gulp.task('plugins', function() {
+  return gulp.src(['src/plugins/**/*', '!src/plugins/**/*.scc']) // ignore .scc source safe files
+  .pipe(gulp.dest('dist/plugins/'));
+});
+
+// Full directory cleaner
+gulp.task('clean', function(callback) {
+  del('dist');
+  return cache.clearAll(callback);
+});
+
+// Directory cleaner but keeps media folder in tact, shortens build time
+gulp.task('clean:dist', function(callback){
+  del(['dist/**/*', '!dist/media', '!dist/media/**/*'], callback);
+});
+
+// HTML Template modulizer
+gulp.task('nunjucks', function() {
+  nunjucksRender.nunjucks.configure(['src/templates/'], { watch: false, lstripBlocks: true, asynch: true });
+  return gulp.src('src/pages/**/*.+(html|nunjucks)')
+  .pipe(nunjucksRender())
+  .pipe(gulp.dest('src'));
+});
+
+// JS modulizer
+gulp.task('scripts', function() {
+    gulp.src('src/js/app.js')
+        .pipe(browserify({
+          insertGlobals : false
+        }))
+        .pipe(rename('main.js'))
+        .pipe(gulp.dest('src/js'));
+});
+
+// JS debugger
+gulp.task('jshint', function () {
+    gulp.src(['src/js/*.js', 'src/js/views/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+// Checker for unused CSS
+gulp.task('checkcss', function(){
+    return gulp.src(['src/*.html', 'src/css/css/modern.css'])
+    .pipe(checkCSS({
+        ignore: [ 'wysiwyg', /^vendor-/ ]
+    }));
+});
+
+// CSS Linter
+gulp.task('css', function() {
+  gulp.src('src/css/css/modern.css')
+    .pipe(csslint({
+        'shorthand': false,
+        'box-sizing': false,
+        'adjoining-classes': false,
+        'regex-selectors': false,
+        'important': false,
+        'vendor-prefix': false,
+        'compatible-vendor-prefixes': false,
+        'gradients': false,
+        'unique-headings': false,
+        'qualified-headings': false,
+        'box-model': false,
+        'outline-none': false,
+        'text-indent': false,
+        'universal-selector': false,
+        'unqualified-attributes': false,
+        'overqualified-elements': false
+        }))
+    .pipe(csslint.reporter());
+});
+</pre>
+                </div>
+            </div>
+
+            <p></p>
+
+        </div><!-- END MAIN CONTENT -->
+
+
+		<!-- FOOTER -->
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <small class="footer-copy">Copyright © 2000-2015 by John Wiley &amp; Sons, Inc. or related companies. All rights reserved.</small>
+        </div><!-- END FOOTER -->
+
+        <!-- BACK TO TOP OF PAGE BUTTON -->
+        <a href="#" class="topside js-topside">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <script src="js/main.min.js"></script>
+
+        <script src="plugins/slider/jquery.flexslider.js"></script>
+        
+        <script>
+        $(window).load(function() {
+              $('.flexslider').flexslider({
+                  animationSpeed: 800,
+                  touch: true,
+                  pauseOnHover: true,
+                  pauseOnAction: true,
+                  startAt:0,
+                  animation: "fade"
+                });
+            });
+        </script>
+    </body>
+</html>

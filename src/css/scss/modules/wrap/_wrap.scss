@@ -1,0 +1,19 @@
+/*----------------------------------------------------------------------
+ Wraps
+----------------------------------------------------------------------*/
+.wrap {position: relative;}
+
+.wrap_content {
+	max-width: 1024px;
+	margin: 0 auto 20px;
+	padding: 20px 10px 20px;
+	background: #ffffff;
+	z-index: 1;
+}
+
+.mix-wrap_alignCenter,
+.mix-wrap_alignCenterMobile {text-align: center;}
+
+.mix-wrap_alignRight {text-align: right;}
+
+.mix-wrap_pushBtm {margin-bottom: 20px;}

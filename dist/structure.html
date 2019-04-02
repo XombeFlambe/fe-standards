@@ -1,0 +1,676 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GULP TEST Front End Web Standards - Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="css/css/modern.min.css">
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/css/legacy.min.css">
+        <![endif]-->
+
+        <link rel="stylesheet" href="./plugins/slider/flexslider.css" type="text/css">
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+		<!-- BEGIN HEADER -->
+		<div class="header">
+			<div class="header-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <div class="header-hd">
+				<h1 class="hdg hdg_2 hdg_grayLight">Front End Web Development Standards</h1>
+			</div>
+
+		</div>
+
+        
+			<!-- BEGIN NAVIGATION  -->
+			<div class="mainNav js-mainNav">
+				<div class="mainNav-trigger js-mainNav-trigger">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="mainNav-content js-mainNav-content">
+					<ul class="list hList">
+						<li><a href="structure.html" class="active">Structure</a></li>
+						<li><a href="html-practices.html" class="">HTML Practices</a></li>
+						<li><a href="css-practices.html" class="">CSS &amp; SCSS  Practices</a></li>
+						<li><a href="js-practices.html" class="">JS Practices</a></li>
+						<li><a href="responsive.html" class="">Responsive Layouts</a></li>
+					    <li><a href="common-objects.html" class="">Common Objects</a></li>
+					    <li><a href="js-modules.html" class="">JS Modules</a></li>
+					    <li><a href="media.html" class="">Media</a></li>
+					    <li><a href="task-runners.html" class="">Task Runners</a></li>
+					    <li><a href="style-guides.html" class="">Style Guides</a></li>
+					</ul>
+				</div>
+			</div>
+
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+            <h2 class="hdg hdg_2 hdg_pushBtm">Structure</h2>
+            <p></p>
+            <ul class="hList">
+                <li><a href="#directory-structure" class="js-nav">Directory Structure</a></li>
+            </ul>
+
+            <!-- DIRECTORY SECTOR -->
+            <div class="sector" id="directory-structure">
+                <div class="sector-hd">
+                    <h3 class="hdg hdg_3">Directory Structure</h3>
+                </div>
+                <div class="sector-bd">
+                    <p>Proper organization for files is an integral part of creating and maintaining a project's front end statics directory. <a href="./media/uploads/statics.zip">Download this project's statics directory</a> for a detailed look (dist and node_modules sub-directories not included. dist directory is created with a task runner and node_modules directory is created by node.js). Below are two examples of the proper structure for statics directories.</p>
+
+                    <h4 class="hdg hdg_4 hdg_pushBtmSm">Simple Project Structure</h4>
+                    <!-- BEGIN SIMPLE TREE MODULE -->
+                    <div class="tree js-tree">
+                        <div class="tree-action tree-action_all">
+                            <a href="javascript:void(0)" class="tree-action-showAll">Show All</a>
+                            <a href="javascript:void(0)" class="tree-action-hideAll">Hide All</a>
+                        </div>
+                        <ul class="tree-list">
+                            <li>
+                                <div class="tree-folder">
+                                    <div class="tree-trigger">
+                                        <i class="fa fa-plus-square fa-minus-square"></i>
+                                        <i class="fa fa-folder fa-folder-open"></i>
+                                    </div>
+                                    <span class="tree-folder-name">statics</span>
+                                </div>
+                                <ul class="tree-content isActive">
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square"></i>
+                                                <i class="fa fa-folder"></i>
+                                            </div>
+                                            <span class="tree-folder-name">css</span>
+                                        </div>
+                                        <ul class="tree-content">
+                                            <li><i class="fa fa-file"></i> legacy.css</li>
+                                            <li><i class="fa fa-file"></i> modern.css</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square"></i>
+                                                <i class="fa fa-folder"></i>
+                                            </div>
+                                            <span class="tree-folder-name">favicons</span>
+                                        </div>
+                                        <ul class="tree-content">
+                                            <li>Place your generated favicon files here.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square"></i>
+                                                <i class="fa fa-folder"></i>
+                                            </div>
+                                            <span class="tree-folder-name">js</span>
+                                        </div>
+                                        <ul class="tree-content">
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">vendor</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li><i class="fa fa-file"></i> jquery.js</li>
+                                                    <li><i class="fa fa-file"></i> modernizer.js</li>
+                                                </ul>
+                                            </li>
+                                            <li><i class="fa fa-file"></i> main.js</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square"></i>
+                                                <i class="fa fa-folder"></i>
+                                            </div>
+                                            <span class="tree-folder-name">media</span>
+                                        </div>
+                                        <ul class="tree-content">
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">fonts</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li><i class="fa fa-file"></i> font.eot</li>
+                                                    <li><i class="fa fa-file"></i> font.ttf</li>
+                                                    <li><i class="fa fa-file"></i> font.woff</li>
+                                                    <li><i class="fa fa-file"></i> font-icon.eot</li>
+                                                    <li><i class="fa fa-file"></i> font-icon.svg</li>
+                                                    <li><i class="fa fa-file"></i> font-icon.ttf</li>
+                                                    <li><i class="fa fa-file"></i> font-icon.woff</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">images</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li><i class="fa fa-file"></i> image-1.jpg</li>
+                                                    <li><i class="fa fa-file"></i> image-2.png</li>
+                                                    <li><i class="fa fa-file"></i> image-3.svg</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">uploads</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li><i class="fa fa-file"></i> upload-1.pdf</li>
+                                                    <li><i class="fa fa-file"></i> upload-2.doc</li>
+                                                    <li><i class="fa fa-file"></i> upload-3.xls</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">videos</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li><i class="fa fa-file"></i> video-1.mp4</li>
+                                                    <li><i class="fa fa-file"></i> video-2.mp4</li>
+                                                    <li><i class="fa fa-file"></i> video-3.mp4</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square"></i>
+                                                <i class="fa fa-folder"></i>
+                                            </div>
+                                            <span class="tree-folder-name">plugins</span>
+                                        </div>
+                                        <ul class="tree-content">
+                                            <li>Place 3rd party plugin directories here. This is where the flexslider plugin directory is kept.</li>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-file"></i> about.html</li>
+                                    <li><i class="fa fa-file"></i> contact.html</li>
+                                    <li><i class="fa fa-file"></i> index.html</li>
+                                    <li><i class="fa fa-file"></i> resources.html</li>
+                                    <li><i class="fa fa-file"></i> search.html</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- END SIMPLE TREE MODULE -->
+
+                    <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">Project Structure with SCSS and Gulp</h4>
+                    <!-- BEGIN TREE MODULE -->
+                    <div class="tree js-tree">
+                        <div class="tree-action tree-action_all">
+                            <a href="javascript:void(0)" class="tree-action-showAll">Show All</a>
+                            <a href="javascript:void(0)" class="tree-action-hideAll">Hide All</a>
+                        </div>
+                        <ul class="tree-list">
+                            <li>
+                                <div class="tree-folder">
+                                    <div class="tree-trigger">
+                                        <i class="fa fa-plus-square fa-minus-square"></i>
+                                        <i class="fa fa-folder fa-folder-open"></i>
+                                    </div>
+                                    <span class="tree-folder-name">statics</span>
+                                </div>
+                                <ul class="tree-content isActive">
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square"></i>
+                                                <i class="fa fa-folder"></i>
+                                            </div>
+                                            <span class="tree-folder-name">dist</span>
+                                        </div>
+                                        <ul class="tree-content">
+                                            <li>Is built by Gulp and includes a minified/compiled version of the src directory. The dist directory is for production and backend integration. Do not work in this directory, any changes will be over written when the src directory is compiled.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square"></i>
+                                                <i class="fa fa-folder"></i>
+                                            </div>
+                                            <span class="tree-folder-name">node_modules</span>
+                                        </div>
+                                        <ul class="tree-content">
+                                            <li>Is built by npm install (node.js) and includes the gulp application modules. Do not edit in this directory, make all edits via npm in the command line. Do not save this directory in version control.</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div class="tree-folder">
+                                            <div class="tree-trigger">
+                                                <i class="fa fa-plus-square fa-minus-square"></i>
+                                                <i class="fa fa-folder fa-folder-open"></i>
+                                            </div>
+                                            <span class="tree-folder-name">src</span>
+                                        </div>
+                                        <ul class="tree-content isActive">
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">css</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">css (compiled from scss directory)</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> legacy.css</li>
+                                                            <li><i class="fa fa-file"></i> modern.css</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">scss</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li>
+                                                                <div class="tree-folder">
+                                                                    <div class="tree-trigger">
+                                                                        <i class="fa fa-plus-square"></i>
+                                                                        <i class="fa fa-folder"></i>
+                                                                    </div>
+                                                                    <span class="tree-folder-name">base</span>
+                                                                </div>
+                                                                <ul class="tree-content">
+                                                                    <li><i class="fa fa-file"></i> _elements.scss</li>
+                                                                    <li><i class="fa fa-file"></i> _fonts.scss</li>
+                                                                    <li><i class="fa fa-file"></i> _hide.scss</li>
+                                                                    <li><i class="fa fa-file"></i> _reset.scss</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <div class="tree-folder">
+                                                                    <div class="tree-trigger">
+                                                                        <i class="fa fa-plus-square"></i>
+                                                                        <i class="fa fa-folder"></i>
+                                                                    </div>
+                                                                    <span class="tree-folder-name">helpers</span>
+                                                                </div>
+                                                                <ul class="tree-content">
+                                                                    <li><i class="fa fa-file"></i> _utils.scss</li>
+                                                                    <li><i class="fa fa-file"></i> _vars.scss</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <div class="tree-folder">
+                                                                    <div class="tree-trigger">
+                                                                        <i class="fa fa-plus-square"></i>
+                                                                        <i class="fa fa-folder"></i>
+                                                                    </div>
+                                                                    <span class="tree-folder-name">landmarks</span>
+                                                                </div>
+                                                                <ul class="tree-content">
+                                                                    <li>
+                                                                        <div class="tree-folder">
+                                                                            <div class="tree-trigger">
+                                                                                <i class="fa fa-plus-square"></i>
+                                                                                <i class="fa fa-folder"></i>
+                                                                            </div>
+                                                                            <span class="tree-folder-name">footer</span>
+                                                                        </div>
+                                                                        <ul class="tree-content">
+                                                                            <li><i class="fa fa-file"></i> _footer.scss</li>
+                                                                            <li><i class="fa fa-file"></i> _footer_md.scss</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="tree-folder">
+                                                                            <div class="tree-trigger">
+                                                                                <i class="fa fa-plus-square"></i>
+                                                                                <i class="fa fa-folder"></i>
+                                                                            </div>
+                                                                            <span class="tree-folder-name">header</span>
+                                                                        </div>
+                                                                        <ul class="tree-content">
+                                                                            <li><i class="fa fa-file"></i> _header.scss</li>
+                                                                            <li><i class="fa fa-file"></i> _header_md.scss</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <div class="tree-folder">
+                                                                    <div class="tree-trigger">
+                                                                        <i class="fa fa-plus-square"></i>
+                                                                        <i class="fa fa-folder"></i>
+                                                                    </div>
+                                                                    <span class="tree-folder-name">modules (objects go here)</span>
+                                                                </div>
+                                                                <ul class="tree-content">
+                                                                    <li>
+                                                                        <div class="tree-folder">
+                                                                            <div class="tree-trigger">
+                                                                                <i class="fa fa-plus-square"></i>
+                                                                                <i class="fa fa-folder"></i>
+                                                                            </div>
+                                                                            <span class="tree-folder-name">accordion</span>
+                                                                        </div>
+                                                                        <ul class="tree-content">
+                                                                            <li><i class="fa fa-file"></i> _accordion.scss</li>
+                                                                            <li><i class="fa fa-file"></i> _accordion_md.scss</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="tree-folder">
+                                                                            <div class="tree-trigger">
+                                                                                <i class="fa fa-plus-square"></i>
+                                                                                <i class="fa fa-folder"></i>
+                                                                            </div>
+                                                                            <span class="tree-folder-name">btn</span>
+                                                                        </div>
+                                                                        <ul class="tree-content">
+                                                                            <li><i class="fa fa-file"></i> _btn.scss</li>
+                                                                            <li><i class="fa fa-file"></i> _btn_md.scss</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="tree-folder">
+                                                                            <div class="tree-trigger">
+                                                                                <i class="fa fa-plus-square"></i>
+                                                                                <i class="fa fa-folder"></i>
+                                                                            </div>
+                                                                            <span class="tree-folder-name">hdg</span>
+                                                                        </div>
+                                                                        <ul class="tree-content">
+                                                                            <li><i class="fa fa-file"></i> _hdg.scss</li>
+                                                                            <li><i class="fa fa-file"></i> _hdg_md.scss</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="tree-folder">
+                                                                            <div class="tree-trigger">
+                                                                                <i class="fa fa-plus-square"></i>
+                                                                                <i class="fa fa-folder"></i>
+                                                                            </div>
+                                                                            <span class="tree-folder-name">etc</span>
+                                                                        </div>
+                                                                        <ul class="tree-content">
+                                                                            <li><i class="fa fa-file"></i> _etc.scss</li>
+                                                                            <li><i class="fa fa-file"></i> _etc_md.scss</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>_screen.scss</li>
+                                                            <li>_screen_md.scss</li>
+                                                            <li>legacy.scss</li>
+                                                            <li>modern.scss</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">favicons</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li>Place your generated favicon files here.</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">js</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">vendor</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> jquery.js</li>
+                                                            <li><i class="fa fa-file"></i> modernizer.js</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">views (js module objects)</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> accordion.js</li>
+                                                            <li><i class="fa fa-file"></i> modal.js</li>
+                                                            <li><i class="fa fa-file"></i> tree.js</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><i class="fa fa-file"></i> app.js (js module compiler file)</li>
+                                                    <li><i class="fa fa-file"></i> main.js</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">media</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">fonts</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> font.eot</li>
+                                                            <li><i class="fa fa-file"></i> font.ttf</li>
+                                                            <li><i class="fa fa-file"></i> font.woff</li>
+                                                            <li><i class="fa fa-file"></i> font-icon.eot</li>
+                                                            <li><i class="fa fa-file"></i> font-icon.svg</li>
+                                                            <li><i class="fa fa-file"></i> font-icon.ttf</li>
+                                                            <li><i class="fa fa-file"></i> font-icon.woff</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">images</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> image-1.jpg</li>
+                                                            <li><i class="fa fa-file"></i> image-2.png</li>
+                                                            <li><i class="fa fa-file"></i> image-3.svg</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">uploads</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> upload-1.pdf</li>
+                                                            <li><i class="fa fa-file"></i> upload-2.doc</li>
+                                                            <li><i class="fa fa-file"></i> upload-3.xls</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">videos</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> video-1.mp4</li>
+                                                            <li><i class="fa fa-file"></i> video-2.mp4</li>
+                                                            <li><i class="fa fa-file"></i> video-3.mp4</li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">pages (pre-compiled page content blocks)</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li><i class="fa fa-file"></i> about.html</li>
+                                                    <li><i class="fa fa-file"></i> contact.html</li>
+                                                    <li><i class="fa fa-file"></i> index.html</li>
+                                                    <li><i class="fa fa-file"></i> resources.html</li>
+                                                    <li><i class="fa fa-file"></i> search.html</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">plugins</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li>Place 3rd party plugin directories here. This is where the flexslider plugin directory is kept.</li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <div class="tree-folder">
+                                                    <div class="tree-trigger">
+                                                        <i class="fa fa-plus-square"></i>
+                                                        <i class="fa fa-folder"></i>
+                                                    </div>
+                                                    <span class="tree-folder-name">templates (pre-compiled partials and master)</span>
+                                                </div>
+                                                <ul class="tree-content">
+                                                    <li>
+                                                        <div class="tree-folder">
+                                                            <div class="tree-trigger">
+                                                                <i class="fa fa-plus-square"></i>
+                                                                <i class="fa fa-folder"></i>
+                                                            </div>
+                                                            <span class="tree-folder-name">partials</span>
+                                                        </div>
+                                                        <ul class="tree-content">
+                                                            <li><i class="fa fa-file"></i> _footer.html</li>
+                                                            <li><i class="fa fa-file"></i> _header.html</li>
+                                                            <li><i class="fa fa-file"></i> _navigation.html</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><i class="fa fa-file"></i> layout.html (master template)</li>
+                                                </ul>
+                                            </li>
+                                            <li><i class="fa fa-file"></i> about.html</li>
+                                            <li><i class="fa fa-file"></i> contact.html</li>
+                                            <li><i class="fa fa-file"></i> index.html</li>
+                                            <li><i class="fa fa-file"></i> resources.html</li>
+                                            <li><i class="fa fa-file"></i> search.html</li>
+                                        </ul>
+                                    </li>
+                                    <li><i class="fa fa-file"></i><span> gulpfile.js</span></li>
+                                    <li><i class="fa fa-file"></i><span> package.json</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- END TREE MODULE -->
+                </div>
+            </div><!-- END DIRECTORY STRUCTURE -->
+
+        </div><!-- END MAIN CONTENT -->
+
+
+		<!-- FOOTER -->
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <small class="footer-copy">Copyright © 2000-2015 by John Wiley &amp; Sons, Inc. or related companies. All rights reserved.</small>
+        </div><!-- END FOOTER -->
+
+        <!-- BACK TO TOP OF PAGE BUTTON -->
+        <a href="#" class="topside js-topside">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <script src="js/main.min.js"></script>
+
+        <script src="plugins/slider/jquery.flexslider.js"></script>
+        
+        <script>
+        $(window).load(function() {
+              $('.flexslider').flexslider({
+                  animationSpeed: 800,
+                  touch: true,
+                  pauseOnHover: true,
+                  pauseOnAction: true,
+                  startAt:0,
+                  animation: "fade"
+                });
+            });
+        </script>
+    </body>
+</html>

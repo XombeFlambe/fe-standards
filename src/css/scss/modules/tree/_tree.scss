@@ -1,0 +1,48 @@
+/* Tree List ******************************************************/
+.tree ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 16px;
+}
+
+.tree-trigger {
+	display: inline-block;
+	min-width: 27px;
+	cursor: pointer;
+}
+
+.tree .tree-content {
+	display: none; /* Activated with jquery slideToggle */
+	padding-left: 19px;
+}
+
+.tree-content.isActive {display:block;}
+
+.tree-action {
+	display: inline-block;
+	padding-left: 5px;
+}
+
+.tree-action a {
+	padding: 0 5px;
+	position: relative;
+}
+
+.tree-action a:before {
+	display: inline-block;
+	content: "|";
+	position: absolute;
+	top: -.1em;
+	left: -.25em;
+}
+
+.tree-action a:first-child:before {content: "";}
+
+.tree-action_all {
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+.tree-action_all,
+.tree-action_all a:first-child {padding-left: 0;}

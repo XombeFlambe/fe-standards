@@ -1,0 +1,28 @@
+/*----------------------------------------------------------------------
+ WYSIWYG
+----------------------------------------------------------------------*/
+.wysiwyg {
+	h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
+
+	h1 {font-size: 40px;}
+	h2 {font-size: 32px;}
+	h3 {font-size: 24px;}
+	h4, h5, h6 {font-size: 18px;}
+
+	p {margin-bottom: 20px;}
+
+	b {font-weight: bold;}
+
+	i {font-style: italic;}
+
+	u {text-decoration: underline;}
+
+	ul, ul li {list-style-type: disc;}
+
+	ol, ol li {list-style-type: decimal;}
+
+	ul, ol {margin: 0 0 20px 20px;}
+}

@@ -1,0 +1,56 @@
+.searchWrap {
+	display: inline-block;
+	position: relative;
+}
+
+input[type="search"].search {
+	box-sizing: border-box;
+}
+
+.searchWrap {display: block;}
+
+.search {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid $GRAY_LIGHT;
+    //border-radius: 5px;
+    box-shadow: inset 0 2px 1px rgba(0,0,0,.075);
+    background: $WHITE;
+    font-family: $FONT_PRIMARY;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.search:focus {
+	border: 1px solid $BRAND_LIGHT;
+	box-shadow: 0 0 3px 3px rgba(0,0,0,.075);
+}
+
+.searchLabel {
+	position: absolute;
+	top: 2px;
+	right: 10px;
+	color: $BRAND;
+	font-size: 20px;
+}
+
+.searchSubmit {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	background: none;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+
+.search:after {
+	display: table;
+	content: "\f002";
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}

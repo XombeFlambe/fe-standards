@@ -1,0 +1,9 @@
+/*----------------------------------------------------------------------
+ Links
+----------------------------------------------------------------------*/
+.link {@include baseLink();}
+
+.link_underline {text-decoration: underline;}
+
+.link_underline:hover,
+.link_underline:focus {text-decoration: none;}

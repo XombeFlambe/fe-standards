@@ -1,0 +1,22 @@
+{% macro active(activePage='home') %}
+			<!-- BEGIN NAVIGATION  -->
+			<div class="mainNav js-mainNav">
+				<div class="mainNav-trigger js-mainNav-trigger">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="mainNav-content js-mainNav-content">
+					<ul class="list hList">
+						<li><a href="structure.html" class="{%if activePage == 'structure' %}active{% endif %}">Structure</a></li>
+						<li><a href="html-practices.html" class="{%if activePage == 'html-practices' %}active{% endif %}">HTML Practices</a></li>
+						<li><a href="css-practices.html" class="{%if activePage == 'css-practices' %}active{% endif %}">CSS &amp; SCSS  Practices</a></li>
+						<li><a href="js-practices.html" class="{%if activePage == 'js-practices' %}active{% endif %}">JS Practices</a></li>
+						<li><a href="responsive.html" class="{%if activePage == 'responsive' %}active{% endif %}">Responsive Layouts</a></li>
+					    <li><a href="common-objects.html" class="{%if activePage == 'common-objects' %}active{% endif %}">Common Objects</a></li>
+					    <li><a href="js-modules.html" class="{%if activePage == 'js-modules' %}active{% endif %}">JS Modules</a></li>
+					    <li><a href="media.html" class="{%if activePage == 'media' %}active{% endif %}">Media</a></li>
+					    <li><a href="task-runners.html" class="{%if activePage == 'task-runners' %}active{% endif %}">Task Runners</a></li>
+					    <li><a href="style-guides.html" class="{%if activePage == 'style-guides' %}active{% endif %}">Style Guides</a></li>
+					</ul>
+				</div>
+			</div>
+{% endmacro %}

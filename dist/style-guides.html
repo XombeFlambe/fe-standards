@@ -1,0 +1,333 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GULP TEST Front End Web Standards - Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="css/css/modern.min.css">
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/css/legacy.min.css">
+        <![endif]-->
+
+        <link rel="stylesheet" href="./plugins/slider/flexslider.css" type="text/css">
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<style>
+		    .sector {
+		        padding-bottom: 20px;
+		        margin-bottom: 10px;
+		        border-top: 2px solid #6d8b91;
+		    }
+		    
+		    .sector:last-child {
+		        padding-bottom: 40px;
+		    }
+
+		    .sector-hd {
+		        border-bottom: 1px solid #bfd9df;
+		        margin-bottom: 20px;
+		        padding-bottom: 5px;
+		    }
+
+		    .grid-col {
+		        padding: 5px 10px;
+		        margin-bottom: 20px;
+		        color: #ffffff;
+		        background: #313130;
+		    }
+
+		    .color {padding: 5px 10px;}
+		    .color_1 {color: #ffffff;background: #00afb2;}
+		    .color_2 {color: #ffffff;background: #196c7d;}
+		    .color_3 {background: #70c4c2;}
+		    .color_4 {color:#ffffff;background: #60b989;}
+		    .color_5 {background: #96d2a2;}
+		    .color_6 {color: #ffffff; background: #313130;}
+		    .color_7 {background: #999a9b;}
+		    .color_8 {background: #e0e0e0;}
+		    .color_9 {color: #ffffff; background: #4d4f4f;}
+
+		    .bg {
+		        width: 100%;
+		        padding: 20px 20px 10px;
+		    }
+
+		    .bg_tetra {background: url(media/images/bg-tetra-40.png) repeat top center;}
+
+		    .iconList i {font-size: 40px;}
+
+		    .blocks {display: none;}
+		    .blocks:first-child {display: block;}
+
+		    @media screen and (min-width: 768px) {
+		        .blocks {display: block;}
+		    }
+		</style>
+
+    </head>
+    <body>
+		<!-- BEGIN HEADER -->
+		<div class="header">
+			<div class="header-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <div class="header-hd">
+				<h1 class="hdg hdg_2 hdg_grayLight">Front End Web Development Standards</h1>
+			</div>
+
+		</div>
+
+        
+			<!-- BEGIN NAVIGATION  -->
+			<div class="mainNav js-mainNav">
+				<div class="mainNav-trigger js-mainNav-trigger">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="mainNav-content js-mainNav-content">
+					<ul class="list hList">
+						<li><a href="structure.html" class="">Structure</a></li>
+						<li><a href="html-practices.html" class="">HTML Practices</a></li>
+						<li><a href="css-practices.html" class="">CSS &amp; SCSS  Practices</a></li>
+						<li><a href="js-practices.html" class="">JS Practices</a></li>
+						<li><a href="responsive.html" class="">Responsive Layouts</a></li>
+					    <li><a href="common-objects.html" class="">Common Objects</a></li>
+					    <li><a href="js-modules.html" class="">JS Modules</a></li>
+					    <li><a href="media.html" class="">Media</a></li>
+					    <li><a href="task-runners.html" class="">Task Runners</a></li>
+					    <li><a href="style-guides.html" class="active">Style Guides</a></li>
+					</ul>
+				</div>
+			</div>
+
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+            <h2 class="hdg hdg_2 hdg_pushBtm">Style Guides</h2>
+            <p>A front end styleguide is a set of standards for the writing and design of websites and applications. It is used to enforce styles/branding between designers and developers, as well as enforce object/module coding for multiple developer teams. Style guides can be displayed on a single page, or they can be broken into sub pages for larger projects and organization.</p>
+
+            <p>It is best practice to order a styleguide by the following list.</p>
+            <ul class="list list_number">
+                <li>Branding (logos, colors, etc.)</li>
+                <li>Simple Objects (involving a single element tag)</li>
+                <li>Complex Objects (objects involving more than one element tag)</li>
+                <li>JS Modules (Objects that use JS for functionality)</li>
+            </ul>
+
+            <h2 class="hdg hdg_2 hdg_pushBtm">Example</h2>
+            <p>Below is an example of a simple single page style guide. Style guides are usually much lengthier with more branding, objects and modules.</p>
+
+            <!-- COLORS SECTOR -->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Colors</h3></div>
+                <div class="sector-bd">
+                    <div class="color color_1">#00afb2</div>
+                    <div class="color color_2">#196c7d</div>
+                    <div class="color color_3">#70c4c2</div>
+                    <div class="color color_4">#60b989</div>
+                    <div class="color color_5">#96d2a2</div>
+                    <div class="color color_6">#313130</div>
+                    <div class="color color_9">#4d4f4f</div>
+                    <div class="color color_7">#999a9b</div>
+                    <div class="color color_8">#e0e0e0</div>
+                </div>
+            </div>
+
+            <!-- TEXT SECTOR -->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Text</h3></div>
+                <div class="sector-bd">
+                    <p>This is a paragraph. The default stylings are inherited from the body. Paragraphs have a 20px margin-bottom. The primary font is Source Sans Pro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam necessitatibus nesciunt laboriosam molestias impedit ducimus corrupti soluta dolorem perspiciatis reprehenderit.</p>
+                    <a href="javascript:void(0);">This is an anchor link.</a>
+                </div>
+            </div>
+
+            <!-- HEADINGS SECTOR -->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Headings</h3></div>
+                <div class="sector-bd">
+                    <h1 class="hdg hdg_1 mix-hdg_lt mix-hdg_upper">Heading 1, 40px</h1>
+                    <h3 class="hdg hdg_2">Heading 2, 32px</h3>
+                    <h3 class="hdg hdg_3 mix-hdg_gray mix-hdg_upper">Heading 3, 24px</h3>
+                    <h4 class="hdg hdg_4 mix-hdg_upper">Heading 4, 18px</h4>
+                </div>
+            </div>
+
+            <!-- ICONS SECTOR -->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Icons</h3></div>
+                <div class="sector-bd">
+                    <ul class="hList iconList">
+                        <li><i class="fa fa-circle"></i></li>
+                        <li><i class="fa fa-download"></i></li>
+                        <li><i class="fa fa-play-circle"></i></li>
+                        <li><i class="fa fa-check-square"></i></li>
+                        <li><i class="fa fa-bars"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- BUTTONS SECTOR -->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Buttons</h3></div>
+                <div class="sector-bd">
+                    <a href="#" class="btn">Primary Button</a>
+                    <a href="#" class="btn btn_secondary">Secondary Button</a>
+                </div>
+            </div>
+
+            <!-- LISTS SECTOR -->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Lists</h3></div>
+                <div class="sector-bd">
+                    <ul class="hList">
+                        <li>Horizontal list item 1</li>
+                        <li>Horizontal list item 2</li>
+                        <li>Horizontal list item 3</li>
+                    </ul>
+                    <ul class="hList hList_pipe">
+                        <li>Horizontal piped list item 1</li>
+                        <li>Horizontal piped list item 2</li>
+                        <li>Horizontal piped list item 3</li>
+                    </ul>
+                    <ul class="list">
+                        <li>Vertical list item 1</li>
+                        <li>Vertical list item 2</li>
+                        <li>Vertical list item 3</li>
+                    </ul>
+                    <ul class="list list_bullet">
+                        <li>Bulleted list item 1</li>
+                        <li>Bulleted list item 2</li>
+                        <li>Bulleted list item 3</li>
+                    </ul>
+                    <ul class="list list_number">
+                        <li>Numbered list item 1</li>
+                        <li>Numbered list item 2</li>
+                        <li>Numbered list item 3</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FORM SECTOR -->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Forms</h3></div>
+                <div class="sector-bd">
+                    <!-- START FORM -->
+                    <form action="generalForm" class="form">
+                        <label for="text">Text Input</label>
+                        <input type="text" id="text" class="form-input" placeholder="Text Input">
+                        <label for="email">Email Input</label>
+                        <input type="email" id="email" class="form-input" placeholder="Email Input">
+                        <label for="phone">Phone Input</label>
+                        <input type="tel" id="phone" class="form-input" placeholder="Phone Input">
+                        <label for="number">Number Input</label>
+                        <input type="number" id="number" class="form-input" placeholder="Number Input">
+                        <label for="select">Select</label>
+                        <select id="select" class="form-input">
+                            <option value="">Option 1</option>
+                            <option value="">Option 2</option>
+                            <option value="">Option 3</option>
+                            <option value="">Option 4</option>
+                        </select>
+                        <label for="textarea">Text Area</label>
+                        <textarea name="textarea" id="textarea" class="form-input form-input_area" placeholder="textarea"></textarea>
+
+                        <!-- RADIO SECTOR OF FORM -->
+                        <ul class="radio">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, nostrum.</li>
+                            <li>
+                                <input type="radio" name="radio-choice" id="radio-choice-1" value="0" />
+                                <label for="radio-choice-1" class="radio-custom"></label>
+                                <span class="radio-text">Yes</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="radio-choice" id="radio-choice-2" value="1" />            
+                                <label for="radio-choice-2" class="radio-custom"></label>
+                                <span class="radio-text">No</span>
+                            </li>
+                        </ul><!-- END RADIO SECTOR OF FORM -->
+
+                        <!-- CHECKBOX SECTOR OF FORM -->
+                        <ul class="checkbox">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo assumenda laboriosam nisi illum animi quis iusto eligendi error, incidunt nemo?</li>
+                            <li>
+                                <input type="checkbox" name="checkbox-choice" id="checkbox-choice-1" value="0" />
+                                <label for="checkbox-choice-1" class="checkbox-custom"></label>
+                                <span class="checkbox-text">Yes</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="checkbox-choice" id="checkbox-choice-2" value="1" />            
+                                <label for="checkbox-choice-2" class="checkbox-custom"></label>
+                                <span class="checkbox-text">No</span>
+                            </li>
+                        </ul><!-- END CHECKBOX SECTOR OF FORM -->
+
+                        <input type="submit" class="btn" value="Send" />
+                    </form><!-- END FORM -->
+                </div>
+            </div>
+
+            <!-- HERO SECTOR-->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Hero Object</h3></div>
+                <div class="sector-bd">
+                    <!-- START HERO -->
+                    <div class="hero">
+                        <div class="hero-media"><img src="media/images/hero/hero-chairs.png" alt="Chairs"></div>
+                        <div class="hero-hd"><h1>Hero Heading</h1></div>
+                    </div><!-- END HERO -->
+                </div>
+            </div>
+
+            <!-- DECORATIVE IMAGE SECTOR-->
+            <div class="sector">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Decorative Image</h3></div>
+                <div class="sector-bd">
+                    <!-- START DECORATIVE IMAGE -->
+                    <div class="vignette">
+                        <img src="media/images/scientist.png" alt="Scientist">
+                        <div class="vignette-decoration"></div>
+                    </div><!-- END DECORATIVE IMAGE -->
+                </div>
+            </div>
+
+        </div><!-- END MAIN CONTENT -->
+
+
+		<!-- FOOTER -->
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <small class="footer-copy">Copyright © 2000-2015 by John Wiley &amp; Sons, Inc. or related companies. All rights reserved.</small>
+        </div><!-- END FOOTER -->
+
+        <!-- BACK TO TOP OF PAGE BUTTON -->
+        <a href="#" class="topside js-topside">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <script src="js/main.min.js"></script>
+
+        <script src="plugins/slider/jquery.flexslider.js"></script>
+        
+        <script>
+        $(window).load(function() {
+              $('.flexslider').flexslider({
+                  animationSpeed: 800,
+                  touch: true,
+                  pauseOnHover: true,
+                  pauseOnAction: true,
+                  startAt:0,
+                  animation: "fade"
+                });
+            });
+        </script>
+    </body>
+</html>

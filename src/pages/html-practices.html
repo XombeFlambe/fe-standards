@@ -1,0 +1,246 @@
+<!-- html-practices.nunjucks -->
+{% extends "layout.html" %}
+
+{% block content %} 
+        {{nav.active('html-practices')}}
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+        	<h2 class="hdg hdg_2 hdg_pushBtm">HTML Practices</h2>
+
+			<!-- PAGE SUB NAV -->
+            <ul class="hList">
+                <li><a href="#about-html" class="js-nav">About HTML</a></li>
+            	<li><a href="#structure" class="js-nav">Structure</a></li>
+                <li><a href="#object-naming" class="js-nav">Object Naming</a></li>
+            	<li><a href="#aria-roles" class="js-nav">Aria Roles</a></li>
+            	<li><a href="#validation" class="js-nav">Validation</a></li>
+            	<!--<li><a href="#nunjucks" class="js-nav">Nunjucks Templating</a></li>-->
+            </ul><!-- END PAGE SUB NAV -->
+
+            <!--ABOUT HTML SECTOR -->
+            <div class="sector" id="about-html">
+                <div class="sector-hd">
+                    <h3 class="hdg hdg_3">About HTML</h3>
+                </div>
+                <div class="sector-bd">
+                    <p>Hyper Text Markup Language, HTML, is the standardized language for writing web documents. It creates a framework for content to be displayed on browsers. The framework is constructed by a set of tags. Common HTML tags, also called elements,  include &lt;span&gt;, &lt;div&gt;, &lt;a&gt;, &lt;img&gt;, etc. A complete list of elements can be found at MDN's <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">"HTML element reference"</a>. Learn HTML and CSS with <a href="https://www.codecademy.com/learn/web" target="_blank">Codecademy's HTML &amp; CSS</a> learning app.</p>
+                </div>
+            </div><!-- END ABOUT HTML SECTOR -->
+
+            <!--STRUCTURE SECTOR -->
+            <div class="sector" id="structure">
+                <div class="sector-hd">
+                    <h3 class="hdg hdg_3">Structure</h3>
+                </div>
+                <div class="sector-bd">
+                    <p>The basic structure of an HTML document consists of the &lt;!doctype html&gt; declaration tag, the &lt;html&gt; tag and its two direct child tags, &lt;head&gt; and &lt;body&gt;.</p>
+                    <pre class="box">
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+                    <p>The &lt;head&gt; consists of meta data (data that is not shown on screen). This is where the developer inserts titles, CSS file paths, and necessary JS file paths.</p>
+                    <pre class="box">
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/css/modern.css&quot;&gt;
+&lt;/head&gt;
+</pre>
+                    <p>The &lt;body&gt; consists of browser visible content. The structure of a basic page body would look something like this:</p>
+                    <pre class="box">
+&lt;body&gt;
+    &lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;mainContent&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+                    <p>JS paths are also placed inside the &lt;body&gt;. This method allows the HTML and CSS to be loaded before the JS, improving the user experience. Always place JS paths at the end of the &lt;body&gt;, unless it is necessary for a specific JS file to be loaded before the HTML and CSS. Then place the JS path in the &lt;head&gt;.</p>
+                    <pre class="box">
+&lt;body&gt;
+    &lt;div class=&quot;header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;mainContent&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;&lt;/div&gt;
+
+    &lt;script src=&quot;js/vendor/jquery-1.11.3.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+</pre>
+                </div>
+            </div>
+            <!-- END STRUCTURE SECTOR -->
+
+            <!-- OBJECT NAMING SECTOR -->
+            <div class="sector" id="object-naming">
+                <div class="sector-hd">
+                    <h3 class="hdg hdg_3">Object Naming</h3>
+                </div>
+                <div class="sector-bd">
+                    <p>There are two attributes that can be used for naming elemental tags: the id and the class. The id can only be used once per page. It should only be used for non-reusable items like anchor links. The class attribute can be used multiple times on a page and is the preferred method of object naming. Classes also have a lighter CSS specificity weight than ids, so they are easier to style and extend styles.</p>
+                    <h4 class="hdg hdg_4 hdg_pushBtmSm">Best Practices</h4>
+                    <ul class="list list_bullet">
+                        <li>Use classes for naming objects and use lowercase</li>
+                        <li>Use the lower camel case naming convention for compound worded names</li>
+                        <li>Child elements should inherit the parent name using the -, aka dash, to chain the parent name to the child name</li>
+                        <li>Avoid chaining more than three words together</li>
+                        <li>Do not mix object names together in a single tag.</li>
+                        <li>Do not intertwine complex objects. Make sure they are properly nested when combining objects together.</li>
+                    </ul>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h4>Examples </h4><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h5 class="hdg hdg_4 hdg_pushBtmSm">Object Naming</h5>
+                            <pre class="box">
+&lt;div class=&quot;media&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;mediaBox&quot;&gt;&lt;/div&gt;
+&lt;ul class=&quot;list&quot;&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;ul class=&quot;hList&quot;&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;div class=&quot;<strike>Media</strike>&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;<strike>MediaBox</strike>&quot;&gt;&lt;/div&gt;
+&lt;ul class=&quot;<strike>List</strike>&quot;&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;ul class=&quot;<strike>Hlist</strike>&quot;&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;                       
+</pre>                                                  
+                            <h5 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">Complex Object Nesting</h5>
+                            <pre class="box">
+&lt;div class=&quot;drawer&quot;&gt;
+    &lt;div class=&quot;drawer-trigger&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;drawer-content&quot;&gt;
+        &lt;div class=&quot;drawer-content-hd&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;drawer-content-bd&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;drawer&quot;&gt;
+    &lt;div class=&quot;<strike>drawerTrigger</strike>&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;drawer-content&quot;&gt;
+        &lt;div class=&quot;drawer-content-hd&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;<strike>drawerContentBd</strike>&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                            <h5 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">Objects Nesting inside Object</h5>
+                            <pre class="box">
+&lt;div class=&quot;drawer&quot;&gt;
+    &lt;div class=&quot;drawer-trigger&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;drawer-content&quot;&gt;
+        &lt;div class=&quot;drawer-content-hd&quot;&gt;
+            &lt;h2 class=&quot;hdg hdg_2&quot;&gt;Media&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;drawer-content-bd&quot;&gt;
+            &lt;div class=&quot;mediaBox&quot;&gt;
+                &lt;div class=&quot;mediaBox-img&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;mediaBox-hd&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;mediaBox-bd&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;drawer&quot;&gt;
+    &lt;div class=&quot;drawer-trigger&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;drawer-content&quot;&gt;
+        &lt;div class=&quot;drawer-content-hd&quot;&gt;
+            &lt;h2 class=&quot;hdg hdg_2&quot;&gt;Media&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;<strike>mediaBox</strike>&quot;&gt;
+            &lt;div class=&quot;<strike>drawer-content-bd</strike>&quot;&gt;
+                &lt;div class=&quot;mediaBox-img&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;mediaBox-hd&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;mediaBox-bd&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- END OBJECT NAMING SECTOR -->
+
+            <!--ARIA ROLES SECTOR -->
+            <div class="sector" id="aria-roles">
+                <div class="sector-hd">
+                    <h3 class="hdg hdg_3">Aria Roles</h3>
+                </div>
+                <div class="sector-bd">
+                    <p>The Accessible Rich Internet Applications Suite, ARIA, adds accessibility to websites and applications by assigning 'roles' to tags. These roles help screen readers navigate to specific areas of the page/app. The best practice is to add roles to the general landmark sections. Adding more roles than the landmarks is up to the developer's discresion. <a href="http://www.webteacher.ws/2010/10/14/aria-roles-101/" target="_blank">"ARIA Roles 101"</a> has the full list of ARIA roles.</p>
+                    <h4 class="hdg hdg_4 hdg_pushBtmSm">Important Landmark Roles</h4>
+                    <ul class="list list_bullet">
+                        <li>banner (apply to header)</li>
+                        <li>complementary (apply to sidebars)</li>
+                        <li>contentInfo (apply to footer)</li>
+                        <li>form (apply to form tag)</li>
+                        <li>main (apply to main content)</li>
+                        <li>navigation (apply to navigation)</li>
+                        <li>search (apply to search form)</li>
+                    </ul>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <pre>
+&lt;body&gt;
+    &lt;div class=&quot;header&quot; role=&quot;banner&quot;&gt;
+        &lt;div class=&quot;logo&quot;&gt;&lt;/div&gt;
+        &lt;ul class=&quot;nav&quot; role=&quot;navigation&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;link 3&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;form class=&quot;search&quot; role=&quot;search&quot;&gt;
+            &lt;label for=&quot;globalSearch&quot; class=&quot;search-label&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/label&gt;
+            &lt;input type=&quot;search&quot; name=&quot;search&quot; id=&quot;globalSearch&quot; class=&quot;search-field&quot; placeholder=&quot;Search&quot;&gt;
+            &lt;input type=&quot;submit&quot; class=&quot;search-submit&quot; /&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mainContent&quot; role=&quot;main&quot;&gt;
+        &lt;!-- MAIN CONTENT... --&gt;
+        &lt;form class=&quot;contact&quot; role=&quot;form&quot;&gt;
+            &lt;!-- CONTACT FORM FIELDS... --&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;sideBar&quot; role=&quot;complimentary&quot;&gt;
+        &lt;!-- SIDEBAR CONTENT... --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;footer&quot; role=&quot;contentInfo&quot;&gt;
+        &lt;!-- FOOTER CONTENT... --&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- END ARIA ROLES SECTOR -->
+
+            <!--VALIDATION SECTOR -->
+            <div class="sector" id="validation">
+                <div class="sector-hd">
+                    <h3 class="hdg hdg_3">Validation</h3>
+                </div>
+                <div class="sector-bd">
+                    <p>It is best practice to validate each page's HTML for errors based on <a href="http://www.w3.org/" target="_blank">W3C</a> standards. Modern browsers are fairly good at parsing error riddled code, but they still miss some. There is also a strong possibility that the main testing browser parses the error without issue, but a different browser does not. The most common error is caused by the failure to add an end tag. This simple error can break an entire page. It is not always possible to fix all validation errors, as 3rd party code does not always comply. A simple rule of thumb is to make sure that the code written by the developer is validated at 100% while giving 3rd party code (plugins, snippets, links, boilerplate meta data) more leeway.</p>
+                    <p>Reasons for Validating:</p>
+                    <ul class="list list_bullet">
+                        <li>Validation is a useful debugging tool</li>
+                        <li>Future proofing code for the next gen browsers</li>
+                        <li>Easier future maintenance and updates</li>
+                        <li>Establishes standards and practices in the developer global community</li>
+                        <li>Establishes professional code</li>
+                    </ul>
+                    <p>For more information on Validation, read <a href="https://validator.w3.org/docs/why.html" target="_blank">"Why Validate?"</a> There are three ways to validate: by URL, file upload, and direct input. URL can only be used if the page is hosted publicly and is quick for live site validation. Development testing is best suited for the direct input approach. <a href="https://validator.w3.org/" target="_blank">Start validating your code at W3C's Validator</a>.</p>
+                </div>
+            </div><!-- END VALIDATION SECTOR -->
+
+        </div><!-- END MAIN CONTENT -->
+
+{% endblock %}

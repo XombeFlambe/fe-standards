@@ -1,0 +1,14 @@
+/*----------------------------------------------------------------------
+ Hero Object, Med
+----------------------------------------------------------------------*/
+$HERO_PADDING: 40px;
+
+.hero:after {
+	top: -$HERO_PADDING;
+	right: $HERO_PADDING;
+}
+
+.hero-hd {
+	bottom: $HERO_PADDING;
+	left: -$HERO_PADDING;
+}

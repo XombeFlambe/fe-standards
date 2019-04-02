@@ -1,0 +1,45 @@
+/*----------------------------------------------------------------------
+ Vignette Object
+----------------------------------------------------------------------*/
+$VIGNETTE_BORDER: $GRAY_LIGHT;
+
+.vignette {
+	display: inline-block;
+	position: relative;
+	border: 4px solid $VIGNETTE_BORDER;
+	line-height: 0;
+}
+
+.vignette img {
+	max-width: 100%;
+}
+
+.vignette-decoration {
+	height: 50px;
+	width: 50%;
+	position: absolute;
+	bottom: -4px;
+	right: 50px;
+	box-shadow: inset 0 0 0 4px $VIGNETTE_BORDER;
+}
+
+.vignette-decoration:before,
+.vignette-decoration:after {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	box-shadow: inset 0 0 0 4px $VIGNETTE_BORDER;
+}
+
+.vignette-decoration:before {
+	top: 23px;
+	left: -50%;
+}
+
+.vignette-decoration:after {
+	top: -23px;
+	left: 50%;
+	margin-left: -4px;
+}

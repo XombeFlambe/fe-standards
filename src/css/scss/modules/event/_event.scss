@@ -1,0 +1,13 @@
+/*----------------------------------------------------------------------
+ Event Object
+----------------------------------------------------------------------*/
+.event-date,
+.event-location {
+	display: inline-block;
+	margin-bottom: 10px;
+	color: $GRAY;
+}
+
+.event-location {font-weight: 700;}
+
+.event-hd {margin-bottom: 10px;}

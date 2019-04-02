@@ -1,0 +1,43 @@
+// ------------------------------------------------------------------
+// Font Icons
+// ------------------------------------------------------------------
+@font-face {
+	font-family: 'icomoon';
+	src:url('../../fonts/icomoon.eot?-5byet9');
+	src:url('../../fonts/icomoon.eot?-5byet9#iefix') format('embedded-opentype'),
+		url('../../fonts/icomoon.ttf?-5byet9') format('truetype'),
+		url('../../fonts/icomoon.woff?-5byet9') format('woff'),
+		url('../../fonts/icomoon.svg?-5byet9#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar-31:before {
+	content: "\e788";
+}
+.icon-download2:before {
+	content: "\e8f5";
+}
+.icon-play-circle:before {
+	content: "\e96a";
+}
+.icon-check-square:before {
+	content: "\e999";
+}
+.icon-menu-square:before {
+	content: "\e99b";
+}

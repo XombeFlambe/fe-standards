@@ -1,0 +1,13 @@
+// ------------------------------------------------------------------
+// Caret
+// ------------------------------------------------------------------
+.caret {
+	width: 0;
+	height: 0;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 10px solid $WHITE;
+	transition: transform .3s ease-out;
+}
+
+.caret.isActive {transform: rotateX(180deg);}

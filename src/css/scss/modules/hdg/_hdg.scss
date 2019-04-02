@@ -1,0 +1,25 @@
+/*----------------------------------------------------------------------
+ Headings
+----------------------------------------------------------------------*/
+.hdg {
+	color: $GRAY_DARK;
+	font-family: $FONT_HEADING;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.hdg_1 {font-size: 28px;}
+.hdg_2 {font-size: 24px;}
+.hdg_3 {font-size: 20px;}
+.hdg_4 {font-size: 16px;}
+
+.hdg_gray {color: $GRAY;}
+.hdg_grayLight {color: $GRAY_LIGHT;}
+
+.hdg_upper {text-transform: uppercase;}
+.hdg_cap {text-transform: capitalize;}
+
+.hdg_pushBtm {margin-bottom: 20px;}
+.hdg_pushBtmSm {margin-bottom: 10px;}
+.hdg_pushTop {margin-top: 20px;}
+.hdg_pullTop {margin-top: -20px;}

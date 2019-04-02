@@ -1,0 +1,35 @@
+// ------------------------------------------------------------------
+// Flexslider Mods and Overrides
+// ------------------------------------------------------------------
+.flexslider {
+	margin-bottom: 0 !important;
+	border: none !important;
+	background: none !important;
+}
+
+.flex-control-nav {
+	bottom: 20px !important;
+	z-index: 2 !important;
+}
+
+.flex-control-nav {bottom: -10px !important;}
+
+.flex-direction-nav {display: none;}
+
+.flex-direction-nav a:before {color: $BRAND_LIGHT !important;}
+.flex-control-paging li a {border-color: $BRAND_LIGHT !important;}
+.flex-control-paging li a:hover,
+.flex-control-paging li a.flex-active {background: $BRAND_LIGHT !important;}
+
+.flexslider img {margin-bottom: 20px !important;}
+
+.slides-info {
+	width: 100%;
+	text-align: center;
+}
+
+.slides-info-hd {
+	margin-bottom: 20px;
+	padding: 0 10px;
+	font-size: 28px;
+}

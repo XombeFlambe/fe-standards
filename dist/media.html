@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GULP TEST Front End Web Standards - Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="css/css/modern.min.css">
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" href="css/css/legacy.min.css">
+        <![endif]-->
+
+        <link rel="stylesheet" href="./plugins/slider/flexslider.css" type="text/css">
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+		<!-- BEGIN HEADER -->
+		<div class="header">
+			<div class="header-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <div class="header-hd">
+				<h1 class="hdg hdg_2 hdg_grayLight">Front End Web Development Standards</h1>
+			</div>
+
+		</div>
+
+        
+			<!-- BEGIN NAVIGATION  -->
+			<div class="mainNav js-mainNav">
+				<div class="mainNav-trigger js-mainNav-trigger">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="mainNav-content js-mainNav-content">
+					<ul class="list hList">
+						<li><a href="structure.html" class="">Structure</a></li>
+						<li><a href="html-practices.html" class="">HTML Practices</a></li>
+						<li><a href="css-practices.html" class="">CSS &amp; SCSS  Practices</a></li>
+						<li><a href="js-practices.html" class="">JS Practices</a></li>
+						<li><a href="responsive.html" class="">Responsive Layouts</a></li>
+					    <li><a href="common-objects.html" class="">Common Objects</a></li>
+					    <li><a href="js-modules.html" class="">JS Modules</a></li>
+					    <li><a href="media.html" class="active">Media</a></li>
+					    <li><a href="task-runners.html" class="">Task Runners</a></li>
+					    <li><a href="style-guides.html" class="">Style Guides</a></li>
+					</ul>
+				</div>
+			</div>
+
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+        	<h2 class="hdg hdg_2 hdg_pushBtm">Media</h2>
+
+            <p>All media files should be saved in the media directory. The base sub-directories include fonts, images, videos, and uploads.</p>
+
+        	<!-- PAGE SUB NAV -->
+            <ul class="hList">
+                <li><a href="#fonts" class="js-nav">Fonts</a></li>
+                <li><a href="#images" class="js-nav">Images</a></li>
+                <li><a href="#videos" class="js-nav">Videos</a></li>
+                <li><a href="#uploads" class="js-nav">Uploads</a></li>
+            </ul><!-- END PAGE SUB NAV -->
+
+            <!-- FONTS SECTOR -->
+            <div class="sector" id="fonts">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Fonts</h3></div>
+                <div class="sector-bd">
+                    <p>All font files should be stored in the media/fonts directory (This includes icon font files). It is best practice to always have a browser safe fallback font which will protect the project from file corruption and font server failures. Browsers use <a href="http://www.granneman.com/webdev/coding/css/fonts-and-formatting/web-browser-font-defaults/" target="_blank">default fonts</a> and <a href="http://www.triplesmart.com/fonts.html" target="_blank">browser safe fonts</a> to style the text content of a website. Although the list of browser safe fonts is growing, designers tend to find the selection limiting. There are two popular practices used to expand the list of fonts that a project can use:</p>
+
+                    <h4 class="hdg hdg_4 hdg_pushBtmSm">Font Face</h4>
+                    <p>Font face allows the developer to pull font files from a hosted source and/or the project directly. There is no standard font file for browsers yet, so multiple files types of the same font are necessary to import (.eot, .woff, .ttf, etc.). In the example below, the font files are stored in the media/fonts directory.</p>
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h4>Example</h4><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">src/media/fonts</h4>
+                            <pre class="box">
+webfont.eot
+webfont.est?iefix
+webfont.woff2
+webfont.woff
+webfont.ttf
+webfont.svg#svgFontName
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">SCSS</h4>
+                            <pre class="box">
+/* Place in the css/scss/base/_fonts.scss file */
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('../media/fonts/webfont.eot'); /* IE9 Compat Modes */
+    src: url('../media/fonts/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../media/fonts/webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../media/fonts/webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../media/fonts/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../media/fonts/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+/* Body is an example placement, font-family property can be placed on any selector */
+body {
+    font-family: 'MyWebFont', Fallback, sans-serif;
+}
+</pre>
+                        </div>
+                    </div>
+
+                    <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">Google Fonts</h4>
+                    <p><a href="https://www.google.com/fonts" target="_blank">Google Fonts</a> allow the developer quick access to a large library of fonts without having to store font files in the project. The benefits of this approach are faster font integration, not storing font files directly in the project, and Google Fonts are free to use. The con is that the project fonts will be affected if Google Fonts server goes down, which is highly unlikely. Google Fonts also has a page load gauge helping developers make better decisions on font download selections. This project and many current Wiley projects are using the Google Font approach.</p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h4>Example</h4><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">                            
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;!-- PLACE IN HEAD, GROUP FONT FILE PATHS TOGETHER --&gt;
+&lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700' rel='stylesheet' type='text/css'&gt;
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">CSS</h4>
+                            <pre class="box">
+/* Body is an example placement, font-family property can be placed on any selector */
+body {
+    font-family: 'Lato', Fallback, sans-serif;
+}
+</pre>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!-- END FONTS SECTOR -->
+
+            <!-- IMAGES SECTOR -->
+            <div class="sector" id="images">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Images</h3></div>
+                <div class="sector-bd">
+                    <p class="txt_pushBtmSm">There are many image file types that are browser compatible, but three (jpg, gif, png) are browser safe and one is nearly browser safe (svg) on the top browsers (Chrome, IE, Firefox, Safari, and Opera). Each of these file types have pros and cons as listed below.</p>
+                    <ul class="list list_bullet">
+                        <li class="txt_bold">JPG</li>
+                        <li class="list_reset">
+                            <ul class="list list_bullet">
+                                <li>Pros: Displays photos and optimizes photo file size better than other file types.</li>
+                                <li>Cons: Displaying a jpg larger or smaller than its native size can result in pixelization. Does not allow transparency. Still popular for its great photo compression, but due to its lack of flexibility and transparency, is being replaced by the png.</li>
+                            </ul>
+                        </li>
+                        <li class="txt_bold">GIF</li>
+                        <li class="list_reset">
+                            <ul class="list list_bullet">
+                                <li>Pros: Displays graphics and optimizes graphic file size better than jpg or png files. Can be used for simple animations.</li>
+                                <li>Cons: Does not allow transparency. Animation can not be controlled. Losing popularity and becoming obsolete by the png and svg file types.</li>
+                            </ul>
+                        </li>
+                        <li class="txt_bold">PNG</li>
+                        <li class="list_reset">
+                            <ul class="list list_bullet">
+                                <li>Pros: Works great with both photo and graphic images, surpassing both jpg and gif usage. Allows transparency (great for images with transparent backgrounds and opacity levels). Displays responsive images better than jpg and gif files, including the ability to enlarge png file sizes larger than its native size (great for using site background images).</li>
+                                <li>Cons: Larger file sizes (roughly 3x) than jpg for photo images and gif for graphic images.</li>
+                            </ul>
+                        </li>
+                        <li class="txt_bold">SVG</li>
+                        <li class="list_reset">
+                            <ul class="list list_bullet">
+                                <li>Pros: Highly customizable, it is quickly becoming the file of choice for logos, graphics, animated graphics and icons. Can be placed inside an image tag or directly inline with the &lt;svg&gt; tag (html compatible code). Optimal sizing for vector images, even better than gifs. Completely scalable, one size fits all. Allows transparency.Can be animated either with css or svg animations. Can be paired with Canvas, a powerful javascript animation library.</li>
+                                <li>Cons: Only used for vector layouts. The svg file is still relatively new technology, so there are some browser compatibility issues (for example IE10 and below have an svg height bug).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h4>Examples </h4><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <ul class="blocks blocks_2col">
+                            <li>
+                                <span class="txt_bold">JPG, 75kb</span>
+                                <img src="media/images/scientist.jpg"  class="imgResponsive" alt="jpg example">
+                            </li>
+                            <li>
+                                <span class="txt_bold">PNG, 175kb</span>
+                                <img src="media/images/scientist.png"  class="imgResponsive" alt="png photo example">
+                            </li>
+                            <li><span class="txt_bold">GIF, 10.11kb</span>
+                                <img src="media/images/quadrants.gif"  class="imgResponsive" alt="gif example">
+                            </li>
+                            <li>
+                                <span class="txt_bold">PNG, 34.5kb</span>
+                                <img src="media/images/quadrants.png"  class="imgResponsive" alt="png graphic example">
+                            </li>
+                            <li>
+                                <span class="txt_bold">PNG, 10.1kb</span>
+                                <img src="media/images/logo-pxt.png"  class="imgResponsive" alt="png logo example">
+                            </li>
+                            <li>
+                                <span class="txt_bold">SVG, 5kb</span>
+                                <img src="media/images/logo-pxt-blue.svg"  class="imgResponsive" alt="svg logo example">
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!-- END IMAGES SECTOR -->
+
+            <!-- VIDEOS SECTOR -->
+            <div class="sector" id="videos">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Videos</h3></div>
+                <div class="sector-bd">
+                    <p>Videos can be stored in the project's media/videos directory, but it is best practice to use a video sharing site (Youtube, Vimeo, etc.) or video marketing platform. Wiley used Youtube in the past but currently stores it's videos with the video marketing platform, <a href="https://www.vidyard.com/" target="_blank">Vidyard</a>. A user account is needed to access the Wiley Vidyard account (contact your manager if you do not have access). There are three ways to share a Vidyard video: sharing page, inline embed, and lightbox embed. Light box embedding is the Wiley standard, which creates a video modal experience. Modal styling should remain consistent throughout the project.</p>
+                    <p>Pros of using Vidyard:</p>
+                    <ul class="list list_bullet">
+                        <li>Videos not stored directly in project, greatly reducing website load times</li>
+                        <li>Built in embedding</li>
+                        <li>Analytics</li>
+                    </ul>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h4>Example</h4><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <!-- BEGIN VIDYARD CODE -->
+                            <script type="text/javascript" id="vidyard_embed_code_NS_-fNShCYwKTMNiN6xXmQ" src="https://play.vidyard.com/NS_-fNShCYwKTMNiN6xXmQ.js?v=3.1&amp;type=lightbox"></script> 
+                            <div class="outer_vidyard_wrapper" style="display:block;overflow:hidden;">
+                                <div class="vidyard_wrapper" onclick="fn_vidyard_NS_$fNShCYwKTMNiN6xXmQ();" data-ident="NS_%24fNShCYwKTMNiN6xXmQ">
+                                    <img alt="The Five Behaviors of a Cohesive Team: Patrick Lencioni on Teamwork " src="https://play.vidyard.com/NS_-fNShCYwKTMNiN6xXmQ.jpg?" class="imgResponsive" style="max-width: 320px;">
+                                    <div class="vidyard_play_button"><a href="javascript:void(0);"></a></div>
+                                </div>
+                            </div><!-- END VIDYARD CODE -->
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <pre class="box">
+&lt;!-- BEGIN VIDYARD LIGHTBOX EMBED CODE --&gt;
+&lt;script type=&quot;text/javascript&quot; id=&quot;vidyard_embed_code_NS_-fNShCYwKTMNiN6xXmQ&quot; src=&quot;https://play.vidyard.com/NS_-fNShCYwKTMNiN6xXmQ.js?v=3.1&amp;amp;type=lightbox&quot;&gt;&lt;/script&gt; 
+&lt;div class=&quot;outer_vidyard_wrapper&quot;&gt;
+    &lt;div class=&quot;vidyard_wrapper&quot; onclick=&quot;fn_vidyard_NS_$fNShCYwKTMNiN6xXmQ();&quot; data-ident=&quot;NS_%24fNShCYwKTMNiN6xXmQ&quot;&gt;
+        &lt;img alt=&quot;The Five Behaviors of a Cohesive Team: Patrick Lencioni on Teamwork &quot; src=&quot;https://play.vidyard.com/NS_-fNShCYwKTMNiN6xXmQ.jpg?&quot; class=&quot;imgResponsive&quot;&gt;
+        &lt;div class=&quot;vidyard_play_button&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- END VIDYARD CODE --&gt;
+</pre>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!-- END VIDEOS SECTOR -->
+
+            <!-- UPLOADS SECTOR -->
+            <div class="sector" id="uploads">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Uploads</h3></div>
+                <div class="sector-bd">
+                    <p>Document files meant to be uploaded by the user should be stored in the media/uploads directory. Common file types include .pdf, .xlt, .doc, etc. PDF files are browser compatible, and the link should use the attribute target="_blank" to open a new window that displays the PDF. Non browser compatible file links should not use the target attribute, as they default to opening a download window.</p>
+                    
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h4>Examples</h4><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                        <ul class="list">
+                            <li><a href="./media/uploads/363FAQ.pdf" target="_blank">Link to a browser compatible file.</a></li>
+                            <li><a href="./media/uploads/LeaderProcessLaunch.doc">Link to a browser non-compatible file.</a></li>
+                        </ul>                          
+                        <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                        <pre class="box">
+&lt;a href=&quot;./media/uploads/363FAQ.pdf&quot; target=&quot;_blank&quot;&gt;Link to a browser compatible file.&lt;/a&gt;
+&lt;a href=&quot;./media/uploads/LeaderProcessLaunch.doc&quot;&gt;Link to a browser non-compatible file.&lt;/a&gt;                        
+</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- END UPLOADS SECTOR -->
+
+
+        </div><!-- END MAIN CONTENT -->
+
+
+		<!-- FOOTER -->
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <small class="footer-copy">Copyright © 2000-2015 by John Wiley &amp; Sons, Inc. or related companies. All rights reserved.</small>
+        </div><!-- END FOOTER -->
+
+        <!-- BACK TO TOP OF PAGE BUTTON -->
+        <a href="#" class="topside js-topside">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <script src="js/main.min.js"></script>
+
+        <script src="plugins/slider/jquery.flexslider.js"></script>
+        
+        <script>
+        $(window).load(function() {
+              $('.flexslider').flexslider({
+                  animationSpeed: 800,
+                  touch: true,
+                  pauseOnHover: true,
+                  pauseOnAction: true,
+                  startAt:0,
+                  animation: "fade"
+                });
+            });
+        </script>
+    </body>
+</html>

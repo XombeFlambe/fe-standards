@@ -1,0 +1,92 @@
+<!-- page-name.nunjucks -->
+{% extends "layout.html" %}
+
+{% block content %}
+        {{nav.active('common-modules')}}
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+            <h2 class="hdg hdg_2 hdg_pushBtm">PageHeading</h2>
+
+            <!-- PAGE SUB NAV -->
+            <ul class="hList">
+                <li><a href="#" class="js-nav">Sub nav item</a></li>
+            </ul><!-- END PAGE SUB NAV -->
+
+            <!-- INSERT PAGE CONTENT HERE -->
+
+            <!-- SECTOR TEMPLATE 
+            <div class="sector" id="modals">
+                <div class="sector-hd"><h2 class="hdg hdg_3">Modals</h2></div>
+                <div class="sector-bd">
+                    <p>Drawers are ...</p>
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm">Examples</h3>
+                    <div class="box">
+
+                    </div>
+
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm">HTML Code</h3>
+                    <pre class="box">
+</pre>
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm">SCSS Code</h3>
+                    <pre class="box">
+</pre>
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm">JS Code</h3>
+                    <pre class="box">
+</pre>
+                </div>
+            </div>-->
+
+            <!-- SECTOR WITH DRAWER TEMPLATE 
+            <div class="sector" id="css-reset">
+                <div class="sector-hd"><h2 class="hdg hdg_3">CSS Resets</h2></div>
+                <div class="sector-bd">
+                    <p></p>
+
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            
+                            
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre>
+
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre>
+
+</pre>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>-->
+
+
+                    <!-- BEGIN DRAWER 
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+
+                            <pre class="box">
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">JS</h4>
+                            <pre class="box">
+</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+
+        </div><!-- END MAIN CONTENT -->
+
+{% endblock %}

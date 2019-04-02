@@ -1,0 +1,58 @@
+<!-- js-practices.nunjucks -->
+{% extends "layout.html" %}
+
+{% block content %}
+        {{nav.active('js-practices')}}
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+
+            <h2 class="hdg hdg_2 hdg_pushBtm">JS Practices</h2>
+
+            <ul class="hList">
+            	<li><a href="#about-js" class="js-nav">About JS</a></li>
+            	<li><a href="#writing-js" class="js-nav">Writing JS</a></li>
+            	<li><a href="#modular-js" class="js-nav">Modular JS</a></li>
+            </ul>
+
+            <!-- WRITING JS SECTOR -->
+            <div class="sector" id="about-js">
+                <div class="sector-hd"><h3 class="hdg hdg_3">About JS</h3></div>
+                <div class="sector-bd">
+                    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction" target="_blank">JavaScript</a> is a cross-platform scripting language. It is perhaps the most versatile and powerful web language to date. JS can create functionality for modules, animations, data collection, music players, video players, games, apps, apps, and even more apps. The expanse of JS is so vast that a developer can dedicate themselves to a single JS discipline without worry of job security. Hundreds of libraries (JQuery, Canvas 3D, .etc), frameworks (AngularJS, Backbone, etc.), and server side development tools (Grunt, Gulp, etc.) have been created to custom fit the amazing versatility of JS. Libraries help developers by simplifying how JS code is written. This project currently uses the <a href="https://jquery.com/" target="_blank">JQuery</a> library to write the <a href="./js-modules.html">JS module</a> functionality easier and provide simple animations. Frameworks mimic backend structures, and this removes the need for a project to be written in back end code. This project uses a <a href="./task-runners.html">task runner</a> (server side dev tool), <a href="http://gulpjs.com/" target="_blank">Gulp</a>. Gulp runs on <a href="https://nodejs.org/en/" target="_blank">node.js</a> and is the swiss army knife of front end development. It can be used to create frameworks, modularize, minify, debugging, etc.</p>
+                </div>
+            </div><!-- END WRITING JS SECTOR -->
+
+            <!-- WRITING JS SECTOR -->
+            <div class="sector" id="writing-js">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Writing JS</h3></div>
+                <div class="sector-bd">
+                    <p>The best way to understand JS is to learn how to write it. The <a href="https://www.codecademy.com/learn/javascript" target="_blank">Codecademy JavaScript tutorial</a> is an excellent learning tool that covers the basics: variables, functions, for loops, while loops, controls, data structures and objects.</p>
+
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm">Best Practices</h3>
+                    <ul class="list list_bullet">
+                    	<li>JS should be strictly written in .js files. Avoid writing JS functions in the markup. Exclusions to the rule include 3rd party embed and plugin JS. There are two instances where inline JS is being used in this project: the <a href="./media.html#videos">Vidyard video modal</a> and the <a href="./js-modules.html#carousels">Flexslider carousel</a>.</li>
+                        <li>Avoid using id selectors for JS modules, as the id can only be used once per page. Use classes for selectors instead.</li>
+                        <li>Do not use the same selector for styling and javascript. Always keep them separate. Prepend 'js-' to any styling class to create a JS selector that is unique and familiar to the object name. Example: &lt;div class="modal js-modal"&gt;&lt;/div&gt;</li>
+                    	<li>Break the JS into modules. More info in the <a href="./js-practices.html#modular-js" class="js-nav">Modular JS section</a>.</li>
+                    	<li>Avoid using global variables, and instead write variables within their respective modules.</li>
+                    	<li>Merge and minify JS files for the the most optimal page loading. Merging JS files into one file (sometimes more than one file is optimal depending on circumstances) requires the browser to only have to load one file. Minifying reduces file sizes by an average of 33%. This browser uses <a href="https://www.npmjs.com/package/gulp-uglify" target="_blank">Uglify</a> to achieve these tasks. Uglify is dependent upon the task runner, Gulp, but there are manual minifiers available like <a href="http://jscompress.com/" target="_blank">jscompress.com</a>.</li>
+                    	<li>JS file paths should be written at the bottom of the markup just above the body end tag. It must be inside the body tag, do not write paths outside the body tag. This method allows the page markup and styles to load before the javascript, creating a better user experience. Exception to the rule: some JS files that directly affect the markup and classes, like <a href="https://modernizr.com/" target="_blank">modernizer.js</a> need to be written in the head.</li>
+                    	<li>Stacking JS file paths in the correct order is important. If a JS file is dependent on another JS file, make sure that the dependent file is written below the necessary file. For example, the JQuery file path must be written before any JS files that use the library or the files will cause errors because the JQuery library was not parsed before the dependent file.</li>
+                    </ul>
+                </div>
+            </div><!-- END WRITING JS SECTOR -->
+
+            <!-- MODULAR JS SECTOR -->
+            <div class="sector" id="modular-js">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Modular JS</h3></div>
+                <div class="sector-bd">
+                    <p>Modular JS arrived on the coding scene around the year 2011, and the discipline has grew in popularity while becoming an important standard of writing JavaScript. Similar to <a href="">Object Oriented CSS</a> where the developer breaks CSS into reusable self contained objects/modules, the developer takes the same approach with JS. JS is broken down into modules that can be reused multiple times and does not interfere with the functionality of another JS module. Module JS is best practiced using a module loader. This project uses <a href="http://browserify.org/" target="_blank">Browserify</a>, which is dependent upon the Gulp task runner. With Browserify, the modules are written in separate JS files located in the js/views directory, and an app.js file merges all the module js files together into a main.js file. If the developer chooses not to use a module loader, they should write their modules in one main.js file but make sure to keep each module separated from each other.</p>
+
+                    <p>All custom JS in this project was written with the modular JS discipline. Check out the <a href="./js-modules.html">JS Modules</a> page for examples.</p>
+
+                </div>
+            </div><!-- END MODULAR JS SECTOR -->
+
+        </div><!-- END MAIN CONTENT -->
+
+{% endblock %}

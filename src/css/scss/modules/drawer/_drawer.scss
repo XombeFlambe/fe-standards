@@ -1,0 +1,38 @@
+//----------------------------------------------------------------------
+// Drawer Styles
+//----------------------------------------------------------------------
+.drawer {display: block;}
+
+.drawer-trigger {
+	padding: 10px 20px;
+	margin-bottom: 5px;
+	position: relative;
+	background: $BRAND;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.drawer-trigger a {
+	display: block;
+	@include clearfix();
+	color: $WHITE;
+}
+
+.drawer-trigger a > *:first-child {
+	display: inline-block;
+	padding-right: 50px;
+}
+
+.drawer-trigger i {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-top: -6px;
+}
+
+.drawer-content {
+	display: none;
+	padding: 10px;
+	margin-bottom: 5px;
+	background: $GRAY_LIGHT;
+}

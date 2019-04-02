@@ -1,0 +1,45 @@
+/*----------------------------------------------------------------------
+ Hero Object
+----------------------------------------------------------------------*/
+$HERO_PADDING: 20px;
+
+.hero {
+	overflow: hidden;
+	position: relative;
+}
+
+.hero:after {
+	display: block;
+	content: "";
+	height: 100%;
+	position: absolute;
+	top: -$HERO_PADDING;
+	right: $HERO_PADDING;
+	border-right: 1px solid $WHITE;
+}
+
+.hero-media > * {width: 100%;}
+
+.hero-hd {
+	width: 100%;
+	position: absolute;
+	bottom: $HERO_PADDING;
+	left: -$HERO_PADDING;
+	border-top: 1px solid $WHITE;
+	border-bottom: 1px solid $WHITE;
+	text-align: right;
+	line-height: 0;
+}
+
+.hero-hd > * {
+	display: inline-block;
+	min-width: 50%;
+	padding: 0 10px;
+	background: $WHITE;
+	color: $BRAND_DARK;
+	font-family: $FONT_SECONDARY;
+	font-size: 24px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 1.4;
+}

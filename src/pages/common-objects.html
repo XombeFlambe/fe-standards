@@ -1,0 +1,1250 @@
+<!-- common-objects.nunjucks -->
+{% extends "layout.html" %}
+
+{% block content %} 
+        {{nav.active('common-objects')}}
+		<div class="wrap wrap_content js-modalArc" id="top">
+        <!-- BEGIN MAIN CONTENT -->
+            <h2 class="hdg hdg_2 hdg_pushBtm">Common Objects</h2>
+
+            <p>Objects are reusable class-based modules, and they are the key foundation to the principles of <a href="http://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/" target="_blank">Object Oriented CSS (OOCSS)</a> Reusable code greatly reduces development and browser load times, so it is a beneficial for devs, clients and users. Objects range from simple (text, lists, images, etc.) to complex (media objects, grids, heroes, navigation, etc.).
+            </p>
+
+            <!-- PAGE SUB NAV -->
+            <ul class="hList">
+                <li><a href="#text" class="js-nav">Text</a></li>
+                <li><a href="#paragraphs" class="js-nav">Paragraphs</a></li>
+                <li><a href="#links" class="js-nav">Links</a></li>
+                <li><a href="#headings" class="js-nav">Headings</a></li>
+                <li><a href="#buttons" class="js-nav">Buttons</a></li>
+                <li><a href="#lists" class="js-nav">Lists</a></li>
+                <li><a href="#horizontal-lists" class="js-nav">Horizontal Lists</a></li>
+                <li><a href="#icons" class="js-nav">Icons</a></li>
+                <li><a href="#images" class="js-nav">Images</a></li>
+                <li><a href="#forms" class="js-nav">Forms</a></li>
+                <li><a href="#blocks" class="js-nav">Blocks</a></li>
+                <li><a href="#grids" class="js-nav">Grids</a></li>
+                <li><a href="#mediaBox" class="js-nav">Media Box</a></li>
+            </ul><!-- END PAGE SUB NAV -->
+
+                    <!-- BEGIN DRAWER 
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+            <!-- TEXT SECTOR -->
+            <div class="sector" id="text">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Text</h3></div>
+                <div class="sector-bd">
+                    <p>Base styles are set on the body tag as well as a base class of <span class="txt mix-txt_bold">.txt</span> and then utilizes a variety of mix-in classes (for example .txt_lg and .txt_upper) to achieve multiple styles. The .txt class is used on &lt;span&gt;, &lt;li&gt;, &lt;p&gt;, and &lt;div&gt; tags. Avoid using paddings and margins on the base class, and instead create mix-in styles to create paddings and margins. WYSIWYG (text editor) styling does not use classes to style tags and must really on styling the tags, please check out <a href="wysiwyg.html">WYSIWYG Text Styling</a> for wysiwyg styling standards.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <span class="txt">Text in a span tag.</span>
+                            <ul class="list">
+                                <li>Text without the .txt base class, base text styles are also set on the body tag as a fallback.</li>
+                                <li class="txt">Text with the .txt base class.</li>
+                                <li class="txt txt_lg">Large text.</li>
+                                <li class="txt txt_italic">Italicized text.</li>
+                                <li class="txt txt_bold">Bold text.</li>
+                                <li class="txt txt_upper">Uppercase text.</li>
+                                <li class="txt txt_gray">Gray text.</li>
+                            </ul>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;span class=&quot;txt&quot;&gt;Text in a span tag.&lt;/span&gt;
+&lt;ul class=&quot;list&quot;&gt;
+    &lt;li&gt;Text with out the .txt base class, base text styles are also set on the body tag.&lt;/li&gt;
+    &lt;li class=&quot;txt&quot;&gt;Text with the .txt base class.&lt;/li&gt;
+    &lt;li class=&quot;txt txt_lg&quot;&gt;Large text.&lt;/li&gt;
+    &lt;li class=&quot;txt txt_italic&quot;&gt;Italicized text.&lt;/li&gt;
+    &lt;li class=&quot;txt txt_bold&quot;&gt;Bold text.&lt;/li&gt;
+    &lt;li class=&quot;txt txt_upper&quot;&gt;Uppercase text.&lt;/li&gt;
+    &lt;li class=&quot;txt txt_gray&quot;&gt;Gray text.&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+@mixin baseText {
+    font-family: $FONT_PRIMARY;
+    font-size: 16px;
+    color: $GRAY_DARK;
+    line-height: 1.3;
+}/* Global mix-in located in the base/_utils.scss file */
+
+body {@include baseText();} /* Body tag styling located in the base/_elements.scss file */
+
+.txt {@include baseText();}
+
+.txt_sm {font-size: 12px;}
+.txt_med {font-size: 18px;}
+.txt_lg {font-size: 24px;}
+
+.txt_bold {font-weight: 700;}
+
+.txt_italic {font-style: italic;}
+
+.txt_upper {text-transform: uppercase;}
+
+.txt_inlineBlock {display: inline-block;}
+.txt_block {display: block;}
+
+.txt_pushBtm {margin-bottom: 20px;}
+.txt_pushBtmSm {margin-bottom: 10px;}
+
+.txt_gray {color: $GRAY;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- PARAGRAPH SECTOR -->
+            <div class="sector" id="paragraphs">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Paragraphs</h3></div>
+                <div class="sector-bd">
+                    <p>The &lt;p&gt; (paragraph) tag should not be styled (with one exception to the rule) and instead let the styles be inherited by the parent tags. Since the paragraph is used to seperate text content, a style of margin-bottom is an exception. The .txt classes can also be used on &lt;p&gt; tags. WYSIWYG (text editor) styling will inherit the styling from the &lt;p&gt; tag. Please check out <a href="wysiwyg.html">WYSIWYG Link Styling</a> for wysiwyg styling standards.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <p>Base &lt;p&gt; tag styling, consectetur adipisicing elit. Necessitatibus dignissimos eum, error veritatis architecto praesentium ab a. Possimus provident tempore, unde aut, aliquam magnam at ex quos cumque nulla, quaerat harum. Labore ab quam quisquam minima non, iure rem, quidem impedit, eos perferendis quaerat aliquid, corporis odit numquam. Tempore dolores corrupti et, quis impedit culpa nam ad distinctio veniam dolor cum in non saepe qui, illum. Quod doloremque, corporis, numquam incidunt dolorum odio rerum vero reprehenderit culpa natus. Illum eum, sunt necessitatibus aut odio labore a at qui reprehenderit consequatur, in similique saepe dolores hic soluta maiores dignissimos sint est asperiores, nam architecto esse earum!</p>
+                            <p class="txt txt_lg">&lt;p&gt; tag styling using .txt classes, consectetur adipisicing elit. Necessitatibus dignissimos eum, error veritatis architecto praesentium ab a. Possimus provident tempore, unde aut, aliquam magnam at ex quos cumque nulla, quaerat harum. Labore ab quam quisquam minima non!</p>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;p&gt;Base &lt;p&gt; tag styling, ....&lt;/p&gt;
+&lt;p class=&quot;txt txt_lg&quot;&gt;&lt;p&gt; tag styling using .txt classes, .....&lt;/p&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+p {margin-bottom: 20px;} /* Located in base/_elements.scss */</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- LINK SECTOR -->
+            <div class="sector" id="links">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Links</h3></div>
+                <div class="sector-bd">
+                    <p class="txt_pushBtmSm">Links, <span class="txt_bold">&lt;a href="url"&gt;Link Text&lt;/a&gt;</span>, are used to navigate from the current page to a new page or document using a url.</p>
+                    <ul class="list list_bullet">
+                        <li>When a page navigates to another page on the same site, this is called an internal link. Internal links should not open pages in new tabs. There are many reasons to treat internal links like so. It keeps the user focused on one tab per site, prevents tab bloat, simplifies the mobile/tablet experience, and reduces the site's load (each new tab is a new call to the site, so five open tabs would equal five calls to the website on one device.). One exception to the internal link rule is if the new internal page lacks navigation, then the link should be treated like an external link and open in a new tab.</li>
+                        <li>When a page navigates to another page outside of the previous page's site, this is called an external link. An external link should open in new tab. This allows the user to stay on the current site while visiting the external page in a separate tab. Use the attribute target="_blank" to make a link open in a new tab, <span class="txt_bold">&lt;a href="url" target="_blank"&gt;Link Text&lt;/a&gt;</span></li>
+                        <li>Links are also used to open files. These links should be treated like external links and open in new tabs as they have no navigation back to the site. One exception to this rule is that if the file is not browser compatible (for example, needs a program like Microsoft Word or Adobe Photoshop to open), a download window will open, negating a need for a new tab to open (a new tab will open to a blank page in this instance). This exception is optional if the developer chooses to discern between compatible and non-compatible files.</li>
+                    </ul>
+                    <p class="txt_pushBtmSm">Users should be able to easily discern between common text and a link. The default link styling is less than flattering and should be restyled to match the brand coloring of the site.</p>
+                    <ul class="list list_bullet">
+                        <li>Choose a color distinctive from the color of common text. Brand colors are the best choice.</li>
+                        <li>Remove underline styling from the link default state.</li>
+                        <li>Add underline styling to the hover and focus states.</li>
+                        <li>A link should always have styling for the focus state for screen reader accessiblity.</li>
+                    </ul>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <ul class="list">
+                                <li><a href="javascript:void(0);">This is a link using the a tag for styling</a></li>
+                                <li><a class="link" href="javascript:void(0);">This is a link using the .link class for styling.</a></li>
+                                <li><a class="link link_underline" href="javascript:void(0);">This is a link using the .link and link_underline classes for styling.</a></li>
+                                <li><a href="common-modules.html">Internal link to the Common Modules page.</a></li>
+                                <li><a href="http://www.everythingdisc.com/" target="_blank">External link to a different site.</a></li>
+                                <li><a href="media/uploads/363FAQ.pdf" target="_blank">Link to a browser compatible file.</a></li>
+                                <li><a href="media/uploads/LeaderProcessLaunch.doc">Link to a browser non-compatible file.</a></li>
+                            </ul>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;ul class=&quot;list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;This is a link using the a tag for styling&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;link&quot; href=&quot;javascript:void(0);&quot;&gt;This is a link using the .link class for styling.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a class=&quot;link link_underline&quot; href=&quot;javascript:void(0);&quot;&gt;This is a link using the .link and link_underline classes for styling.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;common-modules.html&quot;&gt;Internal link to the Common Modules page.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.everythingdisc.com/&quot; target=&quot;_blank&quot;&gt;External link to a different site.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.everythingdisc.com/UserFiles/Sample_Module_Mgmt.pdf&quot; target=&quot;_blank&quot;&gt;Link to a browser compatible file.&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;http://www.everythingdisc.com/UserFiles/Sample_PPT_Mgmt.ppt&quot;&gt;Link to a browser non-compatible file.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+@mixin baseLink {
+    color: $BRAND;
+    text-decoration: none;
+} /* Global mix-in located in base/_utils.scss file */
+
+a {@include baseLink();} /* Located in base/_elements.scss file */
+
+a:hover,
+a:focus {text-decoration: underline;} /* Located in base/_elements.scss file */
+
+.link {@include baseLink();}
+
+.link_underline {text-decoration: underline;}
+
+.link_underline:hover,
+.link_underline:focus {text-decoration: none;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- HEADINGS SECTOR -->
+            <div class="sector" id="headings">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Headings</h3></div>
+                <div class="sector-bd">
+                    <p>Headings use a base class of <span class="txt mix-txt_bold">.hdg</span> and then utilize a variety of mix-in classes (for example .hdg_1 and .hdg_gray) to achieve multiple styles. The .hdg class is used on &lt;h1&gt;, &lt;h3&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, and &lt;h6&gt; tags. Avoid using paddings and margins on the base class, and instead create mix-in styles to create paddings and margins. WYSIWYG (text editor) styling does not use classes to style tags and must really on styling the tags, please check out <a href="wysiwyg.html">WYSIWYG Heading Styling</a> for wysiwyg styling standards.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <h1 class="hdg hdg_1">Heading 1</h1>
+                            <h3 class="hdg hdg_2">Heading 2</h3>
+                            <h3 class="hdg hdg_3">Heading 3</h3>
+                            <h4 class="hdg hdg_4">Heading 4</h4>
+                            <h3 class="hdg hdg_3 hdg_gray">Heading Gray</h3>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <pre class="box">
+&lt;h1 class=&quot;hdg hdg_1&quot;&gt;Heading 1&lt;/h1&gt;
+&lt;h3 class=&quot;hdg hdg_3&quot;&gt;Heading 2&lt;/h3&gt;
+&lt;h3 class=&quot;hdg hdg_3&quot;&gt;Heading 3&lt;/h3&gt;
+&lt;h4 class=&quot;hdg hdg_4&quot;&gt;Heading 4&lt;/h4&gt;
+&lt;h3 class=&quot;hdg hdg_3 hdg_gray&quot;&gt;Heading Gray&lt;/h3&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+.hdg {
+    color: $GRAY_DARK;
+    font-family: $FONT_HEADING;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.hdg_1 {font-size: 40px;}
+.hdg_3 {font-size: 32px;}
+.hdg_3 {font-size: 24px;}
+.hdg_4 {font-size: 18px;}
+
+.hdg_gray {color: $GRAY;}
+
+.hdg_upper {text-transform: uppercase;}
+.hdg_cap {text-transform: capitalize;}
+
+.hdg_pushBtm {margin-bottom: 20px;}
+.hdg_pushBtmSm {margin-bottom: 10px;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- BUTTONS SECTOR -->
+            <div class="sector" id="buttons">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Buttons</h3></div>
+                <div class="sector-bd">
+                    <p>Buttons use a base class of <span class="txt mix-txt_bold">.btn</span> and then utilize a variety of mix-in classes (for example .btn_sm and .btn_white) to achieve multiple styles. The .btn class is used on &lt;a&gt;, &lt;button&gt;, and &lt;input type=&quot;submit&quot; /&gt; tags. Try to avoid using .btn on &lt;div&gt; and &lt;span&gt; tags, as these tags do not have focus states needed for keyboard and screen reader navigation.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <a href="#" class="btn">Primary Button</a>
+                            <button class="btn btn_secondary">Secondary Button</button>
+                            <input type="submit" class="btn btn_sm" value="Small Button" />
+                            <a href="#" class="btn inActive">Disabled Button</a>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;
+&lt;button href=&quot;#&quot; class=&quot;btn btn_secondary&quot;&gt;Secondary Button&lt;/button&gt;
+&lt;input type=&quot;submit&quot; class=&quot;btn btn_sm&quot; value=&quot;Small Button&quot; /&gt;
+&lt;a href=&quot;#&quot; class=&quot;btn inActive&quot;&gt;Disabled Button&lt;/a&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+.btn {
+    display: inline-block;
+    min-width: 160px;
+    margin: 0 20px 20px 0;
+    padding: 12px 20px;
+    box-shadow: $BOX_SHADOW;
+    border: 2px solid $BRAND_DARK;
+    color: $WHITE;
+    background: $BRAND;
+    font-family: $FONT_SECONDARY;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    transition: box-shadow .1s, transform .1s, background .3s;
+}
+
+.btn:hover,
+.btn:focus {
+    box-shadow: none;
+    cursor: pointer;
+    text-decoration: none;
+    background: $BRAND_DARK; /* Old browsers */
+    transform: translate(2px,2px);
+}
+
+.btn_sm {
+    min-width: 120px;
+    padding: 8px 10px;
+    font-size: 16px;
+}
+
+.btn_secondary {
+    border: 2px solid $GRAY_DARK;
+    color: $GRAY_DARK;
+    background: $WHITE;
+}
+
+.btn_secondary:hover,
+.btn_secondary:focus {
+    background: $GRAY_LIGHT;
+}
+
+.btn:disabled,
+[disabled="disabled"],
+.btn.inActive {
+    border: 2px solid #cfe0e6;
+    box-shadow: none;
+    color: #cfe0e6;
+    background: #f7fbfc;
+    cursor: not-allowed;
+    transform: none;
+}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- LISTS SECTOR -->
+            <div class="sector" id="lists">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Lists</h3></div>
+                <div class="sector-bd">
+                    <p>There are two types of list tags, &lt;ul&gt;(unordered) and &lt;ol&gt;(ordered). Unordered list styles default to bulleting, and ordered lists default to numerals. When using a base/_reset.scss file, these defaults are removed. The _reset.scss file also removes default margins and paddings from the &lt;ul&gt; and &lt;ol&gt; tags. Create the .list class and mix-ins (for example, .list_bullet and .list_number) to add list-style-type, padding, and margin styles. WYSIWYG (text editor) styling does not use classes to style tags and must really on styling the tags, please check out <a href="wysiwyg.html">WYSIWYG List Styling</a> for wysiwyg styling standards.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <ul class="list">
+                                <li>List item 1</li>
+                                <li>List item 2</li>
+                                <li>List item 3</li>
+                            </ul>
+                            <ul class="list list_bullet">
+                                <li>Bulleted list item 1</li>
+                                <li>Bulleted list item 2</li>
+                                <li>Bulleted list item 3</li>
+                            </ul>
+                            <ol class="list list_number">
+                                <li>Numbered list item 1</li>
+                                <li>Numbered list item 2</li>
+                                <li>Numbered list item 3</li>
+                            </ol>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;ul class=&quot;list&quot;&gt;
+    &lt;li&gt;List item 1&lt;/li&gt;
+    &lt;li&gt;List item 2&lt;/li&gt;
+    &lt;li&gt;List item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class=&quot;list list_bullet&quot;&gt;
+    &lt;li&gt;Bulleted list item 1&lt;/li&gt;
+    &lt;li&gt;Bulleted list item 2&lt;/li&gt;
+    &lt;li&gt;Bulleted list item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol class=&quot;list list_number&quot;&gt;
+    &lt;li&gt;Numbered list item 1&lt;/li&gt;
+    &lt;li&gt;Numbered list item 2&lt;/li&gt;
+    &lt;li&gt;Numbered list item 3&lt;/li&gt;
+&lt;/ol&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+.list {margin-bottom: 20px;}
+
+.list_bullet {
+    margin-left: 16px;
+    list-style-type: disc;
+}
+
+.list_number {
+    margin-left: 18px;
+    list-style-type: decimal;
+}
+
+.list > li {margin-bottom: 5px;}
+
+.list > li > ul {margin-bottom: 0;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- HORIZONTAL LISTS SECTOR -->
+            <div class="sector" id="horizontal-lists">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Horizontal Lists</h3></div>
+                <div class="sector-bd">
+                    <p>Lists default to line breaking for each &lt;li&gt; tag. A separate class is used to make list items horizontal, a base .hList. You can create mix-ins (for example, .hList_pipe) to extend the base style.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <ul class="hList">
+                                <li>Horizontal list item 1</li>
+                                <li>Horizontal list item 2</li>
+                                <li>Horizontal list item 3</li>
+                            </ul>
+                            <ul class="hList hList_pipe">
+                                <li>Horizontal piped list item 1</li>
+                                <li>Horizontal piped list item 2</li>
+                                <li>Horizontal piped list item 3</li>
+                            </ul>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;ul class=&quot;hList&quot;&gt;
+    &lt;li&gt;Horizontal list item 1&lt;/li&gt;
+    &lt;li&gt;Horizontal list item 2&lt;/li&gt;
+    &lt;li&gt;Horizontal list item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul class=&quot;hList hList_pipe&quot;&gt;
+    &lt;li&gt;Horizontal piped list item 1&lt;/li&gt;
+    &lt;li&gt;Horizontal piped list item 2&lt;/li&gt;
+    &lt;li&gt;Horizontal piped list item 3&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+.hList {margin: 0 0 20px -10px;}
+
+.hList > li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.hList_pipe {overflow: hidden;}
+
+.hList_pipe > li {position: relative;}
+
+.hList_pipe > li:before {
+    display: table;
+    content: "|";
+    position: absolute;
+    top: 0;
+    left: -3px;
+}
+
+.hList_pipe > li:first-child:before {display: none;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- ICONS SECTOR -->
+            <div class="sector" id="icons">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Icons</h3></div>
+                <div class="sector-bd">
+                    <p>Icons are simple graphic images generally used as visual aids to help users recognize common website sections and buttons.  Icons fonts should use the <span class="txt_bold">&lt;i&gt;&lt;/i&gt;</span> tag, an antiquated tag originally used to italicize text but has been replaced by the <span class="txt_bold">&lt;em&gt;&lt;/em&gt;</span> tag. <span class="txt_bold">&lt;i&gt;&lt;/i&gt;</span> tags are text tags and will inherit parent font-styles and colors making them ideal to complement text.</p>
+
+                    <p>Image sprites were once the best practice solution for icons, but they lacked scalability. Icon fonts are vector based/scalable and are now the most common solutions. They are generated using 3rd party browser applications. The <a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome</a> app allows the developer to directly link to all the icons without having to integrate needed files. The developer only needs to link to the FontAwesome server via &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"&gt;, and you would place this with the other CSS file paths in the head. The <a href="https://icomoon.io/" target="_blank">IcoMoon</a> app allows the developer to select specific icons, however, the developer will need download and integrate font files (into the media/fonts directory) and css files.</p>
+
+                    <p>If a complex icon is needed, the SVG file using &lt;img /&gt; (or if inline, &lt;svg&gt;) is the best solution, as it allows scalability, multiple colors, and multiple paths. &lt;svg&gt; tags are not text tags, do not inherit font-styles, so they must be custom styled. <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" target="_blank">Learn more about SVG.</a></p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <ul class="list list_bullet">
+                                <li>
+                                    <span>Icon Fonts, <a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome</a>: <i class="fa fa-hand-paper-o"></i> <i class="fa fa-chevron-down"></i> <i class="fa fa-envelope"></i>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>Icon Fonts, <a href="https://icomoon.io/" target="_blank">IcoMoon</a>: <i class="icon icon-play-circle"></i> <i class="icon icon-download2"></i> <i class="icon icon-menu-square"></i>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>SVG in image tag:</span>
+                                    <img src="media/images/mail.svg" alt="power svg in image tag" style="height:18px; vertical-align:middle;" />
+                                </li>
+                                <li>
+                                    <span>SVG inline:</span>
+                                    <?xml version="1.0" encoding="iso-8859-1"?>
+                                    <!-- Generator: Adobe Illustrator 19.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="52 39.889 715.111 715.111" style="enable-background:new 52 39.889 715.111 715.111;" xml:space="preserve" width="18" height="18">
+                                    <g>
+                                        <path d="M409.629,87.889c169.303-0.012,307.5,136.239,309.461,305.98c1.975,170.95-135.009,311.135-305.959,313.11
+                                            c-1.21,0.014-2.441,0.021-3.648,0.021c-169.304,0-307.5-136.241-309.461-305.98C98.046,230.068,235.029,89.885,405.98,87.91
+                                            C407.19,87.896,408.422,87.889,409.629,87.889 M409.652,39.889h-0.026c-1.387,0-2.806,0.008-4.201,0.024
+                                            c-48.244,0.557-94.963,10.558-138.856,29.724c-42.373,18.502-80.306,44.716-112.746,77.915s-57.771,71.727-75.29,114.516
+                                            c-18.147,44.324-27.066,91.261-26.509,139.508c0.553,47.902,10.42,94.314,29.326,137.946c18.251,42.121,44.129,79.9,76.915,112.288
+                                            c32.768,32.37,70.839,57.777,113.157,75.519c43.802,18.361,90.251,27.673,138.061,27.673c1.391,0,2.809-0.009,4.203-0.024
+                                            c48.245-0.558,94.964-10.559,138.856-29.725c42.372-18.502,80.306-44.716,112.746-77.915
+                                            c32.439-33.198,57.771-71.729,75.29-114.517c18.146-44.323,27.064-91.261,26.509-139.505
+                                            c-0.554-47.901-10.42-94.312-29.324-137.943c-18.25-42.121-44.126-79.899-76.909-112.288
+                                            c-32.766-32.371-70.835-57.78-113.149-75.521C503.904,49.2,457.457,39.889,409.652,39.889L409.652,39.889z"/>
+                                    </g>
+                                    <polygon style="fill:#FFB53A;" points="482.749,396.444 644.927,252.951 644.927,539.936 "/>
+                                    <polygon style="fill:#FFB53A;" points="336.398,396.444 174.22,252.951 174.22,539.936 "/>
+                                    <polygon style="fill:#FFB53A;" points="193.493,227.087 626.122,227.087 409.782,415.721 "/>
+                                    <polygon style="fill:#FFB53A;" points="409.781,471.109 358.041,425.984 193.493,569.458 626.122,569.458 461.573,425.949 "/>
+                                    </svg>
+                                </li>
+                            </ul>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;!-- ICON FONT, FONT AWESOME --&gt;
+&lt;i class=&quot;fa fa-hand-paper-o&quot;&gt;&lt;/i&gt; &lt;i class=&quot;fa fa-chevron-down&quot;&gt;&lt;/i&gt; &lt;i class=&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;
+
+&lt;!-- ICON FONT, ICOMOON --&gt;
+&lt;i class=&quot;icon icon-play-circle&quot;&gt;&lt;/i&gt; &lt;i class=&quot;icon icon-download2&quot;&gt;&lt;/i&gt; &lt;i class=&quot;icon icon-menu-square&quot;&gt;&lt;/i&gt;
+
+&lt;!-- SVG IN IMAGE TAG --&gt;
+&lt;img src=&quot;media/images/mail.svg&quot; alt=&quot;power svg in image tag&quot; <del>style=&quot;height:18px; vertical-align:middle;&quot;</del> /&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;
+
+&lt;!-- SVG INLINE --&gt;
+&lt;svg version=&quot;1.1&quot; id=&quot;Layer_1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot;
+     viewBox=&quot;52 39.889 715.111 715.111&quot; style=&quot;enable-background:new 52 39.889 715.111 715.111;&quot; xml:space=&quot;preserve&quot; <del>width=&quot;18&quot; height=&quot;18&quot;</del> &gt;
+&lt;g&gt;
+    &lt;path d=&quot;M409.629,87.889c169.303-0.012,307.5,136.239,309.461,305.98c1.975,170.95-135.009,311.135-305.959,313.11
+        c-1.21,0.014-2.441,0.021-3.648,0.021c-169.304,0-307.5-136.241-309.461-305.98C98.046,230.068,235.029,89.885,405.98,87.91
+        C407.19,87.896,408.422,87.889,409.629,87.889 M409.652,39.889h-0.026c-1.387,0-2.806,0.008-4.201,0.024
+        c-48.244,0.557-94.963,10.558-138.856,29.724c-42.373,18.502-80.306,44.716-112.746,77.915s-57.771,71.727-75.29,114.516
+        c-18.147,44.324-27.066,91.261-26.509,139.508c0.553,47.902,10.42,94.314,29.326,137.946c18.251,42.121,44.129,79.9,76.915,112.288
+        c32.768,32.37,70.839,57.777,113.157,75.519c43.802,18.361,90.251,27.673,138.061,27.673c1.391,0,2.809-0.009,4.203-0.024
+        c48.245-0.558,94.964-10.559,138.856-29.725c42.372-18.502,80.306-44.716,112.746-77.915
+        c32.439-33.198,57.771-71.729,75.29-114.517c18.146-44.323,27.064-91.261,26.509-139.505
+        c-0.554-47.901-10.42-94.312-29.324-137.943c-18.25-42.121-44.126-79.899-76.909-112.288
+        c-32.766-32.371-70.835-57.78-113.149-75.521C503.904,49.2,457.457,39.889,409.652,39.889L409.652,39.889z&quot;/&gt;
+&lt;/g&gt;
+&lt;polygon style=&quot;fill:#FFB53A;&quot; points=&quot;482.749,396.444 644.927,252.951 644.927,539.936 &quot;/&gt;
+&lt;polygon style=&quot;fill:#FFB53A;&quot; points=&quot;336.398,396.444 174.22,252.951 174.22,539.936 &quot;/&gt;
+&lt;polygon style=&quot;fill:#FFB53A;&quot; points=&quot;193.493,227.087 626.122,227.087 409.782,415.721 &quot;/&gt;
+&lt;polygon style=&quot;fill:#FFB53A;&quot; points=&quot;409.781,471.109 358.041,425.984 193.493,569.458 626.122,569.458 461.573,425.949 &quot;/&gt;
+&lt;/svg&gt;</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- IMAGES SECTOR -->
+            <div class="sector" id="images">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Images</h3></div>
+                <div class="sector-bd">
+                    <p>Images display photo, graphic and animated gif files. They can either be displayed with the img tag or as a background image of a div tag. The image tag is the best approach, but sometimes displaying an image as a background image provides more flexibility. There are pros and cons to each approach.</p>
+                    
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm">Image Tag</h3>
+                    <p>The image tag is dependent of the url attribute and should include the alt attribute, <span class="txt_bold">&lt;img src="url" alt="" /&gt;</span>. The src attribute links to the path where the file is located. The alt attribute should contain a brief description of the image to better aid screen reader accessibility. The img tag is an inline tag, and the image size defaults to the native size of the image. Use the width style property to adjust the size of an image as the width/height ratio remains the same.</p>
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <ul class="blocks blocks_2col">
+                            <li>
+                                <span class="txt_bold">Image</span>
+                                <img src="media/images/scientist.jpg"  class="imgResponsive" alt="scientist">
+                            </li>
+                            <li>
+                                <span class="txt_bold">HTML</span>
+<pre>&lt;img src=&quot;media/images/scientist.jpg&quot;  class=&quot;imgResponsive&quot; alt=&quot;scientist&quot;&gt;
+</pre>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+
+                    <h3 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">Background Image</h3>
+                    <p>The background image is commonly used for displaying an image in the background of an element. The image is displayed by the CSS background-image property of a selector or tag. It is stacked behind any content inside the tag. The size and proportion of the image has no effect on the tag style, which can make the background image ideal for homogenize images of different sizes into the same size. This is a great method for tiled images that need to keep proportions and sizing the same. This method is also a great method to use for bulletproofing database pulled images, especially database pulled images populated by a Content Management System. It is preferable to place the background-image style properthy in the html tag, which will make backend integration much simpler.</p>
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <ul class="blocks blocks_2col">
+                                <li>
+                                    <span class="txt_bold">Background Image</span>
+                                    <div class="bgImgExample" style="background-image:url(media/images/scientist.jpg);width:100%;padding:35% 0;background-size:cover;"></div>
+                                </li>
+                                <li>
+                                    <span class="txt_bold">HTML</span>
+                                    <pre class="txt_pushBtmSm">
+&lt;div class=&quot;bg-img-example&quot;&gt;
+</pre>
+                                    <span class="txt_bold txt_pushTop">CSS</span>
+                                    <pre>
+.bgImgExample {
+    width:100%;
+    padding:35% 0;
+    background-image:url(../media/images/scientist.jpg);
+    background-size:cover;
+    }
+</pre>
+                                </li>
+                            </ul>
+                            <ul class="blocks blocks_2col">
+                                <li>
+                                    <span class="txt_bold">Database Pulled Background Image</span>
+                                    <div class="bgImgExample" style="background-image:url(media/images/scientist.jpg);width:100%;padding:35% 0;background-size:cover;"></div>
+                                </li>
+                                <li>
+                                    <span class="txt_bold">HTML</span>
+                                    <pre class="txt_pushBtmSm">
+&lt;div class=&quot;bg-img-example&quot; style=&quot;background-image:url(media/images/scientist.jpg);&quot;&gt;
+</pre>
+                                    <span class="txt_bold txt_pushTop">CSS</span>
+                                    <pre>
+.bgImgExample {
+    width:100%;
+    padding:35% 0;
+    background-size:cover;
+    }
+</pre>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- FORM SECTOR -->
+            <div class="sector" id="forms">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Forms</h3></div>
+                <div class="sector-bd">
+                    <p>Forms are tools used for interacting with users. They can collect, authenticate, and post data. Common forms are the login user/password, search, and the email form. Form more information about forms, read more at <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms" target="_blank">HTML forms guide</a>.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <!-- START FORM -->
+                            <form action="generalForm" class="form">
+
+                                <!-- TEXT INPUTS SECTION -->
+                                <label for="text-input">Text Input</label>
+                                <input type="text" id="text-input" class="form-input" placeholder="Text Input">
+                                <label for="email-input">Email Input</label>
+                                <input type="email" id="email-input" class="form-input" placeholder="Email Input">
+                                <label for="phone-input">Phone Input</label>
+                                <input type="tel" id="phone-input" class="form-input" placeholder="Phone Input">
+                                <label for="number-input">Number Input</label>
+                                <input type="number" id="number-input" class="form-input" placeholder="Number Input">
+                                <label for="select">Select</label><!-- END TEXT INPUTS SECTION -->
+
+                                <!-- SELECT SECTION -->
+                                <select id="select" class="form-input">
+                                    <option value="">Option 1</option>
+                                    <option value="">Option 2</option>
+                                    <option value="">Option 3</option>
+                                    <option value="">Option 4</option>
+                                </select><!--END SELECT SECTION -->
+
+                                <!-- TEXT AREA SECTION -->
+                                <label for="textarea">Text Area</label>
+                                <textarea name="textarea" id="textarea" class="form-input form-input_area" placeholder="textarea"></textarea><!-- END TEXT AREA SECTION -->
+
+                                <!-- INPUTS IN BLOCKS SECTION -->
+                                <ul class="blocks blocks_2col">
+                                    <li>
+                                        <label for="text2">2 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text2" class="form-input" placeholder="2 Column Inputs Using Blocks">
+                                    </li>
+                                    <li>
+                                        <label for="text3">2 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text3" class="form-input" placeholder="2 Column Inputs Using Blocks">
+                                    </li>
+                                </ul>
+                                <ul class="blocks blocks_3col">
+                                    <li>
+                                        <label for="text4">3 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text4" class="form-input" placeholder="3 Column Inputs Using Blocks">
+                                    </li>
+                                    <li>
+                                        <label for="text5">3 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text5" class="form-input" placeholder="3 Column Inputs Using Blocks">
+                                    </li>
+                                    <li>
+                                        <label for="text6">3 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text6" class="form-input" placeholder="3 Column Inputs Using Blocks">
+                                    </li>
+                                </ul>
+                                <ul class="blocks blocks_4col">
+                                    <li>
+                                        <label for="text7">4 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text7" class="form-input" placeholder="4 Column Inputs Using Blocks">
+                                    </li>
+                                    <li>
+                                        <label for="text8">4 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text8" class="form-input" placeholder="4 Column Inputs Using Blocks">
+                                    </li>
+                                    <li>
+                                        <label for="text9">4 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text9" class="form-input" placeholder="4 Column Inputs Using Blocks">
+                                    </li>
+                                    <li>
+                                        <label for="text10">4 Column Inputs Using Blocks</label>
+                                        <input type="text" id="text10" class="form-input" placeholder="4 Column Inputs Using Blocks">
+                                    </li>
+                                </ul><!-- END INPUTS IN BLOCKS SECTION -->
+
+                                <!-- RADIO SECTION OF FORM -->
+                                <ul class="radio">
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, nostrum.</li>
+                                    <li>
+                                        <input type="radio" name="radio-choice" id="radio-choice-1" value="0" />
+                                        <label for="radio-choice-1" class="radio-custom"></label>
+                                        <span class="radio-text">Yes</span>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="radio-choice" id="radio-choice-2" value="1" />            
+                                        <label for="radio-choice-2" class="radio-custom"></label>
+                                        <span class="radio-text">No</span>
+                                    </li>
+                                </ul><!-- END RADIO SECTION OF FORM -->
+
+                                <!-- CHECKBOX SECTION OF FORM -->
+                                <ul class="checkbox">
+                                    <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo assumenda laboriosam nisi illum animi quis iusto eligendi error, incidunt nemo?</li>
+                                    <li>
+                                        <input type="checkbox" name="checkbox-choice" id="checkbox-choice-1" value="0" />
+                                        <label for="checkbox-choice-1" class="checkbox-custom"></label>
+                                        <span class="checkbox-text">Yes</span>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="checkbox-choice" id="checkbox-choice-2" value="1" />            
+                                        <label for="checkbox-choice-2" class="checkbox-custom"></label>
+                                        <span class="checkbox-text">No</span>
+                                    </li>
+                                </ul><!-- END CHECKBOX SECTION OF FORM -->
+                                
+                                <!-- SUBMIT BUTTON -->
+                                <input type="submit" class="btn" value="Send" />
+
+                            </form><!-- END FORM -->
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML, Text Inputs Section</h4>
+                            <pre class="box">
+&lt;!-- START FORM --&gt;
+&lt;form action=&quot;generalForm&quot; class=&quot;form&quot;&gt;
+    &lt;label for=&quot;text-input&quot;&gt;Text Input&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;text-input&quot; class=&quot;form-input&quot; placeholder=&quot;Text Input&quot;&gt;
+    &lt;label for=&quot;email-input&quot;&gt;Email Input&lt;/label&gt;
+    &lt;input type=&quot;email&quot; id=&quot;email-input&quot; class=&quot;form-input&quot; placeholder=&quot;Email Input&quot;&gt;
+    &lt;label for=&quot;phone-input&quot;&gt;Phone Input&lt;/label&gt;
+    &lt;input type=&quot;tel&quot; id=&quot;phone-input&quot; class=&quot;form-input&quot; placeholder=&quot;Phone Input&quot;&gt;
+    &lt;label for=&quot;number-input&quot;&gt;Number Input&lt;/label&gt;
+    &lt;input type=&quot;number&quot; id=&quot;number-input&quot; class=&quot;form-input&quot; placeholder=&quot;Number Input&quot;&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML Code, Select Section</h4>
+                            <pre class="box">
+    &lt;label for=&quot;select&quot;&gt;Select&lt;/label&gt;
+    &lt;select id=&quot;select&quot; class=&quot;form-input&quot;&gt;
+        &lt;option value=&quot;&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;&quot;&gt;Option 3&lt;/option&gt;
+        &lt;option value=&quot;&quot;&gt;Option 4&lt;/option&gt;
+    &lt;/select&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML, Text Area Section</h4>
+                            <pre class="box">
+    &lt;label for=&quot;textarea&quot;&gt;Text Area&lt;/label&gt;
+    &lt;textarea name=&quot;textarea&quot; id=&quot;&quot; class=&quot;form-input form-input_area&quot; placeholder=&quot;textarea&quot;&gt;&lt;/textarea&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML, Inputs in  Blocks Section</h4>
+                            <pre class="box">
+    &lt;ul class=&quot;blocks blocks_2col&quot;&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text2&quot;&gt;2 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text2&quot; class=&quot;form-input&quot; placeholder=&quot;2 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text3&quot;&gt;2 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text3&quot; class=&quot;form-input&quot; placeholder=&quot;2 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class=&quot;blocks blocks_3col&quot;&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text4&quot;&gt;3 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text4&quot; class=&quot;form-input&quot; placeholder=&quot;3 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text5&quot;&gt;3 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text5&quot; class=&quot;form-input&quot; placeholder=&quot;3 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text6&quot;&gt;3 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text6&quot; class=&quot;form-input&quot; placeholder=&quot;3 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class=&quot;blocks blocks_4col&quot;&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text7&quot;&gt;4 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text7&quot; class=&quot;form-input&quot; placeholder=&quot;4 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text8&quot;&gt;4 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text8&quot; class=&quot;form-input&quot; placeholder=&quot;4 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text9&quot;&gt;4 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text9&quot; class=&quot;form-input&quot; placeholder=&quot;4 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;label for=&quot;text10&quot;&gt;4 Column Inputs Using Blocks&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;text10&quot; class=&quot;form-input&quot; placeholder=&quot;4 Column Inputs Using Blocks&quot;&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML, Radio Input Section</h4>
+                            <pre class="box">
+    &lt;!-- RADIO SECTOR OF FORM --&gt;
+    &lt;ul class=&quot;radio&quot;&gt;
+        &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, nostrum.&lt;/li&gt;
+        &lt;li&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;radio-choice&quot; id=&quot;radio-choice-1&quot; value=&quot;0&quot; /&gt;
+            &lt;label for=&quot;radio-choice-1&quot; class=&quot;radio-custom&quot;&gt;&lt;/label&gt;
+            &lt;span class=&quot;radio-text&quot;&gt;Yes&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;input type=&quot;radio&quot; name=&quot;radio-choice&quot; id=&quot;radio-choice-2&quot; value=&quot;1&quot; /&gt;            
+            &lt;label for=&quot;radio-choice-2&quot; class=&quot;radio-custom&quot;&gt;&lt;/label&gt;
+            &lt;span class=&quot;radio-text&quot;&gt;No&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;&lt;!-- END RADIO SECTOR OF FORM --&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML, Checkbox Input Section</h4>
+                            <pre class="box">
+    &lt;!-- CHECKBOX SECTOR OF FORM --&gt;
+    &lt;ul class=&quot;checkbox&quot;&gt;
+        &lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo assumenda laboriosam nisi illum animi quis iusto eligendi error, incidunt nemo?&lt;/li&gt;
+        &lt;li&gt;
+            &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-choice&quot; id=&quot;checkbox-choice-1&quot; value=&quot;0&quot; /&gt;
+            &lt;label for=&quot;checkbox-choice-1&quot; class=&quot;checkbox-custom&quot;&gt;&lt;/label&gt;
+            &lt;span class=&quot;checkbox-text&quot;&gt;Yes&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;input type=&quot;checkbox&quot; name=&quot;checkbox-choice&quot; id=&quot;checkbox-choice-2&quot; value=&quot;1&quot; /&gt;            
+            &lt;label for=&quot;checkbox-choice-2&quot; class=&quot;checkbox-custom&quot;&gt;&lt;/label&gt;
+            &lt;span class=&quot;checkbox-text&quot;&gt;No&lt;/span&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;&lt;!-- END CHECKBOX SECTOR OF FORM --&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML Code, Submit Button Section</h4>
+                            <pre class="box">
+    &lt;input type=&quot;submit&quot; class=&quot;btn&quot; value=&quot;Send&quot; /&gt;
+&lt;/form&gt;&lt;!-- END FORM --&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">SCSS</h4>
+                            <pre class="box">
+.form label {
+    display: inline-block;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 11px 8px;
+    margin-bottom: 20px;
+    border: 1px solid $GRAY_LIGHT;
+    box-shadow: inset 0 2px 1px rgba(0,0,0,.075);
+    background: $WHITE;
+    font-family: $FONT_PRIMARY;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.form-input:focus {
+    border: 1px solid $BRAND_LIGHT;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,.075);
+}
+
+.form-input_area {min-height: 180px;}
+
+.radio,
+.checkbox {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+    text-indent: -9999px;
+}
+
+.radio .radio-custom,
+.checkbox .checkbox-custom {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $BRAND;
+    padding: 0;
+    margin: 0 5px -4px 0;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.radio .radio-custom {border-radius: 50%;}
+
+.radio input[type="radio"]:checked + .radio-custom,
+.checkbox input[type="checkbox"]:checked + .checkbox-custom {
+    border: 2px solid $BRAND;
+    background: $BRAND;
+}
+
+.radio li,
+.checkbox li {margin-bottom: 5px;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- BLOCKS SECTOR -->
+            <div class="sector" id="blocks">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Blocks</h3></div>
+                <div class="sector-bd">
+                    <p>The blocks object is list that is a hybrid between a <a href="#horizontal-lists">horizontal list</a> and <a href="#grids">grid</a> object. It is very useful for a responsive interior grid for product lists, image lists, and <a href="#forms">form inputs</a>. The SCSS can be a bit tricky for this object, but blocks is a very powerful and important object to understand.  Keep in mind, you will want to create styling for both mobile and tablet/desktop screen widths.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <ul class="blocks blocks_4col">
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                            </ul>
+                              
+                            <ul class="blocks blocks_3col">
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                            </ul>
+
+                            <ul class="blocks blocks_2col">
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                                <li><img class="imgResponsive" src="http://placehold.it/400x100" alt="block" /></li>
+                            </ul>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;ul class=&quot;blocks blocks_4col&quot;&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+  
+&lt;ul class=&quot;blocks blocks_3col&quot;&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class=&quot;blocks blocks_2col&quot;&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;img class=&quot;imgResponsive&quot; src=&quot;http://placehold.it/400x100&quot; alt=&quot;block&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <p>A blocks item for mobile is set to 100% width and will push its next sibling column below it. The block item becomes a floating column at tablet/desktop screen width.</p>
+                            <p>The SCSS below may look overwhelming, but the only two variables needed to automatically create block column widths are the $MAX_WIDTH and $BLOCK_GUTTER variables. SCSS math will do the rest.</p>
+                            <pre class="box">
+/*----------------------------------------------------------------------
+ Blocks, Mobile (Media Query break at 768px)
+----------------------------------------------------------------------*/
+.blocks > li {
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+/*----------------------------------------------------------------------
+ Blocks, Desktop
+----------------------------------------------------------------------*/
+$MAX_WIDTH: 1024px; /* Set max width here */
+$BLOCK_GUTTER: 20px; /* Set gutter width here */
+
+$BLOCK_WIDTH: 100%;
+$BLOCK_MARGIN: $BLOCK_WIDTH * ($BLOCK_GUTTER / $MAX_WIDTH);
+
+.blocks {margin-left: -$BLOCK_MARGIN;}
+
+.blocks:before,
+.blocks:after {
+  display: table;
+  content: "";
+}
+
+.blocks:after {clear: both;}
+
+.blocks > li {
+  float: left;
+  margin: 0 0 $BLOCK_MARGIN $BLOCK_MARGIN;
+}
+
+.blocks_8col > li {width: ($BLOCK_WIDTH - ($BLOCK_MARGIN * 8)) / 8;}
+.blocks_7col > li {width: ($BLOCK_WIDTH - ($BLOCK_MARGIN * 7)) / 7;}
+.blocks_6col > li {width: ($BLOCK_WIDTH - ($BLOCK_MARGIN * 6)) / 6;}
+.blocks_5col > li {width: ($BLOCK_WIDTH - ($BLOCK_MARGIN * 5)) / 5;}
+.blocks_4col > li {width: ($BLOCK_WIDTH - ($BLOCK_MARGIN * 4)) / 4;}
+.blocks_3col > li {width: ($BLOCK_WIDTH - ($BLOCK_MARGIN * 3)) / 3;}
+.blocks_2col > li {width: ($BLOCK_WIDTH - ($BLOCK_MARGIN * 2)) / 2;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- GRIDS SECTOR -->
+            <div class="sector" id="grids">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Grids</h3></div>
+                <div class="sector-bd">
+                    <p>A grid object is a responsive layout for your overall website structure and works great for multi column layouts. The grid SCSS is a bit tricky, but grids are a necessity in responsive layouts and should be mastered. There are many grid calculators available online. <a href="http://gridcalculator.dk/#/1024/4/20/0" target="_blank">Grid Calculator</a> is one such tool. Keep in mind, you will want to create styling for both mobile and tablet/desktop screen widths.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <!-- START GRID -->
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_1of4">Column 1 of 4</div>
+                                <div class="grid-col grid-col_3of4">Column 3 of 4</div>
+                            </div><!-- END GRID -->
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_1of4">Column 1 of 4</div>
+                                <div class="grid-col grid-col_1of4">Column 1 of 4</div>
+                                <div class="grid-col grid-col_1of4">Column 1 of 4</div>
+                                <div class="grid-col grid-col_1of4">Column 1 of 4</div>
+                            </div>
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_2of4">Column 2 of 4</div>
+                                <div class="grid-col grid-col_2of4">Column 2 of 4</div>
+                            </div>
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_3of4">Column 3 of 4</div>
+                                <div class="grid-col grid-col_1of4">Column 1 of 4</div>
+                            </div>
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_4of4">Column 4 of 4</div>
+                            </div>
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_1of3">Column 1 of 3</div>
+                                <div class="grid-col grid-col_2of3">Column 2 of 3</div>
+                            </div>
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_2of3">Column 2 of 3</div>
+                                <div class="grid-col grid-col_1of3">Column 1 of 3</div>
+                            </div>
+                            <div class="grid grid_example">
+                                <div class="grid-col grid-col_3of3">Column 3 of 3</div>
+                            </div>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;!-- START GRID --&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_1of4&quot;&gt;Column 1 of 4&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_3of4&quot;&gt;Column 3 of 4&lt;/div&gt;
+    &lt;/div&gt;&lt;!-- END GRID --&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_1of4&quot;&gt;Column 1 of 4&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_1of4&quot;&gt;Column 1 of 4&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_1of4&quot;&gt;Column 1 of 4&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_1of4&quot;&gt;Column 1 of 4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_2of4&quot;&gt;Column 2 of 4&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_2of4&quot;&gt;Column 2 of 4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_3of4&quot;&gt;Column 3 of 4&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_1of4&quot;&gt;Column 1 of 4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_4of4&quot;&gt;Column 4 of 4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_1of3&quot;&gt;Column 1 of 3&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_2of3&quot;&gt;Column 2 of 3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_2of3&quot;&gt;Column 2 of 3&lt;/div&gt;
+        &lt;div class=&quot;grid-col grid-col_1of3&quot;&gt;Column 1 of 3&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid&quot;&gt;
+        &lt;div class=&quot;grid-col grid-col_3of3&quot;&gt;Column 3 of 3&lt;/div&gt;
+    &lt;/div&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <p>A grid column for mobile is set to 100% width and will push its next sibling column below it. The grid becomes a true grid at tablet/desktop screen width.</p>
+                            <p>Time for some grid math. You can use the <a href="http://gridcalculator.dk/#/1024/4/20/0" target="_blank">Grid Calculator</a> to calculate the column width by entering the max-width, gutter width and number of columns. A max-width of 1024px, gutter width of 20px and a 4 column grid would give you a column width of 241px. In the first grid example, we have a 1of4 column and a 3of4 column, totalling 4of4 that gives us 1024px (100%) width. The 1of4 column is 241px, but it is not as simple as to multiply 241px by 3 for the 3of4 column, as there are two gutters at 20px each to consider. <span class="txt txt_bold">The simplest equation to finding the width of a column is CW + (CC-1)(CW + GW) whereas CW = column width, GW = gutter width, CC = column count.</span> For example, a 3of4 column width is 241px + (3-1)(241px + 20px). Once you have the column widths in pixels, you can convert them into percentages by dividing the column width by the max-width (for example, 1of4 column: 241px/1024px = 23.535%, 2of4 column: 502px/1024px = 49.023%, 3of4 column: 763px/1024p = 74.512%). The gutter width percentage would be (20px/1024px = 1.953%).</p>
+                            <pre class="box">
+/*----------------------------------------------------------------------
+ Grid, Mobile (768px break point)
+----------------------------------------------------------------------*/
+.grid {@include clearfix();}
+
+.grid-col {
+    width: 100%;
+    margin-bottom: 20px;
+    float: left;
+}
+
+/*----------------------------------------------------------------------
+ Grid, Desktop
+----------------------------------------------------------------------*/
+.grid-col ~ .grid-col {margin-left: 1.95%;}
+
+/* 4 column grid */
+.grid-col_1of4 {width: 23.53%;}
+.grid-col_2of4 {width: 49.02%;}
+.grid-col_3of4 {width: 74.51%;}
+.grid-col_4of4 {width: 100%;}
+
+/* 3 column grid */
+.grid-col_1of3 {width: 32.03%;}
+.grid-col_2of3 {width: 66.02%;}
+.grid-col_3of3 {width: 100%;}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- GRIDS SECTOR -->
+            <div class="sector" id="mediaBox">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Media Box</h3></div>
+                <div class="sector-bd">
+                    <p>Media boxes, also called <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/" target="_blank">media objects</a>, combine an image with text content. It was created by a Facebook developer to reduce the amount of code needed to comments and posts. They are especially prevalent on social media and blog sites, but versions of media boxes can be found on most sites.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            <div class="mediaBox">
+                                <div class="mediaBox-media">
+                                    <img src="./media/images/scientist.png" class="imgResponsive" alt="Scientist">
+                                </div>
+                                <h4 class="hdg hdg_4 hdg_pushBtmSm">Simple Media Box</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint deserunt iste inventore doloremque officiis repellendus officia voluptas, nesciunt maiores quo, distinctio harum aspernatur accusamus consequuntur sunt nobis sit autem velit reiciendis sapiente ad odio, totam quam at. Qui, repellendus ex asperiores. Itaque corporis maiores impedit, doloremque. Mollitia sint quaerat, ut.</p>
+                            </div>
+
+                            <div class="mediaBox mediaBox_right">
+                                <div class="mediaBox-media">
+                                    <img src="./media/images/scientist.png" class="imgResponsive" alt="Scientist">
+                                </div>
+                                <h4 class="hdg hdg_4 hdg_pushBtmSm">Simple Media Box Image Floated Right</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint deserunt iste inventore doloremque officiis repellendus officia voluptas, nesciunt maiores quo, distinctio harum aspernatur accusamus consequuntur sunt nobis sit autem velit reiciendis sapiente ad odio, totam quam at. Qui, repellendus ex asperiores. Itaque corporis maiores impedit, doloremque. Mollitia sint quaerat, ut.</p>
+                            </div>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;div class=&quot;mediaBox&quot;&gt;
+    &lt;div class=&quot;mediaBox-media&quot;&gt;
+        &lt;img src=&quot;./media/images/scientist.png&quot; class=&quot;imgResponsive&quot; alt=&quot;Scientist&quot;&gt;
+    &lt;/div&gt;
+    &lt;h4 class=&quot;hdg hdg_4 hdg_pushBtmSm&quot;&gt;Simple Media Box&lt;/h4&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint deserunt iste inventore doloremque officiis repellendus officia voluptas, nesciunt maiores quo, distinctio harum aspernatur accusamus consequuntur sunt nobis sit autem velit reiciendis sapiente ad odio, totam quam at. Qui, repellendus ex asperiores. Itaque corporis maiores impedit, doloremque. Mollitia sint quaerat, ut.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;mediaBox mediaBox_right&quot;&gt;
+    &lt;div class=&quot;mediaBox-media&quot;&gt;
+        &lt;img src=&quot;./media/images/scientist.png&quot; class=&quot;imgResponsive&quot; alt=&quot;Scientist&quot;&gt;
+    &lt;/div&gt;
+    &lt;h4 class=&quot;hdg hdg_4 hdg_pushBtmSm&quot;&gt;Simple Media Box Image Floated Right&lt;/h4&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint deserunt iste inventore doloremque officiis repellendus officia voluptas, nesciunt maiores quo, distinctio harum aspernatur accusamus consequuntur sunt nobis sit autem velit reiciendis sapiente ad odio, totam quam at. Qui, repellendus ex asperiores. Itaque corporis maiores impedit, doloremque. Mollitia sint quaerat, ut.&lt;/p&gt;
+&lt;/div&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+//----------------------------------------------------------------------
+// Media Box Object
+//----------------------------------------------------------------------
+.mediaBox {
+    @include clearfix();
+    margin-bottom: 20px;
+    border-bottom: 1px solid $GRAY;
+}
+
+.mediaBox-media {
+    max-width: 360px;
+    margin: 0 20px 10px 0;
+    float: left;
+}
+
+.mediaBox-media > * {width: 100%;}
+
+.mediaBox_right .mediaBox-media {
+    margin: 0 0 10px 20px;
+    float: right;
+}</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+        </div><!-- END MAIN CONTENT -->
+{% endblock %}

@@ -1,0 +1,977 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GULP TEST Front End Web Standards - Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <!-- STYLESHEETS -->
+        <!--build:css css/css/modern.min.css-->
+        <link rel="stylesheet" href="./css/css/modern.css">
+        
+        <!-- endbuild -->
+        <!-- build:css css/css/legacy.min.css-->
+        <!--[if lt IE 9]> 
+            <link rel="stylesheet" href="css/css/legacy.css">
+        <![endif]-->
+        <!-- endbuild -->
+
+        <link rel="stylesheet" href="./plugins/slider/flexslider.css" type="text/css">
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    <body>
+		<!-- BEGIN HEADER -->
+		<div class="header">
+			<div class="header-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <div class="header-hd">
+				<h1 class="hdg hdg_2 hdg_grayLight">Front End Web Development Standards</h1>
+			</div>
+
+		</div>
+
+        
+			<!-- BEGIN NAVIGATION  -->
+			<div class="mainNav js-mainNav">
+				<div class="mainNav-trigger js-mainNav-trigger">
+					<i class="fa fa-bars"></i>
+				</div>
+				<div class="mainNav-content js-mainNav-content">
+					<ul class="list hList">
+						<li><a href="structure.html" class="">Structure</a></li>
+						<li><a href="html-practices.html" class="">HTML Practices</a></li>
+						<li><a href="css-practices.html" class="">CSS &amp; SCSS  Practices</a></li>
+						<li><a href="js-practices.html" class="">JS Practices</a></li>
+						<li><a href="responsive.html" class="">Responsive Layouts</a></li>
+					    <li><a href="common-objects.html" class="">Common Objects</a></li>
+					    <li><a href="js-modules.html" class="active">JS Modules</a></li>
+					    <li><a href="media.html" class="">Media</a></li>
+					    <li><a href="task-runners.html" class="">Task Runners</a></li>
+					    <li><a href="style-guides.html" class="">Style Guides</a></li>
+					</ul>
+				</div>
+			</div>
+
+        <!-- BEGIN MAIN CONTENT -->
+        <div class="wrap wrap_content js-modalArc" role="main">
+            <h2 class="hdg hdg_2 hdg_pushBtm">JS Modules</h2>
+
+            <p>JS Modules are objects that use Javascript and <a href="https://jquery.com/" target="_blank">JQuery(Javascript library)</a> to trigger certain functions based on events such has hovering, clicking, scrolling, etc. Carousels, dropdowns, and accordions are great examples of modules.</p>
+
+            <!-- PAGE SUB NAV -->
+            <ul class="hList">
+                <li><a href="#modals" class="js-nav">Modals</a></li>
+                <li><a href="#drawers" class="js-nav">Drawers</a></li>
+                <li><a href="#accordions" class="js-nav">Accordions</a></li>
+                <li><a href="#dropdowns" class="js-nav">Dropdowns</a></li>
+                <li><a href="#tooltips" class="js-nav">Tooltips</a></li>
+                <li><a href="#carousels" class="js-nav">Carousels</a></li>
+            </ul><!-- END PAGE SUB NAV -->
+
+            <!-- MODAL SECTOR -->
+            <div class="sector" id="modals">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Modals</h3></div>
+                <div class="sector-bd">
+                    <p>Modals are custom pop-up windows that are triggered by either a button or link mouse click event. They are commonly used to contain videos, images, forms, maps, and extra content. When a modal is active, an overlay covers the whole page (except for the modal content container) preventing the user from interacting with the non-modal content until the modal is closed. Two common ways of closing a modal is to have a close button and/or create a close function on the modal overlay. The best practice is to use both closing function as to give more options to the user. </p>
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+                            
+                            <!-- BEGIN MODAL MODULE -->
+                            <a href="javascript:void(0)" class="btn js-modalTrigger">Activate Modal</a>
+                            <div class="modal js-modal">
+                                <div class="modal-mask js-modal-mask js-modal-mask_close"></div><!-- REMOVE modal-mask_close IF YOU WANT TO DEACTIVATE ON CLICK CLOSE FUNCTION ON MASK -->
+                                <div class="modal-content js-modal-content">
+                                    <div class="modal-hd">
+                                        <span>This is a modal!</span>
+                                    </div>
+                                    <div class="modal-bd">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt numquam facere labore dolorem commodi rerum optio dignissimos a, illum. Consectetur similique illum ratione possimus inventore, consequatur officia et quasi nemo dolores explicabo magnam ea, aut accusantium reprehenderit! Ipsam doloribus accusamus reiciendis corporis, dolore tenetur! Molestias id praesentium enim magnam laborum sed sapiente blanditiis dolores porro et similique illo eveniet.</p>
+                                    </div>
+                                    <a href="javascript:void(0)" class="modal-close js-modal-close">
+                                        <span class="isVisuallyHidden">Close Modal</span>
+                                        <i class="fa fa-times-circle"></i>
+                                    </a>
+                                </div>
+                            </div><!-- END MODAL MODULE-->
+                            
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <p>Along with this html code, an activator class, <span class="txt_bold">js-modalArc</span>, needs to be placed on an upper level parent div of the modal html. Currently, class js-modalArc is placed on the body tag since there is one modal on this page. Choosing to place this activator class on the body allows the coder more freedom as to where they place the modal markup. Multiple modals will need to use multiple activator classes on their respective parent divs.</p>
+                            <pre class="box">
+&lt;!-- BEGIN MODAL MODULE --&gt;
+&lt;a href=&quot;javascript:void(0)&quot; class=&quot;btn js-modalTrigger&quot;&gt;Activate Modal&lt;/a&gt;
+&lt;div class=&quot;modal js-modal&quot;&gt;
+    &lt;div class=&quot;modal-mask js-modal-mask js-modal-mask_close&quot;&gt;&lt;/div&gt;&lt;!-- REMOVE modal-mask_close IF YOU WANT TO DEACTIVATE ON CLICK CLOSE FUNCTION ON MASK --&gt;
+    &lt;div class=&quot;modal-content js-modal-content&quot;&gt;
+        &lt;div class=&quot;modal-hd&quot;&gt;
+            &lt;span&gt;This is a modal!&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;modal-bd&quot;&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt numquam facere labore dolorem commodi rerum optio dignissimos a, illum. Consectetur similique illum ratione possimus inventore, consequatur officia et quasi nemo dolores explicabo magnam ea, aut accusantium reprehenderit! Ipsam doloribus accusamus reiciendis corporis, dolore tenetur! Molestias id praesentium enim magnam laborum sed sapiente blanditiis dolores porro et similique illo eveniet.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;a href=&quot;javascript:void(0)&quot; class=&quot;modal-close js-modal-close&quot;&gt;
+            &lt;span class=&quot;isVisuallyHidden&quot;&gt;Close Modal&lt;/span&gt;
+            &lt;i class=&quot;fa fa-times-circle&quot;&gt;&lt;/i&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- END MODAL MODULE--&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <p>Make sure to adjust modal widths and margins between mobile and tablet/desktop views.</p>
+                            <pre class="box">
+//----------------------------------------------------------------------
+// Modal Styles
+//----------------------------------------------------------------------
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+}
+
+.modal-mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,.7);
+}
+
+.modal-content {
+    max-width: 300px;
+    margin: 50px auto 0;
+    padding: 20px;
+    border: 1px solid rgba(0,0,0,.2);
+    box-shadow: $BOX_SHADOW;
+    position: relative;
+    background: #ffffff;
+}
+
+.modal-hd {
+    padding-right: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #333333;
+    font-size: 20px;
+    line-height: 0;
+    cursor: pointer;
+}
+
+//----------------------------------------------------------------------
+// Modal Styles Med
+//----------------------------------------------------------------------
+.modal-content {
+    max-width: 560px;
+    margin: 200px auto 0;
+}</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">JS</h4>
+                            <pre class="box">
+/* Modal Module ***************************************************************************/
+$(document).ready(function() {
+    var modalArc = '.js-modalArc'; //Currently placed on body tag. If more than one modal, is on a page, 
+                                //you will need to place this on a parent div that contains
+                                //both the trigger and modal while making sure that modal parents 
+                                //are not children of other modal parents. 
+    var trigger = '.js-modalTrigger';
+    var modal = '.js-modal';
+    var content = '.js-modal-content';
+    var close = '.js-modal-close';
+    var maskClose = '.js-modal-mask_close';
+    var duration = 300;
+
+    $(modalArc).find(trigger).click(function() {
+        $(this).parents(modalArc).find(modal).fadeIn(duration);
+    });
+    $(modal).find(close).click(function() {
+        $(this).parent(content).parent(modal).fadeOut(duration);
+    });
+    $(maskClose).click(function() {
+        $(this).parent(modal).fadeOut(duration);
+    });
+});</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- DRAWERS SECTOR -->
+            <div class="sector" id="drawers">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Drawers</h3></div>
+                <div class="sector-bd">
+                    <p>Drawers show and hide content using a trigger based on an mouse event. The content is displayed directly below the trigger, and a slide up/down animation is generally applied to the function. Drawers are independently triggered and do not effect the display of other drawers (opening one drawer will not close any other drawers on the page). Drawers can also be stacked together to create an accordion like layout but keep their functionality independent. Drawers are a common module used to show/hide examples for this projects.</p>
+                    
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+
+                            <!-- BEGIN DRAWER MODULE EXAMPLE-->
+                            <div class="drawer js-drawer">
+                                <div class="drawer-trigger js-drawer-trigger">
+                                    <a href="javascript:void(0)"><span>Drawer Item 1 </span><i class="caret"></i></a>
+                                </div>
+                                <div class="drawer-content js-drawer-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.</p>
+                                </div>
+                            </div><!-- END DRAWER MODULE EXAMPLE -->
+                            <!-- BEGIN DRAWER MODULE EXAMPLE-->
+                            <div class="drawer js-drawer">
+                                <div class="drawer-trigger js-drawer-trigger">
+                                    <a href="javascript:void(0)"><span>Drawer Item 2 </span><i class="caret"></i></a>
+                                </div>
+                                <div class="drawer-content js-drawer-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.</p>
+                                </div>
+                            </div><!-- END DRAWER MODULE EXAMPLE -->
+                          
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <pre class="box">
+&lt;!-- BEGIN DRAWER MODULE --&gt;
+&lt;div class=&quot;drawer js-drawer&quot;&gt;
+    &lt;div class=&quot;drawer-trigger js-drawer-trigger&quot;&gt;
+        &lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;span&gt;Drawer Item 1 &lt;/span&gt;&lt;i class=&quot;caret&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;drawer-content js-drawer-content&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- END DRAWER MODULE --&gt;
+&lt;!-- BEGIN DRAWER MODULE --&gt;
+&lt;div class=&quot;drawer js-drawer&quot;&gt;
+    &lt;div class=&quot;drawer-trigger js-drawer-trigger&quot;&gt;
+        &lt;a href=&quot;javascript:void(0)&quot;&gt;&lt;span&gt;Drawer Item 2 &lt;/span&gt;&lt;i class=&quot;caret&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;drawer-content js-drawer-content&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- END DRAWER MODULE --&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">SCSS</h4>
+                            <pre class="box">
+//----------------------------------------------------------------------
+// Drawer Styles
+//----------------------------------------------------------------------
+.drawer {
+    display: block;
+}
+
+.drawer-trigger {
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    background: $GRAY_DARK;
+    font-weight: bold;
+}
+
+.drawer-trigger a {
+    display: block;
+    @include clearfix();
+    color: $WHITE;
+}
+
+.drawer-trigger:after {clear:both;}
+
+.drawer-trigger span {float: left;}
+.drawer-trigger i {float: right;}
+
+.drawer-content {
+    display: none;
+    padding: 10px;
+    background: #ffffff;
+}</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">JS</h4>
+                            <pre class="box">
+/* Drawer Module ***************************************************************************/
+$(document).ready(Drawer = function() {
+    var drawer = '.js-drawer';
+    var trigger = '.js-drawer-trigger';
+    var content = '.js-drawer-content';
+
+    $(drawer).find(trigger).click(function() {
+        $(this).next(content).slideToggle(200);
+        $(this).find('i').toggleClass('isActive');
+        return false;
+    });
+});</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- ACCORDION SECTOR -->
+            <div class="sector" id="accordions">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Accordions</h3></div>
+                <div class="sector-bd">
+                    <p>Accordions look and behave similar to a set of drawers stacked together. Their sections, usually called accordion items show and hide content using a trigger based on an mouse event. The content is displayed directly below the trigger, and a slide up/down animation is generally applied to the function. Unlike drawers, accordion items are dependent to their parent accordion and do effect the display of other sibling accordion items (opening one accordion item will close all other sibling accordion items).</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+
+                            <!-- BEGIN ACCORDION MODULE -->
+                            <ul class="accordion js-accordion">
+                                <li class="accordion-item js-accordion-item">
+                                    <a href="javascript:void(0)" class="accordion-trigger js-accordion-trigger"><span>Accordion Item 1</span><i class="caret"></i></a>
+                                    <div class="accordion-content js-accordion-content isActive">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.</p>
+                                    </div>
+                                </li>
+                                <li class="accordion-item js-accordion-item">
+                                    <a href="javascript:void(0)" class="accordion-trigger js-accordion-trigger"><span>Accordion Item 2</span><i class="caret"></i></a>
+                                    <div class="accordion-content js-accordion-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.</p>
+                                    </div>
+                                </li>
+                                <li class="accordion-item js-accordion-item">
+                                    <a href="javascript:void(0)" class="accordion-trigger js-accordion-trigger"><span>Accordion Item 3</span><i class="caret"></i></a>
+                                    <div class="accordion-content js-accordion-content">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.</p>
+                                    </div>
+                                </li>
+                            </ul><!-- END ACCORDION MODULE -->
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <pre class="box">
+&lt;!-- BEGIN ACCORDION MODULE --&gt;
+&lt;ul class=&quot;accordion js-accordion&quot;&gt;
+    &lt;li class=&quot;accordion-item js-accordion-item&quot;&gt;
+        &lt;a href=&quot;javascript:void(0)&quot; class=&quot;accordion-trigger js-accordion-trigger&quot;&gt;&lt;span&gt;Accordion Item 1&lt;/span&gt;&lt;i class=&quot;caret&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div class=&quot;accordion-content js-accordion-content isActive&quot;&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;accordion-item js-accordion-item&quot;&gt;
+        &lt;a href=&quot;javascript:void(0)&quot; class=&quot;accordion-trigger js-accordion-trigger&quot;&gt;&lt;span&gt;Accordion Item 2&lt;/span&gt;&lt;i class=&quot;caret&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div class=&quot;accordion-content js-accordion-content&quot;&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;accordion-item js-accordion-item&quot;&gt;
+        &lt;a href=&quot;javascript:void(0)&quot; class=&quot;accordion-trigger js-accordion-trigger&quot;&gt;&lt;span&gt;Accordion Item 3&lt;/span&gt;&lt;i class=&quot;caret&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div class=&quot;accordion-content js-accordion-content&quot;&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias assumenda repellat ipsa at rem perferendis neque consequatur ut hic? Architecto consequatur neque doloribus sunt eaque eveniet sit laboriosam, libero quod harum animi minus modi officiis error minima laudantium eligendi mollitia commodi, quam ea. Fuga culpa maiores fugiat, rerum labore modi sapiente, quia alias eligendi dolores doloremque dolor eum omnis deleniti! Non impedit blanditiis temporibus adipisci ipsa! Excepturi doloribus saepe quia, autem at dicta quod distinctio delectus, hic. Impedit saepe necessitatibus sed non recusandae quod tempora dolore. Eius aliquid voluptatibus officia, architecto placeat magnam at beatae dolores sed, nostrum modi aut.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;&lt;!-- END ACCORDION MODULE --&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+// ------------------------------------------------------------------
+// Accordion
+// ------------------------------------------------------------------
+.accordion,
+.accordion-item {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.accordion {margin-bottom: 20px;}
+
+.accordion-trigger {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    color: $WHITE;
+    background: $GRAY_DARK;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.accordion-trigger:hover,
+.accordion-trigger:focus {text-decoration: none;}
+
+.accordion-trigger:before,
+.accordion-trigger:after {
+    display: table;
+    content: "";
+}
+
+.accordion-trigger:after {clear:both;}
+
+.accordion-trigger > *:first-child {width: 93%;}
+
+.accordion-trigger i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -8px;
+}
+
+.accordion-trigger > * > i {margin-right: 10px;}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    background: $WHITE;
+    border: 1px solid $GRAY;
+}
+
+.accordion-content.isActive {display: block;}
+
+.accordion_sub .accordion-trigger {
+    color: $WHITE;
+    background: $GRAY;
+}</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">JS</h4>
+                            <pre class="box">
+/* Accordion Module ***************************************************************************/
+$(document).ready(Accordion = function() {
+    var accordion = '.js-accordion';
+    var item = '.js-accordion-item';
+    var trigger = '.js-accordion-trigger';
+    var content = '.js-accordion-content';
+    var contentActive = '.js-accordion-content.isActive';
+    var icon = 'i';
+    var duration = 300;
+
+    // Styles accordion item if you choose to start with an open accordion on load //
+    $(accordion).find('.isActive').parent(item).find('i').addClass('isActive');
+    $(accordion).find('.isActive').css("display", "block");
+
+    // Click function logic //
+    $(accordion).find(item).find(trigger).click(function(event) {
+
+        $(accordion).find(contentActive).slideUp(duration);
+        $(accordion).find(icon).removeClass('isActive');
+
+        if ($(this).next(content).hasClass('isActive')) {
+            $(content).removeClass('isActive');
+            $(this).find(icon).removeClass('isActive');
+        } else {
+            $(content).removeClass('isActive');
+            $(this).next(content).slideDown(duration);
+            $(this).next(content).addClass('isActive');
+            $(this).find(icon).addClass('isActive');
+        }
+
+    });
+});</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- DROPDOWN SECTOR -->
+            <div class="sector" id="dropdowns">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Dropdowns</h3></div>
+                <div class="sector-bd">
+                    <p>A dropdown behaves similarly to a drawer, but instead of pushing all other content below its own, the dropdown content is displayed on top of other content (positioned absolutely). Dropdowns are most commonly used for mobile navigation and desktop nested navigation. A mouse click (necessary for mobile and tablet) or hover (optional for desktop) event on a trigger is used to open the dropdown content. If a hover trigger is used for desktop, there will be a possibility of conflict between the click and hover function on a tablet device when flipping between landscape and portrait view. This conflict is caused by the media query width landing in between a device's portrait and landscape screen width (if you are on a desktop and want to see this conflict in action, shrink your viewing window below 768px and then try clicking on the example dropdowns below, notice that they do not open. Expand back to full screen and the hover state will work again).</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+
+                            <ul>
+                                <li class="dropdown js-dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-trigger js-dropdown-trigger">Dropdown 1 <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="dropdown-content js-dropdown-content">
+                                        <li><a href="javascript:void(0);">Link 1</a></li>
+                                        <li><a href="javascript:void(0);">Link 2</a></li>
+                                        <li><a href="javascript:void(0);">Link 3</a></li>
+                                        <li><a href="javascript:void(0);">Link 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown js-dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-trigger js-dropdown-trigger">Dropdown 2 <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="dropdown-content js-dropdown-content">
+                                        <li><a href="javascript:void(0);">Link 1</a></li>
+                                        <li><a href="javascript:void(0);">Link 2</a></li>
+                                        <li><a href="javascript:void(0);">Link 3</a></li>
+                                        <li><a href="javascript:void(0);">Link 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown js-dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-trigger js-dropdown-trigger">Dropdown 3 <i class="fa fa-chevron-down"></i></a>
+                                    <ul class="dropdown-content js-dropdown-content">
+                                        <li><a href="javascript:void(0);">Link 1</a></li>
+                                        <li><a href="javascript:void(0);">Link 2</a></li>
+                                        <li><a href="javascript:void(0);">Link 3</a></li>
+                                        <li><a href="javascript:void(0);">Link 4</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <pre class="box">
+&lt;ul&gt;
+    &lt;li class=&quot;dropdown js-dropdown&quot;&gt;
+        &lt;a href=&quot;javascript:void(0);&quot; class=&quot;dropdown-trigger js-dropdown-trigger&quot;&gt;Dropdown 1 &lt;i class=&quot;fa fa-chevron-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;ul class=&quot;dropdown-content js-dropdown-content&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;dropdown js-dropdown&quot;&gt;
+        &lt;a href=&quot;javascript:void(0);&quot; class=&quot;dropdown-trigger js-dropdown-trigger&quot;&gt;Dropdown 2 &lt;i class=&quot;fa fa-chevron-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;ul class=&quot;dropdown-content js-dropdown-content&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;dropdown js-dropdown&quot;&gt;
+        &lt;a href=&quot;javascript:void(0);&quot; class=&quot;dropdown-trigger js-dropdown-trigger&quot;&gt;Dropdown 3 &lt;i class=&quot;fa fa-chevron-down&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;ul class=&quot;dropdown-content js-dropdown-content&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+// ------------------------------------------------------------------
+// Dropdown
+// ------------------------------------------------------------------
+.dropdown {position: relative;}
+
+.dropdown-trigger {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    @include clearfix();
+}
+
+.dropdown-trigger:hover,
+.dropdown-trigger:focus {text-decoration: none;}
+
+.dropdown-trigger i {
+    float: right;
+    transition: transform .3s linear;
+}
+
+.dropdown-trigger i.isActive {transform: rotate(-180deg);}
+
+.dropdown-content {
+    display: none;
+    min-width: 100%;
+    background: $GRAY_DARK;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 5px 10px;
+    color: $WHITE;
+}
+
+// ------------------------------------------------------------------
+// Dropdown Med
+// ------------------------------------------------------------------
+.dropdown {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.dropdown-trigger {
+    display: inline-block;
+    width: inherit;
+}
+
+.dropdown:hover > .dropdown-content {display: block;}
+
+.dropdown-content {
+    position: absolute;
+    left: 0;
+    top: 30px;
+}
+
+.dropdown-trigger i {margin-left: 5px;}
+
+.dropdown:hover > .dropdown-trigger i {transform: rotate(-180deg);}</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">JS</h4>
+                            <pre class="box">
+/* Dropdown Module ***************************************************************************/
+$(document).ready(function() {
+    var dropdown = '.js-dropdown';
+    var trigger = '.js-dropdown-trigger';
+    var content = '.js-dropdown-content';
+
+    if (document.documentElement.clientWidth &lt; 768) {
+        $(dropdown).find(trigger).click(function() {
+            $(this).next(content).slideToggle(200);
+            $(this).find('i').toggleClass('isActive');
+        });
+    }
+});</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- TOOLTIP SECTOR -->
+            <div class="sector" id="tooltips">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Tooltips</h3></div>
+                <div class="sector-bd">
+                    <p>A Tooltip is a little content box that is usually displayed by clicking or hovering on a trigger. They display  extra information related to relative inline content. The tooltip is positioned absolutely and hovers on top of the inline content. Tooltips are becoming less popular, with developers choosing to use drawers for displaying extra info.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+
+                            <!--BEGIN BUBBLE TIP -->
+                            <div class="bubble js-bubble">
+                                <a href="javascript:void(0)" class="bubble-trigger js-bubble-trigger"><i class="fa fa-info-circle"></i> Bubble Tip Default</a>
+                                <div class="bubble-content js-bubble-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quod similique voluptatibus deleniti delectus! Architecto facilis rerum eos nihil corporis ad nemo officia beatae omnis consectetur earum repellendus fugiat, quidem dolorem nobis iusto ipsam quisquam voluptatem inventore, accusantium expedita tenetur doloremque consequatur. Recusandae ipsam architecto, eos ex ipsa, tempore nemo.</p>
+                                </div>
+                            </div>
+                            <div class="bubble js-bubble">
+                                <a href="javascript:void(0)" class="bubble-trigger js-bubble-trigger"><i class="fa fa-info-circle"></i> Bubble Tip Center</a>
+                                <div class="bubble-content bubble-content_center js-bubble-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quod similique voluptatibus deleniti delectus! Architecto facilis rerum eos nihil corporis ad nemo officia beatae omnis consectetur earum repellendus fugiat, quidem dolorem nobis iusto ipsam quisquam voluptatem inventore, accusantium expedita tenetur doloremque consequatur. Recusandae ipsam architecto, eos ex ipsa, tempore nemo.</p>
+                                </div>
+                            </div>
+                            <div class="bubble js-bubble">
+                                <a href="javascript:void(0)" class="bubble-trigger js-bubble-trigger"><i class="fa fa-info-circle"></i> Bubble Tip Right</a>
+                                <div class="bubble-content bubble-content_right js-bubble-content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quod similique voluptatibus deleniti delectus! Architecto facilis rerum eos nihil corporis ad nemo officia beatae omnis consectetur earum repellendus fugiat, quidem dolorem nobis iusto ipsam quisquam voluptatem inventore, accusantium expedita tenetur doloremque consequatur. Recusandae ipsam architecto, eos ex ipsa, tempore nemo.</p>
+                                </div>
+                            </div><!-- END BUBBLE TIP -->
+                            
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm hdg_pushTop">HTML</h4>
+                            <pre class="box">
+&lt;!--BEGIN BUBBLE TIP --&gt;
+&lt;div class=&quot;bubble js-bubble&quot;&gt;
+    &lt;a href=&quot;javascript:void(0)&quot; class=&quot;bubble-trigger js-bubble-trigger&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt; Bubble Tip Default&lt;/a&gt;
+    &lt;div class=&quot;bubble-content js-bubble-content&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quod similique voluptatibus deleniti delectus! Architecto facilis rerum eos nihil corporis ad nemo officia beatae omnis consectetur earum repellendus fugiat, quidem dolorem nobis iusto ipsam quisquam voluptatem inventore, accusantium expedita tenetur doloremque consequatur. Recusandae ipsam architecto, eos ex ipsa, tempore nemo.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bubble js-bubble&quot;&gt;
+    &lt;a href=&quot;javascript:void(0)&quot; class=&quot;bubble-trigger js-bubble-trigger&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt; Bubble Tip Center&lt;/a&gt;
+    &lt;div class=&quot;bubble-content bubble-content_center js-bubble-content&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quod similique voluptatibus deleniti delectus! Architecto facilis rerum eos nihil corporis ad nemo officia beatae omnis consectetur earum repellendus fugiat, quidem dolorem nobis iusto ipsam quisquam voluptatem inventore, accusantium expedita tenetur doloremque consequatur. Recusandae ipsam architecto, eos ex ipsa, tempore nemo.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bubble js-bubble&quot;&gt;
+    &lt;a href=&quot;javascript:void(0)&quot; class=&quot;bubble-trigger js-bubble-trigger&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt; Bubble Tip Right&lt;/a&gt;
+    &lt;div class=&quot;bubble-content bubble-content_right js-bubble-content&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quod similique voluptatibus deleniti delectus! Architecto facilis rerum eos nihil corporis ad nemo officia beatae omnis consectetur earum repellendus fugiat, quidem dolorem nobis iusto ipsam quisquam voluptatem inventore, accusantium expedita tenetur doloremque consequatur. Recusandae ipsam architecto, eos ex ipsa, tempore nemo.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;&lt;!-- END BUBBLE TIP --&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <pre class="box">
+/* Bubble Tip ******************************************************/
+.bubble {
+    display: inline-block;
+    position: relative;
+}
+
+.bubble-trigger {font-weight: bold;}
+
+.bubble-content {
+    display: none;
+    width: 220px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 100;
+    background: #ffffff;
+    cursor: default;
+}
+
+.bubble-content:before {
+    display: table;
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+}
+
+.bubble-content_center {
+    left: 50%;
+    margin-left: -110px;
+}
+
+.bubble-content_center:before {
+    left: 50%;
+    margin-left: -10px;
+}
+
+.bubble-content_right {
+    left: inherit;
+    right: 0;
+}
+
+.bubble-content_right:before {
+    left: inherit;
+    right: 15px;
+}</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">JS</h4>
+                            <pre class="box">
+/* Bubble Tip Module ***************************************************************************/
+$(document).ready(function() {
+    var bubble = '.js-bubble';
+    var trigger = '.js-bubble-trigger';
+    var content = '.js-bubble-content';
+
+    $(bubble).find(trigger).click(function() {
+        $(this).next(content).fadeToggle(200);
+    });
+    $(bubble).find(content).click(function() {
+        $(this).fadeToggle(200);
+    });
+});</pre>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+            <!-- CAROUSEL SECTOR -->
+            <div class="sector" id="carousels">
+                <div class="sector-hd"><h3 class="hdg hdg_3">Carousels</h3></div>
+                <div class="sector-bd">
+                    <p>Carousels (also known as image sliders) are image slideshow modules. They comprise a list of media items(images or video) that show one media item at a time. There are on click triggers that navigate to each media item. The most common triggers are the left/right nav arrows that cycle to the previous/next media item respectively. Another common trigger set are the bullets/thumbnails that are usually located below the active media item, and these on click triggers cycle you directly to its respective media item. Carousels are very complicated modules and take a lot of development time to create from scratch. A plugin carousel like <a href="http://www.woothemes.com/flexslider/" target="_blank">FlexSlider</a> can save precious time and add a more robust carousel to fit multiple needs. FlexSlider is the carousel plugin of choice for the latest Wiley websites.</p>
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Example </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">Browser View</h4>
+
+                            <!-- BEGIN IMAGE CAROUSEL -->
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="media/images/carousel-home/carousel-home-1.png" alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="media/images/carousel-home/carousel-home-2.png" alt="" />
+                                    </li>
+                                    <li>
+                                        <img src="media/images/carousel-home/carousel-home-3.png" alt="" />
+                                    </li>
+                                </ul>
+                            </div><!-- END IMAGE CAROUSEL -->
+
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">HTML</h4>
+                            <pre class="box">
+&lt;!-- BEGIN IMAGE CAROUSEL --&gt;
+&lt;div class=&quot;flexslider&quot;&gt;
+    &lt;ul class=&quot;slides&quot;&gt;
+        &lt;li&gt;
+            &lt;img src=&quot;media/images/carousel-home/carousel-home-1.png&quot; alt=&quot;&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;img src=&quot;media/images/carousel-home/carousel-home-2.png&quot; alt=&quot;&quot; /&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;img src=&quot;media/images/carousel-home/carousel-home-3.png&quot; alt=&quot;&quot; /&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;&lt;!-- END IMAGE CAROUSEL --&gt;</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">CSS</h4>
+                            <p>The FlexSlider plugin comes with default css, but custom css in almost always wanted to match with current branding and styles. It is best practice to create your own scss module and override the default styling in the slider.css file. These overrides are a great example of how the !important override styling is acceptable to use. If your custom css styling is not working, chances are that the default styling is overriding it. Attach the !important to override the default, but always use caution with !important. If you do not need to use it, do not use it. Notice how not all of the classes use !important to override styling.</p>
+                            <pre class="box">
+// ------------------------------------------------------------------
+// Flexslider Mods and Overrides
+// ------------------------------------------------------------------
+.flexslider {
+    margin-bottom: 0!important;
+    border: none !important;
+}
+
+.flex-control-nav {
+    bottom: 20px !important;
+    z-index: 2 !important;
+}
+
+.flex-control-nav {bottom: -10px !important;}
+
+.flex-direction-nav {display: none;}
+
+.flex-direction-nav a:before {color: $BRAND_LIGHT !important;}
+.flex-control-paging li a {border-color: $BRAND_LIGHT !important;}
+.flex-control-paging li a:hover,
+.flex-control-paging li a.flex-active {background: $BRAND_LIGHT !important;}
+
+.flexslider img {margin-bottom: 20px !important;}
+
+.slides-info {
+    width: 100%;
+    text-align: center;
+}
+
+.slides-info-hd {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-size: 28px;
+}
+
+// ------------------------------------------------------------------
+// Flexslider Mods and Overrides Med
+// ------------------------------------------------------------------
+.flex-direction-nav {display: block;}
+
+.flex-control-nav {bottom: 25px !important;}
+
+.slides-info {
+    width: 100%;
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+}
+
+.slides-info-hd {
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,.8);
+    font-size: 40px;
+}</pre>
+                            <h4 class="hdg hdg_4 hdg_pushBtmSm">JS</h4>
+                            <p>See Setup Steps below.</p>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                    <!-- BEGIN DRAWER -->
+                    <div class="drawer js-drawer">
+                        <div class="drawer-trigger js-drawer-trigger">
+                            <a href="javascript:void(0)"><h3>Setup Steps </h3><i class="caret"></i></a>
+                        </div>
+                        <div class="drawer-content js-drawer-content">
+                            <p>The Javascript is already written with the <a href="http://www.woothemes.com/flexslider/" target="_blank">FlexSlider</a> plugin. There are only a few steps needed to set the plugin up:</p>
+                            <ol class="list list_number">
+                                <li>Download the <a href="http://www.woothemes.com/flexslider/" target="_blank">FlexSlider</a> plugin, unzip the contents.</li>
+                                <li>Place the slider folder into the statics root directory. This folder contains the css, js, and icons for the slider.</li>
+                                <li>
+                                    <p>Setup your css slider.css path in your html head with your other css paths. Make sure the href path is correct.</p>
+                                    <pre class="box">
+&lt;!-- STYLESHEETS --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/css/modern.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;slider/flexslider.css&quot; type=&quot;text/css&quot;&gt;
+&lt;!--[if lt IE 9]&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/CSS/legacy.css&quot;&gt;
+&lt;![endif]--&gt;</pre>
+                                </li>
+                                <li>
+                                    <p>Setup your js slider path below the footer  with your other js paths. Make sure the jquery.flexslider.js path is below the jquery.js path, or the slider will not work due to its reliance on jquery. Make sure the href path is correct.</p>
+                                    <pre class="box">
+&lt;!-- SCRIPTS --&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/plugins.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;slider/jquery.flexslider.js&quot;&gt;&lt;/script&gt;
+
+&lt;/body&gt;</pre>
+                                </li>
+                                <li>
+                                    <p>Set up the slider load function. Place this function directly below the jquery.flexslider.js path. If you place this function above it, the slider will not work. Notice that there are many variables in the load function. These variables allow you to customize the functionality of the slider. These are a few examples, but there are <a href="https://github.com/woothemes/FlexSlider/wiki/FlexSlider-Properties" target="_blank">many more variable functions</a> that can be used.</p>
+                                    <pre class="box">
+&lt;!-- SCRIPTS --&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/plugins.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;slider/jquery.flexslider.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(window).load(function() {
+      $('.flexslider').flexslider({
+          animationSpeed: 800,
+          touch: true,
+          pauseOnHover: true,
+          pauseOnAction: true,
+          startAt:0,
+          animation: &quot;fade&quot;
+        });
+    });
+&lt;/script&gt;</pre>
+                                </li>
+                            </ol>
+                        </div>
+                    </div><!-- END DRAWER -->
+
+                </div>
+            </div>
+
+        </div><!-- END MAIN CONTENT -->
+
+
+		<!-- FOOTER -->
+        <div class="footer" role="contentinfo">
+            <div class="footer-logo" itemscope itemtype="http://schema.org/Organization">
+				<a href="index.html" itemprop="url"><img src="media/images/logo-wiley-black.png" alt="Wiley logo" itemprop="logo"></a>
+            </div>
+            <small class="footer-copy">Copyright © 2000-2015 by John Wiley &amp; Sons, Inc. or related companies. All rights reserved.</small>
+        </div><!-- END FOOTER -->
+
+        <!-- BACK TO TOP OF PAGE BUTTON -->
+        <a href="#" class="topside js-topside">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <!--build:js js/main.min.js -->
+        <script src="js/vendor/jquery-1.11.3.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/plugins.js"></script>
+        <!-- endbuild -->
+
+        <script src="plugins/slider/jquery.flexslider.js"></script>
+        
+        <script>
+        $(window).load(function() {
+              $('.flexslider').flexslider({
+                  animationSpeed: 800,
+                  touch: true,
+                  pauseOnHover: true,
+                  pauseOnAction: true,
+                  startAt:0,
+                  animation: "fade"
+                });
+            });
+        </script>
+    </body>
+</html>

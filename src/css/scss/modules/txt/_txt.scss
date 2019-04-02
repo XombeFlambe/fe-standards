@@ -1,0 +1,24 @@
+/*----------------------------------------------------------------------
+ Text
+----------------------------------------------------------------------*/
+.txt {@include baseText();}
+
+.txt_sm {font-size: 12px;}
+.txt_med {font-size: 18px;}
+.txt_lg {font-size: 24px;}
+
+.txt_bold {font-weight: 700;}
+
+.txt_italic {font-style: italic;}
+
+.txt_upper {text-transform: uppercase;}
+
+.txt_inlineBlock {display: inline-block;}
+.txt_block {display: block;}
+
+.txt_pushBtm {margin-bottom: 20px;}
+.txt_pushBtmSm {margin-bottom: 10px;}
+.txt_pushTop {margin-top: 20px;}
+.txt_pushTopSm {margin-top: 10px;}
+
+.txt_gray {color: $GRAY;}
